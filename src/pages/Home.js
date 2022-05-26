@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import Model from "../Model";
 import { motion } from "framer-motion";
+import LightNav from "../components/LightNav";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,13 +14,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-`;
-
-const SlideContainer = styled(motion.div)`
-  width: 50%;
-  background-color: white;
-  height: 100vh;
-  border-radius: 5%;
 `;
 
 function Home() {
@@ -34,7 +28,11 @@ function Home() {
         <Logo />
       ) : (
         <Wrapper>
-          <Canvas camera={{ fov: 10, position: [0, 100, 500] }}>
+          <LightNav />
+          <Canvas
+            transition={{ transition: { duration: 2 } }}
+            camera={{ fov: 10, position: [0, 100, 500] }}
+          >
             <ambientLight intensity={0.4} />
             <spotLight
               intensity={0.1}
@@ -55,7 +53,6 @@ function Home() {
               enablePan={false}
             />
           </Canvas>
-          <SlideContainer whileHover={{ left: 0 }}></SlideContainer>
         </Wrapper>
       )}
     </>

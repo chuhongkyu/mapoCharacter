@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
 }
 body{
   background-color: #0079ff;
+  overflow-x: hidden;
+}
+ul{
+  text-decoration: none;
 }
 `;
 
