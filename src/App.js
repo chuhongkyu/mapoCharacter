@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Introduction from "./components/Introduction";
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -12,8 +13,10 @@ body{
   background-color: #0079ff;
   overflow-x: hidden;
 }
-ul{
+
+a,ul,li{
   text-decoration: none;
+  color: inherit;
 }
 `;
 
@@ -24,6 +27,7 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
