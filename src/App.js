@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Introduction from "./components/Introduction";
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -12,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
 body{
   background-color: #0079ff;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a,ul,li{

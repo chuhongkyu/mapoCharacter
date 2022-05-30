@@ -1,12 +1,14 @@
 import { Link, Route, Routes, useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Shop from "../pages/Shop";
-import Introduction from "./Introduction";
+import Introduction from "../pages/Introduction";
+import About from "../pages/About";
+import { motion } from "framer-motion";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +20,7 @@ const Container = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 10;
   overflow-y: hidden;
+  transform-origin: left;
   h5 {
     width: 100%;
     margin-bottom: 15px;
@@ -49,18 +52,39 @@ const Li = styled.li`
   }
 `;
 
+const LNavVariants = {
+  initial: {
+    scaleX: 0,
+    opacity: 0,
+  },
+  animate: {
+    scaleX: 1,
+    opacity: 1,
+  },
+  transition: {
+    duration: 0.5,
+  },
+};
+
 const LightNav = () => {
   const navigate = useNavigate();
   const introMatch = useMatch("/introduction");
   const shopMatch = useMatch("/shop");
+  const aboutMatch = useMatch("/about");
+
   return (
     <>
-      <Container>
+      <Container
+        variants={LNavVariants}
+        initial="initial"
+        animate="animate"
+        transition="transition"
+      >
         <Logo src={env.PUBLIC_URL + "/assets/logo.svg"} />
         <h5>마포 캐릭터 소개</h5>
         <ul>
           <Li>
-            <Link to={"/"}>About</Link>
+            <Link to={"/"}>Home</Link>
           </Li>
           <Li isActive={introMatch !== null}>
             <Link to={"/introduction"}>Introduction</Link>
@@ -68,13 +92,16 @@ const LightNav = () => {
           <Li isActive={shopMatch !== null}>
             <Link to={"/shop"}>Shop</Link>
           </Li>
+          <Li isActive={aboutMatch !== null}>
+            <Link to={"/about"}>About</Link>
+          </Li>
         </ul>
-        <Routes>
-          <Route path="introduction" element={<Introduction />} />
-        </Routes>
       </Container>
+
       <Routes>
+        <Route path="introduction" element={<Introduction />} />
         <Route path="shop" element={<Shop />} />
+        <Route path="about" element={<About />} />
       </Routes>
     </>
   );
