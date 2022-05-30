@@ -6,11 +6,8 @@ const Model = (props) => {
   const model = useRef();
   const { nodes, materials } = useGLTF("/RYan.glb");
 
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime();
-    // model.current.rotation.x = 2.3;
-    // model.current.rotation.z = 4.6;
-    // model.current.rotation.y = 1.6;
+  useFrame(() => {
+    model.current.rotation.y += 0.01;
   });
 
   return (

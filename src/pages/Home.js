@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import Model from "../Model";
-import { motion } from "framer-motion";
+
 import LightNav from "../components/LightNav";
 
 const Wrapper = styled.div`
