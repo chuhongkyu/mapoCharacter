@@ -7,7 +7,7 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Model = (props) => {
   const model = useRef();
-  const { nodes, materials } = useGLTF(`${env.PUBLIC_URL}/RYan.glb`);
+  const { nodes, materials } = useGLTF(`${env.PUBLIC_URL}/assets/RYan.glb`);
 
   useFrame(() => {
     model.current.rotation.y += 0.01;

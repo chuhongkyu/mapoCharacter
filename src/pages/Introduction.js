@@ -39,7 +39,7 @@ function Introduction() {
     >
       <h1>Introduction</h1>
       <IntroBox>
-        <img src={env.PUBLIC_URL + "assets/라이언.png"} />
+        <img src={env.PUBLIC_URL + "/assets/라이언.png"} />
         <div>
           <p>
             한국의 캐릭터 강자인 만큼, 카카오는 다양한 산업군에서 컬래버레이션이
