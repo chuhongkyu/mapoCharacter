@@ -10,6 +10,7 @@
 # 전시 및 배포
 
 - 코엑스
+- http://chuhongkyu.github.io/mapoCharacter
 
 ---
 

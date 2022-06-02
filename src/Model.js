@@ -2,9 +2,12 @@ import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || "";
+
 const Model = (props) => {
   const model = useRef();
-  const { nodes, materials } = useGLTF("/RYan.glb");
+  const { nodes, materials } = useGLTF(`${env.PUBLIC_URL}/RYan.glb`);
 
   useFrame(() => {
     model.current.rotation.y += 0.01;
