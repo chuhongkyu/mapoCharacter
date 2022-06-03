@@ -14,6 +14,7 @@ const Player = styled(motion.div)`
   img {
     width: 100%;
     height: 100%;
+    -webkit-user-drag: none;
   }
 `;
 
@@ -22,7 +23,7 @@ const Character = ({ name, img }) => {
     <>
       <Player>
         <h1>{name}</h1>
-        <img src={img} alt={name} />
+        <img src={img} alt={name} disabled />
       </Player>
     </>
   );

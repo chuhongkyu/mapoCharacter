@@ -21,12 +21,15 @@ const MovingC = styled(motion.div)`
   position: absolute;
   width: 100px;
   height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 5;
 `;
 
 const LandImg = styled(motion.img)`
   height: 100%;
-  user-select: none;
+  -webkit-user-drag: none;
 `;
 
 const Land = () => {
