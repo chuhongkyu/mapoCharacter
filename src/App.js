@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Land from "./pages/Land";
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -26,8 +27,9 @@ function App() {
       <GlobalStyles />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/*" element={<Home />} />
+          <Route path="/" element={<Land />} />
+          <Route path="/home/*" element={<Home />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>

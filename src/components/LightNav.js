@@ -84,16 +84,16 @@ const LightNav = () => {
         <h5>마포 캐릭터 소개</h5>
         <ul>
           <Li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/home"}>Home</Link>
           </Li>
           <Li isActive={introMatch !== null}>
-            <Link to={"/introduction"}>Introduction</Link>
+            <Link to={"/home/introduction"}>Introduction</Link>
           </Li>
           <Li isActive={shopMatch !== null}>
-            <Link to={"/shop"}>Shop</Link>
+            <Link to={"/home/shop"}>Shop</Link>
           </Li>
           <Li isActive={aboutMatch !== null}>
-            <Link to={"/about"}>About</Link>
+            <Link to={"/home/about"}>About</Link>
           </Li>
         </ul>
       </Container>
