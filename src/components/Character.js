@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Player = styled(motion.div)`
@@ -11,6 +12,11 @@ const Player = styled(motion.div)`
   flex-direction: column;
   position: absolute;
   user-select: none;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -18,12 +24,22 @@ const Player = styled(motion.div)`
   }
 `;
 
-const Character = ({ name, img }) => {
+const IdStyle = styled.h3`
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: white;
+`;
+
+const Character = ({ name, img, show }) => {
   return (
     <>
       <Player>
-        <h1>{name}</h1>
-        <img src={img} alt={name} disabled />
+        <Link to={show}>
+          <IdStyle>{name}</IdStyle>
+        </Link>
+
+        <img src={img} alt={name} />
       </Player>
     </>
   );

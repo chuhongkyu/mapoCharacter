@@ -3,17 +3,30 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import BuddiesLogo from "../components/BuddiesLogo";
 import Character from "../components/Character";
+import { Route, Routes } from "react-router-dom";
+import Bred from "./Bred";
+import Bunny from "./Bunny";
+import DongGeun from "./DongGeun";
+import Cunny from "./Cunny";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+`;
+
+const Iland = styled(motion.div)`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 `;
 
@@ -30,6 +43,7 @@ const MovingC = styled(motion.div)`
 const LandImg = styled(motion.img)`
   height: 100%;
   -webkit-user-drag: none;
+  user-select: none;
 `;
 
 const Land = () => {
@@ -54,50 +68,62 @@ const Land = () => {
             type: "spring",
           }}
         >
-          <MovingC drag dragConstraints={handlePlayer}>
-            <Character
-              name={"Bred"}
-              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
-            />
-          </MovingC>
+          <Iland>
+            <MovingC drag dragConstraints={handlePlayer}>
+              <Character
+                show={"/bred"}
+                name={"Bred"}
+                img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
+              />
+            </MovingC>
 
-          <MovingC drag dragConstraints={handlePlayer}>
-            <Character
-              name={"바니"}
-              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bunny.png`}
-            />
-          </MovingC>
+            <MovingC drag dragConstraints={handlePlayer}>
+              <Character
+                show={"/banny"}
+                name={"바니"}
+                img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bunny.png`}
+              />
+            </MovingC>
 
-          <MovingC drag dragConstraints={handlePlayer}>
-            <Character
-              name={"동건"}
-              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_DongGeun.png`}
-            />
-          </MovingC>
+            <MovingC drag dragConstraints={handlePlayer}>
+              <Character
+                show={"/dongeun"}
+                name={"동건"}
+                img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_DongGeun.png`}
+              />
+            </MovingC>
 
-          <MovingC drag dragConstraints={handlePlayer}>
-            <Character
-              name={"Mc_cunny"}
-              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Mc_cunny.png`}
-            />
-          </MovingC>
+            <MovingC drag dragConstraints={handlePlayer}>
+              <Character
+                show={"/cunny"}
+                name={"Mc_cunny"}
+                img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Mc_cunny.png`}
+              />
+            </MovingC>
 
-          <LandImg
-            src={env.PUBLIC_URL + "/assets/map_Field.png"}
-            alt="캐릭터_map"
-          />
-          <LandImg
-            initial={{ x: 0 }}
-            animate={{ x: [0, -10, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              type: "spring",
-            }}
-            style={{ position: "absolute", zIndex: 2 }}
-            src={env.PUBLIC_URL + "/assets/cloud.png"}
-            alt="캐릭터 팀"
-          />
+            <LandImg
+              src={env.PUBLIC_URL + "/assets/map_Field.png"}
+              alt="캐릭터_map"
+            />
+            <LandImg
+              initial={{ x: 0 }}
+              animate={{ x: [0, -10, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                type: "spring",
+              }}
+              style={{ position: "absolute", zIndex: 2 }}
+              src={env.PUBLIC_URL + "/assets/cloud.png"}
+              alt="캐릭터 팀"
+            />
+            <Routes>
+              <Route path="bred" element={<Bred />} />
+              <Route path="banny" element={<Bunny />} />
+              <Route path="dongeun" element={<DongGeun />} />
+              <Route path="cunny" element={<Cunny />} />
+            </Routes>
+          </Iland>
         </Wrapper>
       )}
     </>
