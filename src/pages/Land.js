@@ -13,12 +13,20 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow: hidden;
+  position: relative;
+`;
+
+const MovingC = styled(motion.div)`
+  position: absolute;
+  width: 100px;
+  height: 150px;
+  z-index: 5;
 `;
 
 const LandImg = styled(motion.img)`
   height: 100%;
+  user-select: none;
 `;
 
 const Land = () => {
@@ -43,6 +51,34 @@ const Land = () => {
             type: "spring",
           }}
         >
+          <MovingC drag dragConstraints={handlePlayer}>
+            <Character
+              name={"Bred"}
+              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
+            />
+          </MovingC>
+
+          <MovingC drag dragConstraints={handlePlayer}>
+            <Character
+              name={"바니"}
+              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bunny.png`}
+            />
+          </MovingC>
+
+          <MovingC drag dragConstraints={handlePlayer}>
+            <Character
+              name={"동건"}
+              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_DongGeun.png`}
+            />
+          </MovingC>
+
+          <MovingC drag dragConstraints={handlePlayer}>
+            <Character
+              name={"Mc_cunny"}
+              img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Mc_cunny.png`}
+            />
+          </MovingC>
+
           <LandImg
             src={env.PUBLIC_URL + "/assets/map_Field.png"}
             alt="캐릭터_map"
@@ -58,13 +94,6 @@ const Land = () => {
             style={{ position: "absolute", zIndex: 2 }}
             src={env.PUBLIC_URL + "/assets/cloud.png"}
             alt="캐릭터 팀"
-          />
-
-          <Character
-            drag
-            dragConstraints={handlePlayer}
-            name={"야옹"}
-            img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
           />
         </Wrapper>
       )}

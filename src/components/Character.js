@@ -4,13 +4,13 @@ import styled from "styled-components";
 const Player = styled(motion.div)`
   width: 100px;
   height: 150px;
-  position: absolute;
-  z-index: 5;
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+  user-select: none;
   img {
     width: 100%;
     height: 100%;
