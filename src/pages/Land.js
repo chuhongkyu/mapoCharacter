@@ -8,17 +8,19 @@ import Bred from "./Bred";
 import Bunny from "./Bunny";
 import DongGeun from "./DongGeun";
 import Cunny from "./Cunny";
+import ContactUs from "../components/ContactUs";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  flex-direction: column;
+  overflow-x: hidden;
 `;
 
 const Iland = styled(motion.div)`
@@ -58,17 +60,17 @@ const Land = () => {
       {!logo ? (
         <BuddiesLogo />
       ) : (
-        <Wrapper
-          ref={handlePlayer}
-          initial={{ y: 0 }}
-          animate={{ y: [0, -10, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-            type: "spring",
-          }}
-        >
-          <Iland>
+        <Wrapper>
+          <Iland
+            ref={handlePlayer}
+            initial={{ y: 0 }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              type: "spring",
+            }}
+          >
             <MovingC drag dragConstraints={handlePlayer}>
               <Character
                 show={"/bred"}
@@ -124,6 +126,7 @@ const Land = () => {
               <Route path="cunny" element={<Cunny />} />
             </Routes>
           </Iland>
+          <ContactUs />
         </Wrapper>
       )}
     </>

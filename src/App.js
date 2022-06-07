@@ -11,7 +11,6 @@ const GlobalStyles = createGlobalStyle`
 body{
   background-color: #0079ff;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 a,ul,li{
