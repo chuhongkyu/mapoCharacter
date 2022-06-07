@@ -27,16 +27,24 @@ const FormContainer = styled.div`
   width: 100%;
   background-color: gray;
   display: flex;
-  justify-content: space-around;
-  form {
-    height: 400px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  div {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    input {
-      padding: 10px 40px 11px 1.5rem;
-      margin-bottom: 5px;
+    form {
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 50px;
+      input {
+        padding: 10px 40px 11px 1.5rem;
+        margin-bottom: 5px;
+      }
     }
   }
 `;
@@ -62,16 +70,19 @@ const ContactUs = () => {
       </header>
       <FormContainer>
         <p>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</p>
-        <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="user_name" placeholder="닉네임" />
-          <input type="email" name="user_email" placeholder="이메일 주소" />
-          <label>피드백</label>
-          <textarea name="message" placeholder="너무 많이 누르지 마세요" />
-          <input type="submit" value="구독" />
-        </form>
-        <img
-          src={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
-        />
+        <p>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</p>
+        <div>
+          <form ref={form} onSubmit={sendEmail}>
+            <input type="text" name="user_name" placeholder="닉네임" />
+            <input type="email" name="user_email" placeholder="이메일 주소" />
+            <label>피드백</label>
+            <textarea name="message" placeholder="너무 많이 누르지 마세요" />
+            <input type="submit" value="구독" />
+          </form>
+          <img
+            src={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
+          />
+        </div>
       </FormContainer>
     </Wrapper>
   );
