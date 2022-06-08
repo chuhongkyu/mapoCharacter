@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 
@@ -30,27 +30,73 @@ const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  padding: 50px;
+  h2 {
+    margin-bottom: 20px;
+  }
   div {
-    width: 100%;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 5%;
     form {
-      height: 400px;
+      height: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      margin-right: 50px;
       input {
         padding: 10px 40px 11px 1.5rem;
         margin-bottom: 5px;
       }
     }
+    img {
+      position: absolute;
+      left: 60%;
+      bottom: 0;
+      width: 350px;
+    }
+  }
+`;
+
+const Btn = styled.button`
+  border-style: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+`;
+
+const Modal = styled.div`
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  position: absolute;
+  z-index: 10;
+  top: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  div {
+    display: flex;
+    justify-content: center;
   }
 `;
 
 const ContactUs = () => {
   const form = useRef();
+  const [subscribe, setSubscribe] = useState(false);
+  const onClick = () => {
+    setSubscribe(!subscribe);
+  };
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, API).then(
@@ -69,18 +115,32 @@ const ContactUs = () => {
         <h1>우리가 시간이 없지, 세상이 안 궁금하냐!</h1>
       </header>
       <FormContainer>
-        <p>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</p>
-        <p>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</p>
+        <div>
+          <h2>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</h2>
+        </div>
         <div>
           <form ref={form} onSubmit={sendEmail}>
             <input type="text" name="user_name" placeholder="닉네임" />
             <input type="email" name="user_email" placeholder="이메일 주소" />
-            <label>피드백</label>
-            <textarea name="message" placeholder="너무 많이 누르지 마세요" />
-            <input type="submit" value="구독" />
+            <Btn onClick={onClick}>구독</Btn>
+            {!subscribe ? null : (
+              <Modal>
+                <h1>구독</h1>
+                <h3>진짜 구독 하시겠습니까?</h3>
+                <div>
+                  <Btn style={{ margin: 10 }} type="submit">
+                    네
+                  </Btn>
+                  <Btn style={{ margin: 10 }} onClick={onClick}>
+                    아니요
+                  </Btn>
+                </div>
+              </Modal>
+            )}
           </form>
           <img
-            src={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_Bred.M.png`}
+            src={env.PUBLIC_URL + "/assets/characters/Buddies_Cha_Bred.M.png"}
+            alt="캐릭터"
           />
         </div>
       </FormContainer>

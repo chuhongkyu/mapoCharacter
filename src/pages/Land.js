@@ -71,7 +71,7 @@ const Land = () => {
               type: "spring",
             }}
           >
-            <MovingC drag dragConstraints={handlePlayer}>
+            <MovingC drag dragConstraints={handlePlayer} style={{ left: 400 }}>
               <Character
                 show={"/bred"}
                 name={"Bred"}
@@ -79,7 +79,7 @@ const Land = () => {
               />
             </MovingC>
 
-            <MovingC drag dragConstraints={handlePlayer}>
+            <MovingC drag dragConstraints={handlePlayer} style={{ top: 20 }}>
               <Character
                 show={"/banny"}
                 name={"바니"}
@@ -87,15 +87,23 @@ const Land = () => {
               />
             </MovingC>
 
-            <MovingC drag dragConstraints={handlePlayer}>
+            <MovingC
+              drag
+              dragConstraints={handlePlayer}
+              style={{ left: 750, bottom: 25 }}
+            >
               <Character
                 show={"/dongeun"}
-                name={"동건"}
+                name={"동근"}
                 img={`${env.PUBLIC_URL}/assets/characters/Buddies_Cha_DongGeun.png`}
               />
             </MovingC>
 
-            <MovingC drag dragConstraints={handlePlayer}>
+            <MovingC
+              drag
+              dragConstraints={handlePlayer}
+              style={{ right: 320, bottom: 270 }}
+            >
               <Character
                 show={"/cunny"}
                 name={"Mc_cunny"}
@@ -119,14 +127,14 @@ const Land = () => {
               src={env.PUBLIC_URL + "/assets/cloud.png"}
               alt="캐릭터 팀"
             />
-            <Routes>
-              <Route path="bred" element={<Bred />} />
-              <Route path="banny" element={<Bunny />} />
-              <Route path="dongeun" element={<DongGeun />} />
-              <Route path="cunny" element={<Cunny />} />
-            </Routes>
           </Iland>
           <ContactUs />
+          <Routes>
+            <Route path="bred" element={<Bred />} />
+            <Route path="banny" element={<Bunny />} />
+            <Route path="dongeun" element={<DongGeun />} />
+            <Route path="cunny" element={<Cunny />} />
+          </Routes>
         </Wrapper>
       )}
     </>
