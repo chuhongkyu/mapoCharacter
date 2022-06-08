@@ -96,14 +96,24 @@ const ContactUs = () => {
   };
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, API).then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .sendForm(
+        YOUR_SERVICE_ID,
+        YOUR_TEMPLATE_ID,
+        form.current,
+        {
+          img: "https://github.com/chuhongkyu/mapoCharacter/blob/main/public/assets/Buddies_Cha_01.png?raw=true",
+        },
+        API
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     setSubscribe(!subscribe);
   };
 
