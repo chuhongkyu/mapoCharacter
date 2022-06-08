@@ -73,22 +73,19 @@ const Btn = styled.button`
 `;
 
 const Modal = styled.div`
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 200px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
-  top: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   padding: 50px;
-  div {
-    display: flex;
-    justify-content: center;
-  }
 `;
 
 const ContactUs = () => {
@@ -107,6 +104,7 @@ const ContactUs = () => {
         console.log(error.text);
       }
     );
+    setSubscribe(!subscribe);
   };
 
   return (
@@ -122,27 +120,20 @@ const ContactUs = () => {
           <form ref={form} onSubmit={sendEmail}>
             <input type="text" name="user_name" placeholder="닉네임" />
             <input type="email" name="user_email" placeholder="이메일 주소" />
-            <Btn onClick={onClick}>구독</Btn>
-            {!subscribe ? null : (
-              <Modal>
-                <h1>구독</h1>
-                <h3>진짜 구독 하시겠습니까?</h3>
-                <div>
-                  <Btn style={{ margin: 10 }} type="submit">
-                    네
-                  </Btn>
-                  <Btn style={{ margin: 10 }} onClick={onClick}>
-                    아니요
-                  </Btn>
-                </div>
-              </Modal>
-            )}
+            <Btn type="submit" onSubmit={onClick}>
+              구독
+            </Btn>
           </form>
           <img
             src={env.PUBLIC_URL + "/assets/characters/Buddies_Cha_Bred.M.png"}
             alt="캐릭터"
           />
         </div>
+        {!subscribe ? null : (
+          <Modal onClick={onClick}>
+            <h1>❤ 구독이 완료 되었습니다.</h1>
+          </Modal>
+        )}
       </FormContainer>
     </Wrapper>
   );
