@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled(motion.div)`
   position: absolute;
@@ -13,18 +14,30 @@ const Container = styled(motion.div)`
 const Variant = {
   initial: {
     y: "100%",
+    opacity: 0,
   },
   animate: {
     y: 0,
+    opacity: 1,
     transition: {
-      duration: 2,
+      duration: 1,
+      ease: "easeInOut",
     },
   },
 };
 
 const Bred = () => {
+  const navigate = useNavigate();
+  const onExit = () => {
+    navigate("/");
+  };
   return (
-    <Container variants={Variant} animate="animate" initial="initial">
+    <Container
+      onClick={onExit}
+      variants={Variant}
+      animate="animate"
+      initial="initial"
+    >
       <h1>Bred</h1>
     </Container>
   );

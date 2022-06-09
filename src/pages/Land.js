@@ -9,13 +9,14 @@ import Bunny from "./Bunny";
 import DongGeun from "./DongGeun";
 import Cunny from "./Cunny";
 import ContactUs from "../components/ContactUs";
+import Navigation from "../components/Navigation";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 200vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,9 +53,16 @@ const Land = () => {
   const handlePlayer = useRef(null);
   const [logo, setLogo] = useState(false);
   const logoTime = () => setLogo(true);
+
   useEffect(() => {
     setTimeout(logoTime, 2000);
   }, []);
+
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `버디즈 홈`;
+  }, []);
+
   return (
     <>
       {!logo ? (
@@ -128,13 +136,14 @@ const Land = () => {
               alt="캐릭터 팀"
             />
           </Iland>
-          <ContactUs />
           <Routes>
             <Route path="bred" element={<Bred />} />
             <Route path="banny" element={<Bunny />} />
             <Route path="dongeun" element={<DongGeun />} />
             <Route path="cunny" element={<Cunny />} />
+            <Route path="letter" element={<ContactUs />} />
           </Routes>
+          <Navigation />
         </Wrapper>
       )}
     </>
