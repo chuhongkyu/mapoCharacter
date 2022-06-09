@@ -101,6 +101,12 @@ const Modal = styled.div`
   padding: 50px;
 `;
 
+export const isEmail = (email) => {
+  const emailRegex =
+    /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+  console.log("이메일 유효성 검사", emailRegex.test(email.target.value));
+};
+
 const ContactUs = () => {
   const navigate = useNavigate();
   const onExit = () => {
@@ -148,7 +154,12 @@ const ContactUs = () => {
           <div>
             <form ref={form} onSubmit={sendEmail}>
               <input type="text" name="user_name" placeholder="닉네임" />
-              <input type="email" name="user_email" placeholder="이메일 주소" />
+              <input
+                type="email"
+                name="user_email"
+                placeholder="이메일 주소"
+                onBlur={isEmail}
+              />
               <Btn type="submit" onSubmit={onClick}>
                 구독
               </Btn>
