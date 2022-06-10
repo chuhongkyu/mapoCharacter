@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const Iland = styled(motion.div)`
@@ -31,6 +31,10 @@ const Iland = styled(motion.div)`
   justify-content: center;
   align-items: center;
   position: relative;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 const MovingC = styled(motion.div)`
@@ -41,12 +45,19 @@ const MovingC = styled(motion.div)`
   justify-content: center;
   align-items: center;
   z-index: 5;
+  @media screen and (max-width: 768px) {
+    width: 50px;
+    height: 100px;
+  }
 `;
 
 const LandImg = styled(motion.img)`
   height: 100%;
   -webkit-user-drag: none;
   user-select: none;
+  @media screen and (max-width: 768px) {
+    height: 70%;
+  }
 `;
 
 const Land = () => {

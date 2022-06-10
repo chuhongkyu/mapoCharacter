@@ -21,6 +21,10 @@ const Player = styled.div`
       -webkit-user-drag: none;
     }
   }
+  @media screen and (max-width: 768px) {
+    width: 50px;
+    height: 100px;
+  }
 `;
 
 const Character = ({ name, img, show }) => {

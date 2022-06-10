@@ -23,7 +23,8 @@ const BackContainer = styled(motion.div)`
 `;
 
 const Wrapper = styled(motion.div)`
-  background-color: white;
+  background-color: #e5cba9;
+  color: #52371b;
   width: 90%;
   height: 90vh;
   header {
@@ -38,13 +39,14 @@ const Wrapper = styled(motion.div)`
 
 const FormContainer = styled.div`
   width: 100%;
-  background-color: gray;
+  background-color: #ebd5b3;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
   padding: 50px;
+  border: 2px solid #52371b;
   h2 {
     margin-bottom: 20px;
   }

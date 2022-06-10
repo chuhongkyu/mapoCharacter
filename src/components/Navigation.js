@@ -10,6 +10,15 @@ const Wrapper = styled.div`
   position: absolute;
   right: 50px;
   top: 50px;
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Btn = styled.span`
