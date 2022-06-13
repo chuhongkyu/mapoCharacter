@@ -25,7 +25,7 @@ const BackContainer = styled(motion.div)`
 const Wrapper = styled(motion.div)`
   background-color: #e5cba9;
   color: #52371b;
-  width: 90%;
+  width: 80%;
   height: 90vh;
   header {
     width: 100%;
@@ -34,6 +34,11 @@ const Wrapper = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -51,16 +56,19 @@ const FormContainer = styled.div`
     margin-bottom: 20px;
   }
   div {
-    width: 50%;
+    width: 70%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     padding: 0 5%;
     form {
       height: 300px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       flex-direction: column;
+      margin-top: 20px;
       input {
         padding: 10px 40px 11px 1.5rem;
         margin-bottom: 5px;
@@ -71,6 +79,22 @@ const FormContainer = styled.div`
       left: 60%;
       bottom: 0;
       width: 350px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 13px;
+    padding: 5px;
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      img {
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+      }
     }
   }
 `;
@@ -103,13 +127,18 @@ const Modal = styled.div`
   padding: 50px;
 `;
 
-export const isEmail = (email) => {
-  const emailRegex =
-    /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-  console.log("이메일 유효성 검사", emailRegex.test(email.target.value));
-};
+const LetterBox = styled.div`
+  width: 100%;
+  height: 70px;
+  background-color: #52371b;
+  color: #ebd5b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ContactUs = () => {
+  const [checkMail, setCheckMail] = useState(false);
   const navigate = useNavigate();
   const onExit = () => {
     navigate("/");
@@ -133,6 +162,17 @@ const ContactUs = () => {
     console.log(form.current);
   };
 
+  const isEmail = (email) => {
+    const emailRegex =
+      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+    setCheckMail(emailRegex.test(email.target.value));
+    if (checkMail === false) {
+      console.log("이메일 오류");
+    } else {
+      console.log("이메일 확인");
+    }
+  };
+
   return (
     <BackContainer
       initial={{ opacity: 0 }}
@@ -152,6 +192,10 @@ const ContactUs = () => {
         <FormContainer>
           <div>
             <h2>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</h2>
+            <p>
+              세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 <br />
+              우리 탓은 아니잖아요!{" "}
+            </p>
           </div>
           <div>
             <form ref={form} onSubmit={sendEmail}>
@@ -162,9 +206,16 @@ const ContactUs = () => {
                 placeholder="이메일 주소"
                 onBlur={isEmail}
               />
-              <Btn type="submit" onSubmit={onClick}>
-                구독
-              </Btn>
+
+              {!checkMail ? (
+                <Btn style={{ backgroundColor: "#ebd5b3" }}>
+                  이메일을 확인해주세요
+                </Btn>
+              ) : (
+                <Btn type="submit" onSubmit={onClick}>
+                  구독
+                </Btn>
+              )}
             </form>
             <img
               src={env.PUBLIC_URL + "/assets/characters/Buddies_Cha_Bred.M.png"}
@@ -177,6 +228,9 @@ const ContactUs = () => {
             </Modal>
           )}
         </FormContainer>
+        <LetterBox>
+          <h1>-Method-</h1>
+        </LetterBox>
       </Wrapper>
     </BackContainer>
   );
