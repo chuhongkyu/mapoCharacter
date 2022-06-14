@@ -104,7 +104,7 @@ const Btn = styled.button`
   border-radius: 5px;
   background-color: black;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 20px;
   &:hover {
     background-color: white;
     color: black;
@@ -137,6 +137,12 @@ const LetterBox = styled.div`
   align-items: center;
 `;
 
+const ErrorBox = styled.div`
+  width: 100%;
+  color: gray;
+  font-size: 11px;
+`;
+
 const ContactUs = () => {
   const [checkMail, setCheckMail] = useState(false);
   const navigate = useNavigate();
@@ -145,8 +151,9 @@ const ContactUs = () => {
   };
   const form = useRef();
   const [subscribe, setSubscribe] = useState(false);
-  const onClick = () => {
+  const onClick = (e) => {
     setSubscribe(!subscribe);
+    e.stopPropagation();
   };
   const sendEmail = (e) => {
     e.preventDefault();
@@ -199,7 +206,13 @@ const ContactUs = () => {
           </div>
           <div>
             <form ref={form} onSubmit={sendEmail}>
-              <input type="text" name="user_name" placeholder="닉네임" />
+              <input
+                type="text"
+                name="user_name"
+                placeholder="닉네임"
+                minLength="1"
+                maxLength="15"
+              />
               <input
                 type="email"
                 name="user_email"
@@ -208,11 +221,11 @@ const ContactUs = () => {
               />
 
               {!checkMail ? (
-                <Btn style={{ backgroundColor: "#ebd5b3" }}>
-                  이메일을 확인해주세요
-                </Btn>
+                <ErrorBox>
+                  <p>🍳이메일을 확인해주세요</p>
+                </ErrorBox>
               ) : (
-                <Btn type="submit" onSubmit={onClick}>
+                <Btn type="submit" onClick={onClick}>
                   구독
                 </Btn>
               )}
