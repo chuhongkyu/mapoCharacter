@@ -10,6 +10,7 @@ import DongGeun from "./DongGeun";
 import Cunny from "./Cunny";
 import ContactUs from "../components/ContactUs";
 import Navigation from "../components/Navigation";
+import Slider from "../components/Slider";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -147,6 +148,7 @@ const Land = () => {
               alt="캐릭터 팀"
             />
           </Iland>
+
           <Routes>
             <Route path="bred" element={<Bred />} />
             <Route path="banny" element={<Bunny />} />
@@ -155,6 +157,7 @@ const Land = () => {
             <Route path="letter" element={<ContactUs />} />
           </Routes>
           <Navigation />
+          <Slider />
         </Wrapper>
       )}
     </>
