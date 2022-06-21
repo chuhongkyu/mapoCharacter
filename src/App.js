@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Land from "./pages/Land";
+import Home from "./pages/Home";
+import Enter from "./pages/Enter";
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -9,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
 }
 body{
-  background-color: #0079ff;
+  background-color: ${(prop) => prop.theme.bgColor};
   overflow: hidden;
 }
 
@@ -25,8 +26,8 @@ function App() {
       <GlobalStyles />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<Land />} />
-          <Route path="/*" element={<Land />} />
+          <Route path="/" element={<Enter />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
