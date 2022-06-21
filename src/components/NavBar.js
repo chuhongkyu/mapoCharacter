@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 10px;
+  top: 10px;
   width: 150px;
   height: 100%;
 `;
@@ -12,9 +12,34 @@ const Wrapper = styled(motion.div)`
 const Navigation = styled.div`
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+`;
+
+const NavBtn = styled.span`
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 60px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  h1 {
+  }
+  p {
+  }
 `;
 
 const env = process.env;
@@ -24,10 +49,23 @@ const NavBar = () => {
   return (
     <Wrapper>
       <Navigation>
-        <top>ddd</top>
+        <NavBtn style={{ backgroundColor: "rgb(50,50,50)" }}>
+          <h1>LOGO</h1>
+          <p>마포버디즈</p>
+        </NavBtn>
         <div>
-          <p>saf</p>
-          <p>afs</p>
+          <NavBtn style={{ backgroundColor: "rgb(200,200,200)" }}>
+            <h1>LOGO</h1>
+            <p>마포버디즈</p>
+          </NavBtn>
+          <NavBtn style={{ backgroundColor: "rgb(200,200,200)" }}>
+            <h1>LOGO</h1>
+            <p>마포버디즈</p>
+          </NavBtn>
+          <NavBtn style={{ backgroundColor: "rgb(200,200,200)" }}>
+            <h1>LOGO</h1>
+            <p>마포버디즈</p>
+          </NavBtn>
         </div>
       </Navigation>
     </Wrapper>

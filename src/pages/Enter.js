@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import NavBar from "../components/NavBar";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -36,6 +37,7 @@ const Btn = styled.span`
 const Enter = () => {
   return (
     <Wrapper>
+      <NavBar />
       <MainContainer>
         <div>
           <h1>Enter</h1>
