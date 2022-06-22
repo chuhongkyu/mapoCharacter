@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
   position: fixed;
-  left: 10px;
-  top: 10px;
+  left: 0;
+  top: 0;
   width: 150px;
   height: 100%;
+  margin-top: 50px;
 `;
 
 const Navigation = styled.div`
@@ -28,7 +29,6 @@ const NavBtn = styled.span`
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  padding: 60px;
   border: 2px solid black;
   display: flex;
   justify-content: center;
@@ -37,8 +37,10 @@ const NavBtn = styled.span`
   margin-bottom: 10px;
   white-space: nowrap;
   h1 {
+    font-size: 23px;
   }
   p {
+    font-size: 11px;
   }
 `;
 
@@ -49,22 +51,28 @@ const NavBar = () => {
   return (
     <Wrapper>
       <Navigation>
-        <NavBtn style={{ backgroundColor: "rgb(50,50,50)" }}>
+        <NavBtn
+          style={{
+            backgroundColor: "rgb(50,50,50)",
+            width: "122px",
+            height: "122px",
+          }}
+        >
           <h1>LOGO</h1>
           <p>마포버디즈</p>
         </NavBtn>
         <div>
           <NavBtn style={{ backgroundColor: "rgb(200,200,200)" }}>
-            <h1>LOGO</h1>
-            <p>마포버디즈</p>
+            <h1>ICON</h1>
+            <p>버디즈 소개</p>
           </NavBtn>
           <NavBtn style={{ backgroundColor: "rgb(200,200,200)" }}>
-            <h1>LOGO</h1>
-            <p>마포버디즈</p>
+            <h1>ICON</h1>
+            <p>굿즈 소개</p>
           </NavBtn>
           <NavBtn style={{ backgroundColor: "rgb(200,200,200)" }}>
-            <h1>LOGO</h1>
-            <p>마포버디즈</p>
+            <h1>ICON</h1>
+            <p>버디레터 신청</p>
           </NavBtn>
         </div>
       </Navigation>
