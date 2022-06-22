@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
 
@@ -12,65 +11,91 @@ const API = "8COq9QAPVe_wIh5BW";
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.section)`
   width: 100%;
   height: 100vh;
-  header {
-    width: 100%;
-    border: 1px solid black;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const FormContainer = styled.div`
-  width: 100%;
-  background-color: #ebd5b3;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px;
-  border: 2px solid #52371b;
-  h2 {
-    margin-bottom: 20px;
-  }
-  div {
-    width: 70%;
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+const TextBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  header {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding: 0 5%;
-    form {
-      height: 300px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 20px;
-      input {
-        padding: 10px 40px 11px 1.5rem;
-        margin-bottom: 5px;
-      }
+    margin-bottom: 10px;
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
     }
-    img {
-      position: absolute;
-      left: 60%;
-      bottom: 0;
-      width: 350px;
+    p {
+      font-size: 15px;
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  span {
+    font-size: 15px;
+    font-weight: 700;
+  }
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 50px;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    label {
+      font-weight: 800;
+      margin-right: 10px;
+    }
+    input {
+      padding: 10px 15px;
+      border-radius: 5px;
+      width: 300px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+        rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    }
+    &:last-of-type {
+      margin-bottom: 50px;
     }
   }
 `;
 
 const Btn = styled.button`
   border-style: none;
-  border-radius: 5px;
+  border-radius: 25px;
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 60px;
   &:hover {
     background-color: white;
     color: black;
@@ -79,42 +104,36 @@ const Btn = styled.button`
 
 const Modal = styled.div`
   width: 100%;
-  height: 200px;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-`;
-
-const LetterBox = styled.div`
-  width: 100%;
-  height: 70px;
-  background-color: #52371b;
-  color: #ebd5b3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+  }
+  h3 {
+    font-size: 21px;
+    font-weight: 300;
+  }
 `;
 
 const ErrorBox = styled.div`
-  width: 100%;
-  color: gray;
   font-size: 11px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  p {
+    width: 100%;
+    text-align: end;
+  }
 `;
 
 const Letter = () => {
   const [checkMail, setCheckMail] = useState(false);
-  const navigate = useNavigate();
-  const onExit = () => {
-    navigate("/");
-  };
   const form = useRef();
   const [subscribe, setSubscribe] = useState(false);
   const onClick = (e) => {
@@ -147,64 +166,72 @@ const Letter = () => {
   };
 
   return (
-    <Wrapper
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ duration: 0.5 }}
-      onClick={(e) => e.stopPropagation()}
-    >
+    <Wrapper>
       <NavBar />
-      <header>
-        <h1>우리가 시간이 없지, 세상이 안 궁금하냐!</h1>
-      </header>
-      <FormContainer>
-        <div>
-          <h2>🚀 지금 구독하면 내일 아침에 읽을 수 있어요.</h2>
-          <p>
-            세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 <br />
-            우리 탓은 아니잖아요!{" "}
-          </p>
-        </div>
-        <div>
-          <form ref={form} onSubmit={sendEmail}>
-            <input
-              type="text"
-              name="user_name"
-              placeholder="닉네임"
-              minLength="1"
-              maxLength="15"
-            />
-            <input
-              type="email"
-              name="user_email"
-              placeholder="이메일 주소"
-              onBlur={isEmail}
-            />
+      {!subscribe ? (
+        <Container>
+          <TextBox>
+            <header>
+              <h1>버디레터</h1>
+              <p>버디레터 간단한 설명 2~3줄</p>
+            </header>
+            <div>
+              <p>
+                <span>이벤트 기간</span>: 7월 14일 ~7월 19일
+              </p>
+              <p>
+                <span>참여자</span>: ~200명 선착순
+              </p>
+            </div>
+          </TextBox>
 
-            {!checkMail ? (
-              <ErrorBox>
-                <p>🍳이메일을 확인해주세요</p>
-              </ErrorBox>
-            ) : (
-              <Btn type="submit" onClick={onClick}>
-                구독
-              </Btn>
-            )}
-          </form>
-          <img
-            src={env.PUBLIC_URL + "/assets/characters/Buddies_Cha_Bred.M.png"}
-            alt="캐릭터"
-          />
-        </div>
-        {!subscribe ? null : (
-          <Modal onClick={onClick}>
-            <h1>❤ 구독이 완료 되었습니다.</h1>
-          </Modal>
-        )}
-      </FormContainer>
-      <LetterBox>
-        <h1>-Method-</h1>
-      </LetterBox>
+          <FormContainer>
+            <form ref={form} onSubmit={sendEmail}>
+              <div>
+                <label for="user_name">닉네임</label>
+                <input
+                  id="user_name"
+                  type="text"
+                  name="user_name"
+                  placeholder="닉네임을 입력해 주세요."
+                  minLength="1"
+                  maxLength="15"
+                />
+              </div>
+              <div>
+                <label for="user_email">주소(Email)</label>
+                <input
+                  id="user_email"
+                  type="email"
+                  name="user_email"
+                  placeholder="이메일을 입력해 주세요."
+                  onBlur={isEmail}
+                />
+              </div>
+
+              {!checkMail ? (
+                <ErrorBox>
+                  <p>🍳이메일을 확인해주세요</p>
+                </ErrorBox>
+              ) : (
+                <Btn type="submit" onClick={onClick}>
+                  신청하기
+                </Btn>
+              )}
+            </form>
+          </FormContainer>
+        </Container>
+      ) : (
+        <Modal>
+          <img src={env.PUBLIC_URL + "/assets/dongeun.png"} alt="전송 완료" />
+          <h1>버디레터 배달 완료!</h1>
+          <h3>
+            {" "}
+            버디레터가 발송되었습니다.
+            <br /> 이메일을 확인해주세요!
+          </h3>
+        </Modal>
+      )}
     </Wrapper>
   );
 };
