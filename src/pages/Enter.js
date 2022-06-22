@@ -42,7 +42,13 @@ const Enter = () => {
       <NavBar />
       <MainContainer>
         <div>
-          <p>메타마포 도시 마포둥둥섬에 오신 걸 환영합니다~</p>
+          <p>
+            메타마포 도시
+            <br />
+            마포둥둥섬에 오신 걸
+            <br />
+            환영합니다~
+          </p>
         </div>
         <img src={env.PUBLIC_URL + "/assets/map.png"} alt="버디즈" />
       </MainContainer>
