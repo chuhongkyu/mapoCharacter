@@ -13,7 +13,6 @@ const GlobalStyles = createGlobalStyle`
 }
 body{
   background-color: ${(prop) => prop.theme.bgColor};
-  overflow: hidden;
 }
 
 a,ul,li{

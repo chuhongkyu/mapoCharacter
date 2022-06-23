@@ -46,7 +46,17 @@ const Btn = styled.span`
   padding: 10px 50px;
   border-radius: 20px;
   color: ${(props) => props.theme.white.light};
-  background-color: ${(props) => props.theme.blue};
+  background: linear-gradient(100deg, white 50%, #000aff 50%);
+  background-size: 220% 100%;
+  background-position: right bottom;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  &:hover {
+    background-position: left bottom;
+    transition: 0.5s;
+    color: black;
+  }
 `;
 
 const Variant = {

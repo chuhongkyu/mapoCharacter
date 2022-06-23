@@ -7,13 +7,13 @@ const Wrapper = styled(motion.div)`
   left: 0;
   top: 0;
   width: 150px;
-  height: 100%;
-  margin-top: 50px;
+  height: 100vh;
+  margin-top: 10px;
   z-index: 9;
 `;
 
 const Navigation = styled.div`
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,7 +23,19 @@ const Navigation = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 100px;
+  }
+`;
+
+const LogoBtn = styled.span`
+  width: 150px;
+  height: 150px;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
   }
 `;
 
@@ -36,7 +48,7 @@ const NavBtn = styled.span`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   white-space: nowrap;
   background-color: rgb(200, 200, 200);
   h1 {
@@ -60,16 +72,12 @@ const NavBar = () => {
     <Wrapper>
       <Navigation>
         <Link to="/">
-          <NavBtn
-            style={{
-              backgroundColor: "rgb(50,50,50)",
-              width: "122px",
-              height: "122px",
-            }}
-          >
-            <h1>LOGO</h1>
-            <p>마포버디즈</p>
-          </NavBtn>
+          <LogoBtn>
+            <img
+              src={env.PUBLIC_URL + "/assets/logos/Buddies_Title_00.png"}
+              alt="로고"
+            />
+          </LogoBtn>
         </Link>
 
         <div>

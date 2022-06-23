@@ -8,10 +8,10 @@ const Cloud = styled(motion.img)`
 
 const Variant = {
   initial: {
-    y: 0,
+    y: -100,
   },
   animate: {
-    y: [0, 5, 0],
+    y: [-100, -105, -100],
     transition: {
       duration: 2,
       Infinity,
