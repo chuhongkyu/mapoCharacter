@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Loading from "./Loading";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -14,6 +15,8 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  z-index: 99;
 `;
 
 const MainContainer = styled.div`
@@ -63,6 +66,7 @@ const Variant = {
 const Enter = () => {
   return (
     <Wrapper>
+      <Loading />
       <MainContainer>
         <div>
           <p>
