@@ -96,6 +96,8 @@ const Btn = styled.button`
   background-color: black;
   color: white;
   padding: 10px 60px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   &:hover {
     background-color: white;
     color: black;
@@ -136,8 +138,12 @@ const Letter = () => {
   const [checkMail, setCheckMail] = useState(false);
   const form = useRef();
   const [subscribe, setSubscribe] = useState(false);
-  const onClick = (e) => {
-    setSubscribe(!subscribe);
+  // const onClick = (e) => {
+  //   setSubscribe(!subscribe);
+  //   e.stopPropagation();
+  // };
+  const onCheck = (e) => {
+    alert("이름과 이메일을 확인해 주세요");
     e.stopPropagation();
   };
   const sendEmail = (e) => {
@@ -151,6 +157,7 @@ const Letter = () => {
       }
     );
     setSubscribe(!subscribe);
+    e.stopPropagation();
     console.log(form.current);
   };
 
@@ -208,16 +215,25 @@ const Letter = () => {
                   onBlur={isEmail}
                 />
               </div>
+              <ErrorBox>
+                <p>
+                  {!checkMail
+                    ? "🍳이메일을 확인해주세요"
+                    : "이메일을 확인 완료"}
+                </p>
+              </ErrorBox>
 
-              {!checkMail ? (
-                <ErrorBox>
-                  <p>🍳이메일을 확인해주세요</p>
-                </ErrorBox>
-              ) : (
-                <Btn type="submit" onClick={onClick}>
-                  신청하기
-                </Btn>
-              )}
+              <Btn
+                type="submit"
+                disabled={!checkMail}
+                style={
+                  !checkMail
+                    ? { backgroundColor: "gray" }
+                    : { backgroundColor: "black" }
+                }
+              >
+                신청하기
+              </Btn>
             </form>
           </FormContainer>
         </Container>

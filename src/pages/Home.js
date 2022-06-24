@@ -39,6 +39,8 @@ const Land = styled(motion.div)`
   width: 500px;
   img {
     width: 100%;
+    -webkit-box-reflect: below 0px
+      linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
   }
 `;
 
