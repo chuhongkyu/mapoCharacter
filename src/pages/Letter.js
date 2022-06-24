@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import NavBar from "../components/NavBar";
 
 const YOUR_SERVICE_ID = "service_rpllskw";
 const YOUR_TEMPLATE_ID = "template_fq3wg3f";
@@ -13,11 +12,14 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled(motion.section)`
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url("${env.PUBLIC_URL}/assets/page3/00.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
 `;
 
 const Container = styled.div`
@@ -174,7 +176,6 @@ const Letter = () => {
 
   return (
     <Wrapper>
-      <NavBar />
       {!subscribe ? (
         <Container>
           <TextBox>

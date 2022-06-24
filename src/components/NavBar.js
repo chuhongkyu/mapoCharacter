@@ -21,7 +21,7 @@ const Wrapper = styled(motion.div)`
 
 const NavBarContainer = styled.div`
   width: 100px;
-  height: 300px;
+  height: 250px;
   border-radius: 50px;
   background-color: ${(props) => props.theme.root_blue};
   border: 2px solid black;
@@ -29,11 +29,18 @@ const NavBarContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  img {
+    position: absolute;
+    top: -40px;
+    right: 40px;
+    z-index: 99;
+  }
 `;
 
 const NavBtn = styled.span`
   width: 100px;
-  height: 100px;
+  height: 70px;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: center;
@@ -55,6 +62,17 @@ const NavBar = () => {
   return (
     <Wrapper>
       <NavBarContainer>
+        <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
+        <img
+          style={{
+            top: -30,
+            right: 35,
+            transform: "rotateZ(-30deg)",
+            zIndex: 97,
+          }}
+          src={env.PUBLIC_URL + "/assets/page1/02.png"}
+          alt="편지"
+        />
         <NavBtn>버디즈 소개</NavBtn>
         <NavBtn>버디즈 소개</NavBtn>
         <NavBtn style={{ borderBottom: "none" }}>버디즈 소개</NavBtn>
