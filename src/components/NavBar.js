@@ -8,13 +8,13 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 const Wrapper = styled(motion.div)`
   position: fixed;
   left: 0;
-  top: 0;
+  bottom: 20px;
   width: 150px;
-  height: 100vh;
+  height: 70vh;
   margin-top: 10px;
-  z-index: 9;
+  z-index: 99;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 `;
