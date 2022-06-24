@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || "";
+
 const Wrapper = styled(motion.div)`
   position: fixed;
   left: 0;
@@ -10,97 +13,53 @@ const Wrapper = styled(motion.div)`
   height: 100vh;
   margin-top: 10px;
   z-index: 9;
-`;
-
-const Navigation = styled.div`
-  height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 100px;
-  }
 `;
 
-const LogoBtn = styled.span`
-  width: 150px;
-  height: 150px;
-  padding: 0px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 100%;
-  }
-`;
-
-const NavBtn = styled.span`
-  border-radius: 50%;
+const NavBarContainer = styled.div`
   width: 100px;
-  height: 100px;
+  height: 300px;
+  border-radius: 50px;
+  background-color: ${(props) => props.theme.root_blue};
   border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
-  white-space: nowrap;
-  background-color: rgb(200, 200, 200);
-  h1 {
-    font-size: 23px;
-  }
-  p {
-    font-size: 11px;
-  }
-  &:hover {
-    transform: scale(1.2);
-    transition: 0.5s;
-    background-color: ${(props) => props.theme.blue};
-  }
 `;
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
+const NavBtn = styled.span`
+  width: 100px;
+  height: 100px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ArrowBtn = styled.span`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.root_blue};
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const NavBar = () => {
   return (
     <Wrapper>
-      <Navigation>
-        <Link to="/">
-          <LogoBtn>
-            <img
-              src={env.PUBLIC_URL + "/assets/logos/Buddies_Title_00.png"}
-              alt="로고"
-            />
-          </LogoBtn>
-        </Link>
-
-        <div>
-          <Link to="/home">
-            <NavBtn>
-              <h1>ICON</h1>
-              <p>버디즈 소개</p>
-            </NavBtn>
-          </Link>
-          <Link to="/goods">
-            <NavBtn>
-              <h1>ICON</h1>
-              <p>굿즈 소개</p>
-            </NavBtn>
-          </Link>
-          <Link to="/letter">
-            <NavBtn>
-              <h1>ICON</h1>
-              <p>버디레터 신청</p>
-            </NavBtn>
-          </Link>
-        </div>
-      </Navigation>
+      <NavBarContainer>
+        <NavBtn>버디즈 소개</NavBtn>
+        <NavBtn>버디즈 소개</NavBtn>
+        <NavBtn style={{ borderBottom: "none" }}>버디즈 소개</NavBtn>
+      </NavBarContainer>
+      <ArrowBtn>^</ArrowBtn>
     </Wrapper>
   );
 };
