@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
+import Character from "./Character";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -43,6 +44,12 @@ const Characters = () => {
         src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
         alt="left"
       />
+      {/* <Character character={}
+  name={}
+  nickname={}
+  hashs={}
+  description={}
+  subImg={} /> */}
 
       <ArrowBtn
         src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
