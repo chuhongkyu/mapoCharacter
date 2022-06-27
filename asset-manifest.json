@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/mapoCharacter/static/js/main.dbe2b366.js",
+    "main.js": "/mapoCharacter/static/js/main.f3898bf7.js",
     "index.html": "/mapoCharacter/index.html",
-    "main.dbe2b366.js.map": "/mapoCharacter/static/js/main.dbe2b366.js.map"
+    "main.f3898bf7.js.map": "/mapoCharacter/static/js/main.f3898bf7.js.map"
   },
   "entrypoints": [
-    "static/js/main.dbe2b366.js"
+    "static/js/main.f3898bf7.js"
   ]
 }
