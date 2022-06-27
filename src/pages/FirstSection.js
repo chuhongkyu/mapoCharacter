@@ -65,7 +65,7 @@ const Sns_Box = styled.div`
 
 const Header = styled.header`
   width: 100%;
-  height: 10vh;
+  height: 5vh;
   background-color: ${(props) => props.theme.root_blue};
 `;
 
