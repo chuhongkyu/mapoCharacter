@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Introduction from "./pages/Introduction";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -43,6 +44,7 @@ body {
   background: ${(prop) => prop.theme.bgColor};
 	line-height: 1;
   font-family: "Maple_story";
+
 }
 ol, ul {
 	list-style: none;

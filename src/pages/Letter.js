@@ -15,9 +15,17 @@ const Wrapper = styled(motion.section)`
   width: 100%;
   height: 150vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  position: relative;
+`;
+
+const Bottom = styled.div`
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  bottom: 0;
   background-image: url("${env.PUBLIC_URL}/assets/page3/Bg_2.png");
   background-position: bottom;
   background-repeat: no-repeat;
@@ -38,15 +46,15 @@ const TextBox = styled.div`
   header {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
     margin-bottom: 10px;
     h1 {
-      font-size: 30px;
+      font-weight: 700;
+      font-size: 90px;
+      line-height: 140%;
+      text-align: center;
       margin-bottom: 10px;
-    }
-    p {
-      font-size: 15px;
+      margin-top: 50px;
     }
   }
   div {
@@ -54,6 +62,9 @@ const TextBox = styled.div`
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    p {
+      margin-bottom: 20px;
+    }
   }
   span {
     font-size: 15px;
@@ -67,7 +78,6 @@ const FormContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin-top: 50px;
-
   div {
     width: 100%;
     display: flex;
@@ -77,13 +87,15 @@ const FormContainer = styled.div`
     margin-top: 10px;
     label {
       font-weight: 800;
-      margin-right: 10px;
+      margin-right: 50px;
     }
     input {
-      padding: 10px 15px;
-      border-radius: 5px;
-      width: 300px;
-      border: none;
+      background: #ffffff;
+      border: 2px solid #b8b8b8;
+      border-radius: 20px;
+      width: 516px;
+      height: 43px;
+      padding: 5px 10px;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
         rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
@@ -95,22 +107,22 @@ const FormContainer = styled.div`
 
 const Btn = styled.button`
   border-style: none;
-  border-radius: 25px;
-  background-color: black;
-  color: white;
-  padding: 10px 60px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border: 3px solid #150b05;
+  border-radius: 50px;
+  background-color: ${(props) => props.theme.yellow};
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 160%;
+  width: 388px;
+  height: 96px;
   &:hover {
-    background-color: white;
-    color: black;
+    transform: translateY(-2px);
   }
 `;
 
 const Modal = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,14 +194,19 @@ const Letter = () => {
         <Container>
           <TextBox>
             <header>
-              <h1>버디레터</h1>
-              <p>버디레터 간단한 설명 2~3줄</p>
+              <h1>
+                마포 버디즈의
+                <br /> 편지를 받아보고 싶으신가요?
+              </h1>
             </header>
             <div>
               <p>
-                <span>이벤트 기간</span>: 7월 14일 ~7월 19일
+                캐릭터 라이선싱 페어 참여자분들에게
+                <br /> 시범운영으로 버디레터를 무료로 보내드리고 있어요!
               </p>
               <p>
+                <span>이벤트 기간</span>: 7월 14일 ~7월 19일
+                <br />
                 <span>참여자</span>: ~200명 선착순
               </p>
             </div>
@@ -209,7 +226,7 @@ const Letter = () => {
                 />
               </div>
               <div>
-                <label htmlFor="user_email">주소(Email)</label>
+                <label htmlFor="user_email">이메일</label>
                 <input
                   id="user_email"
                   type="email"
@@ -225,17 +242,16 @@ const Letter = () => {
                     : "이메일을 확인 완료"}
                 </p>
               </ErrorBox>
-
               <Btn
                 type="submit"
                 disabled={!checkMail}
                 style={
                   !checkMail
-                    ? { backgroundColor: "gray" }
-                    : { backgroundColor: "black" }
+                    ? { backgroundColor: "#FFC100" }
+                    : { backgroundColor: "#FFC100" }
                 }
               >
-                신청하기
+                버디레터 받기
               </Btn>
             </form>
           </FormContainer>
@@ -251,6 +267,7 @@ const Letter = () => {
           </h3>
         </Modal>
       )}
+      <Bottom />
     </Wrapper>
   );
 };

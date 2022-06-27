@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -46,6 +45,7 @@ const NavBtn = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ArrowBtn = styled.span`
@@ -59,9 +59,27 @@ const ArrowBtn = styled.span`
   align-items: center;
 `;
 
+const Variants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const NavBar = () => {
+  const onTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    <Wrapper>
+    <Wrapper variants={Variants} initial="initial" animate="animate">
       <NavBarContainer>
         <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
         <img
@@ -74,11 +92,11 @@ const NavBar = () => {
           src={env.PUBLIC_URL + "/assets/page1/02.png"}
           alt="편지"
         />
-        <NavBtn>버디즈 소개</NavBtn>
+        <NavBtn onClick={onTop}>버디즈 소개</NavBtn>
         <NavBtn>버디즈 소개</NavBtn>
         <NavBtn style={{ borderBottom: "none" }}>버디즈 소개</NavBtn>
       </NavBarContainer>
-      <ArrowBtn>
+      <ArrowBtn onClick={onTop}>
         <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} />
       </ArrowBtn>
     </Wrapper>

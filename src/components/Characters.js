@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
+import { bred_Data } from "../utils/mapoCharacterData";
 import Character from "./Character";
 
 const env = process.env;
@@ -14,6 +15,7 @@ const Wrapper = styled(motion.section)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 `;
 
 const ArrowBtn = styled.img`
@@ -44,13 +46,14 @@ const Characters = () => {
         src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
         alt="left"
       />
-      {/* <Character character={}
-  name={}
-  nickname={}
-  hashs={}
-  description={}
-  subImg={} /> */}
-
+      <Character
+        character={bred_Data.character}
+        name={bred_Data.name}
+        nickname={bred_Data.nickname}
+        hashs={bred_Data.hashs}
+        description={bred_Data.description}
+        subImg={bred_Data.subImg}
+      />
       <ArrowBtn
         src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
         alt="right"

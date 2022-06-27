@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { useRef } from "react";
-import { useEffect } from "react";
 
 const Wrapper = styled.section`
   width: 100%;

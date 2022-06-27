@@ -3,41 +3,45 @@ import styled from "styled-components";
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
+const Wrapper = styled.section`
+  width: 100%;
+  height: 115vh;
+`;
+
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background-image: url("${env.PUBLIC_URL}/assets/page1/Bg.png");
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   position: relative;
-  h1 {
-    font-size: 55px;
-    font-weight: 800;
-  }
 `;
 
 const Title = styled.div`
-  width: 500px;
+  width: 694px;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 50px;
+  img {
+    width: 694px;
+    height: 183px;
+  }
   span {
-    padding: 15px 60px;
+    padding: 5px 50px;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 160%;
     background-color: ${(props) => props.theme.black};
     color: ${(props) => props.theme.white.light};
-    border-radius: 25px;
+    border-radius: 60px;
     display: flex;
-    img {
-      width: 20px;
-      margin-right: 10px;
-      margin-left: 10px;
-    }
   }
   h1 {
     font-size: 65px;
@@ -45,14 +49,30 @@ const Title = styled.div`
   }
 `;
 
-const MoveBtn = styled.a`
-  position: absolute;
-  bottom: 100px;
+const MoveBtn = styled.div`
+  position: relative;
+  bottom: 30px;
+  width: 338px;
+  height: 86px;
+  background-color: ${(props) => props.theme.black};
+  color: ${(props) => props.theme.white.light};
+  border-radius: 10px 10px 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 160%;
   span {
-    padding: 15px 50px;
-    background-color: ${(props) => props.theme.black};
-    color: ${(props) => props.theme.white.light};
-    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -77,29 +97,42 @@ const Header = styled.header`
   width: 100%;
   height: 5vh;
   background-color: ${(props) => props.theme.black};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const FirstSection = () => {
+  const onClick = () => {
+    window.scrollTo({ top: 1100, behavior: "smooth" });
+  };
   return (
-    <Container>
-      <Header></Header>
-      <Title>
-        <h1>마포 버디즈</h1>
-        <span>
-          <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
-          희망과 소식을 전하는 우체부
-          <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
-        </span>
-      </Title>
-      <MoveBtn href="#Character">
-        <span>캐릭터 보러가기</span>
-      </MoveBtn>
-      <Sns_Box>
-        <img src={env.PUBLIC_URL + "/assets/icons/01.svg"} alt="facebook" />
-        <img src={env.PUBLIC_URL + "/assets/icons/02.svg"} alt="카카오" />
-        <img src={env.PUBLIC_URL + "/assets/icons/03.svg"} alt="insta" />
-      </Sns_Box>
-    </Container>
+    <Wrapper>
+      <Header>
+        <img src={env.PUBLIC_URL + "/assets/icons/header.png"} alt="편지" />
+      </Header>
+      <Container>
+        <Title>
+          <img src={env.PUBLIC_URL + "/assets/page1/title.png"} alt="편지" />
+          <span>
+            {/* <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" /> */}
+            희망과 소식을 전하는 우체부
+            {/* <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" /> */}
+          </span>
+        </Title>
+        <MoveBtn onClick={onClick}>
+          버디즈 보러가기
+          <span>
+            <img src={env.PUBLIC_URL + "/assets/icons/down.png"} alt="down" />
+          </span>
+        </MoveBtn>
+        <Sns_Box>
+          <img src={env.PUBLIC_URL + "/assets/icons/01.svg"} alt="facebook" />
+          <img src={env.PUBLIC_URL + "/assets/icons/02.svg"} alt="카카오" />
+          <img src={env.PUBLIC_URL + "/assets/icons/03.svg"} alt="insta" />
+        </Sns_Box>
+      </Container>
+    </Wrapper>
   );
 };
 
