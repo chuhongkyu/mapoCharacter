@@ -17,7 +17,7 @@ const Wrapper = styled(motion.section)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("${env.PUBLIC_URL}/assets/page3/00.png");
+  background-image: url("${env.PUBLIC_URL}/assets/page3/Bg_2.png");
   background-position: bottom;
   background-repeat: no-repeat;
 `;

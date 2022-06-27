@@ -78,7 +78,9 @@ const NavBar = () => {
         <NavBtn>버디즈 소개</NavBtn>
         <NavBtn style={{ borderBottom: "none" }}>버디즈 소개</NavBtn>
       </NavBarContainer>
-      <ArrowBtn>^</ArrowBtn>
+      <ArrowBtn>
+        <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} />
+      </ArrowBtn>
     </Wrapper>
   );
 };

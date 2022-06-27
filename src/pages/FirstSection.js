@@ -32,6 +32,12 @@ const Title = styled.div`
     background-color: ${(props) => props.theme.black};
     color: ${(props) => props.theme.white.light};
     border-radius: 25px;
+    display: flex;
+    img {
+      width: 20px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
   }
   h1 {
     font-size: 65px;
@@ -51,8 +57,6 @@ const MoveBtn = styled.a`
 `;
 
 const Sns_Box = styled.div`
-  width: 300px;
-  height: 100px;
   position: absolute;
   z-index: 2;
   bottom: 50px;
@@ -61,7 +65,11 @@ const Sns_Box = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: 50px;
+    width: 30px;
+    background-color: black;
+    padding: 5px;
+    border-radius: 11px;
+    margin-left: 5px;
   }
 `;
 
@@ -77,18 +85,19 @@ const FirstSection = () => {
       <Header></Header>
       <Title>
         <h1>마포 버디즈</h1>
-        <span>희망과 소식을 전하는 우체부</span>
+        <span>
+          <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
+          희망과 소식을 전하는 우체부
+          <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
+        </span>
       </Title>
       <MoveBtn href="#Character">
         <span>캐릭터 보러가기</span>
       </MoveBtn>
       <Sns_Box>
-        <img
-          src={env.PUBLIC_URL + "/assets/icons/facebook.svg"}
-          alt="facebook"
-        />
-        <img src={env.PUBLIC_URL + "/assets/icons/insta.svg"} alt="facebook" />
-        <img src={env.PUBLIC_URL + "/assets/icons/insta.svg"} alt="facebook" />
+        <img src={env.PUBLIC_URL + "/assets/icons/01.svg"} alt="facebook" />
+        <img src={env.PUBLIC_URL + "/assets/icons/02.svg"} alt="카카오" />
+        <img src={env.PUBLIC_URL + "/assets/icons/03.svg"} alt="insta" />
       </Sns_Box>
     </Container>
   );
