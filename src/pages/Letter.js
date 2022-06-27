@@ -196,7 +196,7 @@ const Letter = () => {
           <FormContainer>
             <form ref={form} onSubmit={sendEmail}>
               <div>
-                <label for="user_name">닉네임</label>
+                <label htmlFor="user_name">닉네임</label>
                 <input
                   id="user_name"
                   type="text"
@@ -207,7 +207,7 @@ const Letter = () => {
                 />
               </div>
               <div>
-                <label for="user_email">주소(Email)</label>
+                <label htmlFor="user_email">주소(Email)</label>
                 <input
                   id="user_email"
                   type="email"

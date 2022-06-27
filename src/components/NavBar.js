@@ -17,14 +17,15 @@ const Wrapper = styled(motion.div)`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  color: ${(props) => props.theme.white.light};
 `;
 
 const NavBarContainer = styled.div`
   width: 100px;
   height: 250px;
   border-radius: 50px;
-  background-color: ${(props) => props.theme.root_blue};
-  border: 2px solid black;
+  background-color: ${(props) => props.theme.black};
+  border: 4px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +52,7 @@ const ArrowBtn = styled.span`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: ${(props) => props.theme.root_blue};
+  background-color: ${(props) => props.theme.black};
   font-size: 25px;
   display: flex;
   justify-content: center;

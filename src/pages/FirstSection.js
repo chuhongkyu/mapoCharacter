@@ -6,7 +6,7 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: url("${env.PUBLIC_URL}/assets/page1/00.png");
+  background-image: url("${env.PUBLIC_URL}/assets/page1/Bg.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -29,7 +29,8 @@ const Title = styled.div`
   flex-direction: column;
   span {
     padding: 15px 60px;
-    background-color: ${(props) => props.theme.root_blue};
+    background-color: ${(props) => props.theme.black};
+    color: ${(props) => props.theme.white.light};
     border-radius: 25px;
   }
   h1 {
@@ -43,7 +44,8 @@ const MoveBtn = styled.a`
   bottom: 100px;
   span {
     padding: 15px 50px;
-    background-color: ${(props) => props.theme.root_blue};
+    background-color: ${(props) => props.theme.black};
+    color: ${(props) => props.theme.white.light};
     border-radius: 25px;
   }
 `;
@@ -66,7 +68,7 @@ const Sns_Box = styled.div`
 const Header = styled.header`
   width: 100%;
   height: 5vh;
-  background-color: ${(props) => props.theme.root_blue};
+  background-color: ${(props) => props.theme.black};
 `;
 
 const FirstSection = () => {
