@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Letter from "./pages/Letter";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";

@@ -1,8 +1,21 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const Wrapper = styled.section`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  position: relative;
+`;
+
+const Text_Box = styled.div`
+  width: 400px;
+  position: relative;
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +24,12 @@ const Wrapper = styled.section`
     margin-left: 10px;
   }
   span {
-    padding: 0.1rem 1rem;
+    width: 50px;
+    height: 50px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: black;
     color: white;
@@ -19,11 +37,23 @@ const Wrapper = styled.section`
   }
 `;
 
+const Shadow = styled.div`
+  width: 400px;
+  height: 30px;
+  position: absolute;
+  bottom: 5px;
+  z-index: 2;
+  background-color: ${(props) => props.theme.yellow};
+`;
+
 const Sub_Title = ({ title, order }) => {
   return (
     <Wrapper>
-      <span>{order}</span>
-      <h1>{title}</h1>
+      <Text_Box>
+        <span>{order}</span>
+        <h1>{title}</h1>
+      </Text_Box>
+      <Shadow />
     </Wrapper>
   );
 };

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Sub_Title from "../components/Sub_Title";
 
 const YOUR_SERVICE_ID = "service_rpllskw";
 const YOUR_TEMPLATE_ID = "template_fq3wg3f";
@@ -176,6 +177,7 @@ const Letter = () => {
 
   return (
     <Wrapper>
+      <Sub_Title title={"버디레터 신청하기"} order={3} />
       {!subscribe ? (
         <Container>
           <TextBox>

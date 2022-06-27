@@ -11,6 +11,7 @@ const Wrapper = styled.section`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding: 50px 0px;
 `;
 
 const Text_Box = styled.div`
@@ -24,16 +25,19 @@ const Text_Box = styled.div`
 `;
 
 const Btn = styled.span`
-  padding: 0.4rem 5rem;
+  width: 388px;
+  height: 96px;
   font-size: 45px;
+  font-weight: 700;
+  line-height: 160%;
   border-radius: 50px;
   margin-top: 50px;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 160%;
   background-color: ${(props) => props.theme.yellow};
   border: 3px solid #150b05;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Symbol = styled.div`
