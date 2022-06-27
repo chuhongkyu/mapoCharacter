@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import Characters from "../components/Characters";
 import Sub_Title from "../components/Sub_Title";
 
 const env = process.env;
@@ -6,7 +8,7 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 200vh;
+  height: 300vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -55,7 +57,7 @@ const Symbol = styled.div`
   img {
     border-radius: 50%;
     background-color: ${(props) => props.theme.black};
-    background-position: center;
+    background-position: center center;
     background-size: cover;
   }
   span {
@@ -68,6 +70,10 @@ const Symbol = styled.div`
 `;
 
 const Introduction = () => {
+  const [open, setOpen] = useState(false);
+  const onClick = () => {
+    setOpen(!open);
+  };
   return (
     <Wrapper>
       <Sub_Title title={"마포 버디즈란?"} order={1} />
@@ -76,7 +82,8 @@ const Introduction = () => {
         <h3>편지를 전하는 '동물 우체부'예요!</h3>
       </Text_Box>
       <img src={env.PUBLIC_URL + "/assets/Buddies_Cha_01.png"} alt="캐릭터" />
-      <Btn>상세보기</Btn>
+      {!open ? null : <Characters />}
+      <Btn onClick={onClick}>상세보기</Btn>
       <Text_Box>
         <h3>버디즈의 주요 업무는 마포구 전역을 돌면서</h3>
         <h3>구민들에게 '편지를 전하기'입니다</h3>
@@ -88,7 +95,7 @@ const Introduction = () => {
       </Text_Box>
       <Symbol>
         <div>
-          <img src={env.PUBLIC_URL + "/assets/intro/dan.png"} alt="캐릭터" />
+          <img src={env.PUBLIC_URL + "/assets/intro/01.png"} alt="단" />
           <span>소식 단풍잎</span>
         </div>
         <div>
