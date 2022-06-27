@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -25,6 +26,11 @@ const Sub_Title = ({ title, order }) => {
       <h1>{title}</h1>
     </Wrapper>
   );
+};
+
+Sub_Title.propTypes = {
+  title: PropTypes.string,
+  order: PropTypes.number,
 };
 
 export default Sub_Title;
