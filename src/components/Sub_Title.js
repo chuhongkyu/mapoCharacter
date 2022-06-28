@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   align-items: center;
   font-size: 45px;
   position: relative;
+  margin-top: 50px;
 `;
 
 const Text_Box = styled.div`

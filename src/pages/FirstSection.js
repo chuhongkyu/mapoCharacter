@@ -77,6 +77,9 @@ const MoveBtn = styled.div`
     justify-content: center;
     align-items: center;
   }
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 const Sns_Box = styled.div`
@@ -88,10 +91,8 @@ const Sns_Box = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: 30px;
-    background-color: black;
+    width: 50px;
     padding: 5px;
-    border-radius: 11px;
     margin-left: 5px;
   }
 `;
@@ -141,9 +142,12 @@ const FirstSection = () => {
           </span>
         </MoveBtn>
         <Sns_Box>
-          <img src={env.PUBLIC_URL + "/assets/icons/01.svg"} alt="facebook" />
-          <img src={env.PUBLIC_URL + "/assets/icons/02.svg"} alt="카카오" />
-          <img src={env.PUBLIC_URL + "/assets/icons/03.svg"} alt="insta" />
+          <img
+            src={env.PUBLIC_URL + "/assets/icons/icon-f.png"}
+            alt="facebook"
+          />
+          <img src={env.PUBLIC_URL + "/assets/icons/icon-k.png"} alt="카카오" />
+          <img src={env.PUBLIC_URL + "/assets/icons/icon-i.png"} alt="insta" />
         </Sns_Box>
       </Container>
     </Wrapper>

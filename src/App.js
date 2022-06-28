@@ -52,6 +52,7 @@ body {
   background: ${(prop) => prop.theme.bgColor};
 	line-height: 1;
   font-family: "Maple_story";
+  overflow-x: hidden;
 }
 h1{
   font-weight: bold;

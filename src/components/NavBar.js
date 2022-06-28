@@ -7,7 +7,7 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 const Wrapper = styled(motion.div)`
   position: fixed;
   left: 0;
-  bottom: 20px;
+  bottom: 50px;
   width: 150px;
   height: 70vh;
   margin-top: 10px;
@@ -33,7 +33,7 @@ const NavBarContainer = styled.div`
   img {
     position: absolute;
     top: -25px;
-    right: 40px;
+    left: -10px;
     z-index: 99;
     transform: rotateZ(10deg);
   }
@@ -89,7 +89,7 @@ const NavBar = () => {
         <img
           style={{
             top: -10,
-            right: 45,
+            left: -15,
             transform: "rotateZ(-30deg)",
             zIndex: 97,
           }}

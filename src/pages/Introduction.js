@@ -53,7 +53,7 @@ const Symbol = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 50px;
     flex-direction: column;
   }
   img {

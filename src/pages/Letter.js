@@ -19,13 +19,6 @@ const Wrapper = styled(motion.section)`
   align-items: center;
   flex-direction: column;
   position: relative;
-`;
-
-const Bottom = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
   background-image: url("${env.PUBLIC_URL}/assets/page3/Bg_2.png");
   background-position: bottom;
   background-repeat: no-repeat;
@@ -78,30 +71,28 @@ const FormContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin-top: 50px;
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    label {
-      font-weight: 800;
-      margin-right: 50px;
-    }
-    input {
-      background: #ffffff;
-      border: 2px solid #b8b8b8;
-      border-radius: 20px;
-      width: 516px;
-      height: 43px;
-      padding: 5px 10px;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-        rgb(209, 213, 219) 0px 0px 0px 1px inset;
-    }
-    &:last-of-type {
-      margin-bottom: 50px;
-    }
+`;
+
+const InputDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  label {
+    font-weight: 800;
+    margin-right: 50px;
+  }
+  input {
+    background: #ffffff;
+    border: 2px solid #b8b8b8;
+    border-radius: 20px;
+    width: 516px;
+    height: 43px;
+    padding: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+      rgb(209, 213, 219) 0px 0px 0px 1px inset;
   }
 `;
 
@@ -147,6 +138,7 @@ const ErrorBox = styled.div`
     width: 100%;
     text-align: end;
   }
+  margin-bottom: 50px;
 `;
 
 const Letter = () => {
@@ -214,7 +206,7 @@ const Letter = () => {
 
           <FormContainer>
             <form ref={form} onSubmit={sendEmail}>
-              <div>
+              <InputDiv>
                 <label htmlFor="user_name">닉네임</label>
                 <input
                   id="user_name"
@@ -224,8 +216,8 @@ const Letter = () => {
                   minLength="1"
                   maxLength="15"
                 />
-              </div>
-              <div>
+              </InputDiv>
+              <InputDiv>
                 <label htmlFor="user_email">이메일</label>
                 <input
                   id="user_email"
@@ -234,7 +226,7 @@ const Letter = () => {
                   placeholder="이메일을 입력해 주세요."
                   onBlur={isEmail}
                 />
-              </div>
+              </InputDiv>
               <ErrorBox>
                 <p>
                   {!checkMail
@@ -267,7 +259,6 @@ const Letter = () => {
           </h3>
         </Modal>
       )}
-      <Bottom />
     </Wrapper>
   );
 };

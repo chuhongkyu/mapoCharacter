@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useRef, useState } from "react";
 import styled from "styled-components";
-import { bred_Data } from "../utils/mapoCharacterData";
+import { Buddies_data } from "../utils/mapoCharacterData";
 import Character from "./Character";
 
 const env = process.env;
@@ -19,7 +19,7 @@ const Wrapper = styled(motion.section)`
 `;
 
 const Modal = styled.div`
-  width: 500%;
+  width: 100%;
   display: flex;
 `;
 
@@ -43,29 +43,51 @@ const Variants = {
 const Characters = () => {
   const [index, setIndex] = useState(0);
   const onIncrease = () => {
-    setIndex((prev) => prev + 1);
+    if (index >= Buddies_data.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex((prev) => prev + 1);
+    }
   };
+  const onDecrease = () => {
+    if (index <= 0) {
+      setIndex(Buddies_data.length - 1);
+    } else {
+      setIndex((prev) => prev - 1);
+    }
+  };
+  useEffect(() => {
+    console.log("길이:" + Buddies_data.length);
+    console.log("인덱스:" + index);
+  }, [index]);
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
       <ArrowBtn
         style={{ marginLeft: 200 }}
         src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
         alt="left"
+        onClick={onDecrease}
       />
       <Modal>
-        <Character
-          character={bred_Data.character}
-          name={bred_Data.name}
-          nickname={bred_Data.nickname}
-          hashs={bred_Data.hashs}
-          description={bred_Data.description}
-          subImg={bred_Data.subImg}
-        />
+        {Buddies_data.map((intro) =>
+          index === intro.id ? (
+            <Character
+              key={intro.id}
+              character={intro.character}
+              name={intro.name}
+              nickname={intro.nickname}
+              hashs={intro.hashs}
+              description={intro.description}
+              subImg={intro.subImg}
+            />
+          ) : null
+        )}
       </Modal>
       <ArrowBtn
         style={{ marginRight: 200, transform: "rotateY(180deg)" }}
         src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
         alt="right"
+        onClick={onIncrease}
       />
     </Wrapper>
   );

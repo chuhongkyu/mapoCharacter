@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: center;
