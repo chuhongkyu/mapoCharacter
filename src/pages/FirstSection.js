@@ -39,7 +39,7 @@ const Title = styled.div`
   flex-direction: column;
   margin-top: 30px;
   span {
-    padding: 5px 50px;
+    padding: 5px 40px;
     font-weight: 300;
     font-size: 30px;
     line-height: 160%;
@@ -50,6 +50,9 @@ const Title = styled.div`
     justify-content: center;
     align-items: center;
     white-space: nowrap;
+    h2 {
+      margin: 0 20px;
+    }
   }
   h1 {
     font-size: 65px;
@@ -123,13 +126,13 @@ const FirstSection = () => {
           />
           <span>
             <img
-              style={{ width: 30, height: 25, marginRight: 10 }}
+              style={{ width: 32, height: 25 }}
               src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
               alt="편지"
             />
-            희망과 소식을 전하는 우체부
+            <h2>희망과 소식을 전하는 우체부</h2>
             <img
-              style={{ width: 30, height: 25, marginLeft: 10 }}
+              style={{ width: 32, height: 25 }}
               src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
               alt="편지"
             />
