@@ -29,10 +29,6 @@ const Title = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 50px;
-  img {
-    width: 694px;
-    height: 183px;
-  }
   span {
     padding: 5px 50px;
     font-weight: 300;
@@ -42,11 +38,18 @@ const Title = styled.div`
     color: ${(props) => props.theme.white.light};
     border-radius: 60px;
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
   h1 {
     font-size: 65px;
     margin-bottom: 5px;
   }
+`;
+
+const TitleImg = styled.img`
+  width: 694px;
+  height: 183px;
 `;
 
 const MoveBtn = styled.div`
@@ -109,15 +112,26 @@ const FirstSection = () => {
   return (
     <Wrapper>
       <Header>
-        <img src={env.PUBLIC_URL + "/assets/icons/header.png"} alt="편지" />
+        <img src={env.PUBLIC_URL + "/assets/icons/header.png"} alt="header" />
       </Header>
       <Container>
         <Title>
-          <img src={env.PUBLIC_URL + "/assets/page1/title.png"} alt="편지" />
+          <TitleImg
+            src={env.PUBLIC_URL + "/assets/page1/title.png"}
+            alt="title"
+          />
           <span>
-            {/* <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" /> */}
+            <img
+              style={{ width: 30, height: 25, marginRight: 10 }}
+              src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
+              alt="편지"
+            />
             희망과 소식을 전하는 우체부
-            {/* <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" /> */}
+            <img
+              style={{ width: 30, height: 25, marginLeft: 10 }}
+              src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
+              alt="편지"
+            />
           </span>
         </Title>
         <MoveBtn onClick={onClick}>

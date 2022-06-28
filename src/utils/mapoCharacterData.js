@@ -9,8 +9,8 @@ export const bred_Data = {
     "강해보이는 성격과는 별개로 속마음은 따뜻하고 여리다.",
   ],
   subImg: [
-    "/assets/characters/M.png",
-    "/assets/characters/M.png",
-    "/assets/characters/M.png",
+    "/assets/sub_img/BM-A.png",
+    "/assets/sub_img/BM-D1.png",
+    "/assets/sub_img/BM-D2.png",
   ],
 };

@@ -23,7 +23,7 @@ const Wrapper = styled(motion.section)`
 
 const Bottom = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100%;
   position: absolute;
   bottom: 0;
   background-image: url("${env.PUBLIC_URL}/assets/page3/Bg_2.png");
@@ -110,11 +110,11 @@ const Btn = styled.button`
   border: 3px solid #150b05;
   border-radius: 50px;
   background-color: ${(props) => props.theme.yellow};
-  font-weight: 700;
   font-size: 40px;
   line-height: 160%;
   width: 388px;
   height: 96px;
+  font-weight: bold;
   &:hover {
     transform: translateY(-2px);
   }

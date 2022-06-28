@@ -3,16 +3,17 @@ import styled from "styled-components";
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  float: left;
 `;
 
 const Main_img = styled.img`
   width: 256px;
-  margin-right: 50px;
+  margin-right: 100px;
 `;
 
 const TextBox = styled.div`

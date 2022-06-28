@@ -32,9 +32,10 @@ const NavBarContainer = styled.div`
   position: relative;
   img {
     position: absolute;
-    top: -40px;
+    top: -25px;
     right: 40px;
     z-index: 99;
+    transform: rotateZ(10deg);
   }
 `;
 
@@ -78,26 +79,29 @@ const NavBar = () => {
   const onTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const onMiddle = () => {
+    window.scrollTo({ top: 1200, behavior: "smooth" });
+  };
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
       <NavBarContainer>
-        <img src={env.PUBLIC_URL + "/assets/page1/02.png"} alt="편지" />
+        <img src={env.PUBLIC_URL + "/assets/page1/Letter.png"} alt="편지" />
         <img
           style={{
-            top: -30,
-            right: 35,
+            top: -10,
+            right: 45,
             transform: "rotateZ(-30deg)",
             zIndex: 97,
           }}
-          src={env.PUBLIC_URL + "/assets/page1/02.png"}
+          src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
           alt="편지"
         />
         <NavBtn onClick={onTop}>버디즈 소개</NavBtn>
-        <NavBtn>버디즈 소개</NavBtn>
+        <NavBtn onClick={onMiddle}>버디즈 소개</NavBtn>
         <NavBtn style={{ borderBottom: "none" }}>버디즈 소개</NavBtn>
       </NavBarContainer>
       <ArrowBtn onClick={onTop}>
-        <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} />
+        <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="top" />
       </ArrowBtn>
     </Wrapper>
   );

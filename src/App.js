@@ -12,6 +12,14 @@ const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: "Maple_story";
   src: url(${FontUrl}Maple_story_Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Maple_story";
+  src: url(${FontUrl}Maple_story_Light.ttf) format("truetype");
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -44,7 +52,9 @@ body {
   background: ${(prop) => prop.theme.bgColor};
 	line-height: 1;
   font-family: "Maple_story";
-
+}
+h1{
+  font-weight: bold;
 }
 ol, ul {
 	list-style: none;
