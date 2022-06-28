@@ -3,9 +3,9 @@
 - 기획 : 홍승혜
 - 캐릭터: 마포구 캐릭터 디자인팀
 - 일러스트: 김영윤
-- 홍승혜, 김영윤, 박지영, 손수연, 진섭
 - 개발: 추홍규
-- UX/UI:
+- UX/UI: 홍승혜, 김영윤
+- 홍승혜, 김영윤, 박지영, 손수연, 진섭
 
 ---
 
@@ -13,6 +13,7 @@
 
 - 코엑스
 - http://chuhongkyu.github.io/mapoCharacter
+- https://www.figma.com/file/hIMeQcFelXFEyDS6ZTRjw7/
 
 ---
 
