@@ -5,15 +5,24 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 115vh;
+  height: 100vh;
+`;
+
+const Header = styled.header`
+  width: 100%;
+  height: 5vh;
+  background-color: ${(props) => props.theme.black};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: 110vh;
+  height: 95vh;
   background-image: url("${env.PUBLIC_URL}/assets/page1/Bg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,17 +31,17 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  width: 694px;
-  height: 300px;
+  width: 594px;
+  height: 350px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 30px;
   span {
     padding: 5px 50px;
     font-weight: 300;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 160%;
     background-color: ${(props) => props.theme.black};
     color: ${(props) => props.theme.white.light};
@@ -40,6 +49,7 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
   }
   h1 {
     font-size: 65px;
@@ -48,15 +58,14 @@ const Title = styled.div`
 `;
 
 const TitleImg = styled.img`
-  width: 694px;
-  height: 183px;
+  width: 554px;
 `;
 
 const MoveBtn = styled.div`
   position: relative;
-  bottom: 30px;
-  width: 338px;
-  height: 86px;
+  bottom: 60px;
+  width: 258px;
+  height: 76px;
   background-color: ${(props) => props.theme.black};
   color: ${(props) => props.theme.white.light};
   border-radius: 10px 10px 30px 30px;
@@ -64,7 +73,7 @@ const MoveBtn = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 160%;
   span {
     width: 50px;
@@ -95,15 +104,6 @@ const Sns_Box = styled.div`
     padding: 5px;
     margin-left: 5px;
   }
-`;
-
-const Header = styled.header`
-  width: 100%;
-  height: 5vh;
-  background-color: ${(props) => props.theme.black};
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const FirstSection = () => {
@@ -142,12 +142,27 @@ const FirstSection = () => {
           </span>
         </MoveBtn>
         <Sns_Box>
-          <img
-            src={env.PUBLIC_URL + "/assets/icons/icon-f.png"}
-            alt="facebook"
-          />
-          <img src={env.PUBLIC_URL + "/assets/icons/icon-k.png"} alt="카카오" />
-          <img src={env.PUBLIC_URL + "/assets/icons/icon-i.png"} alt="insta" />
+          <a target="blank_" href="https://ko-kr.facebook.com/mapoguoffice">
+            <img
+              src={env.PUBLIC_URL + "/assets/icons/icon-f.png"}
+              alt="facebook"
+            />
+          </a>
+          <a target="blank_" href="https://pf.kakao.com/_xfjqgj">
+            <img
+              src={env.PUBLIC_URL + "/assets/icons/icon-k.png"}
+              alt="카카오"
+            />
+          </a>
+          <a
+            target="blank_"
+            href="https://www.instagram.com/accounts/login/?next=/mapogu_official/"
+          >
+            <img
+              src={env.PUBLIC_URL + "/assets/icons/icon-i.png"}
+              alt="insta"
+            />
+          </a>
         </Sns_Box>
       </Container>
     </Wrapper>

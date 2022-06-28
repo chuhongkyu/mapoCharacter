@@ -24,6 +24,8 @@ const Text_Box = styled.div`
   flex-direction: column;
   margin-top: 50px;
   margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 22px;
 `;
 
 const Btn = styled.span`

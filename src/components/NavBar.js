@@ -9,7 +9,7 @@ const Wrapper = styled(motion.div)`
   position: fixed;
   left: 0;
   bottom: 50px;
-  width: 150px;
+  width: 180px;
   height: 70vh;
   margin-top: 10px;
   z-index: 99;
@@ -33,7 +33,7 @@ const NavBarContainer = styled.div`
   img {
     position: absolute;
     top: -25px;
-    left: -10px;
+    left: -5px;
     z-index: 99;
     transform: rotateZ(10deg);
   }
@@ -98,8 +98,8 @@ const NavBar = () => {
         <img
           style={{
             top: -10,
-            left: -15,
-            transform: "rotateZ(-30deg)",
+            left: -13,
+            transform: "rotateZ(-27deg)",
             zIndex: 97,
           }}
           src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
