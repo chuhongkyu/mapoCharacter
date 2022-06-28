@@ -38,15 +38,11 @@ const Main_img = styled.div`
 const Title = styled.img`
   position: absolute;
   z-index: 2;
-  top: -50px;
-  left: -50px;
 `;
 
 const Character = styled.img`
   position: absolute;
   width: 200px;
-  bottom: -40px;
-  left: -130px;
 `;
 
 const Illustration = () => {
@@ -62,45 +58,53 @@ const Illustration = () => {
       </Text_Box>
       <Illu_Box>
         <Title
+          style={{ top: -50, left: -50 }}
           src={env.PUBLIC_URL + "/assets/page2/이미지_출근준비.png"}
           alt="알림"
         />
         <Main_img></Main_img>
         <Character
+          style={{ bottom: -40, left: -130 }}
           src={env.PUBLIC_URL + "/assets/sub_img/MC-A.png"}
           alt="캐릭터"
         />
       </Illu_Box>
       <Illu_Box>
         <Title
-          src={env.PUBLIC_URL + "/assets/page2/이미지_출근준비.png"}
+          style={{ top: -50, right: -50 }}
+          src={env.PUBLIC_URL + "/assets/page2/이미지_점심.png"}
           alt="알림"
         />
-        <Main_img style={{ transform: "rotateZ(-5deg)" }}></Main_img>
+        <Main_img style={{ transform: "rotateZ(-3deg)" }}></Main_img>
         <Character
-          src={env.PUBLIC_URL + "/assets/sub_img/MC-A.png"}
+          style={{ right: -130, bottom: 0 }}
+          src={env.PUBLIC_URL + "/assets/sub_img/BY-A.png"}
           alt="캐릭터"
         />
       </Illu_Box>
       <Illu_Box>
         <Title
-          src={env.PUBLIC_URL + "/assets/page2/이미지_출근준비.png"}
+          style={{ top: -50, left: -50 }}
+          src={env.PUBLIC_URL + "/assets/page2/이미지_오후근무.png"}
           alt="알림"
         />
-        <Main_img></Main_img>
+        <Main_img style={{ transform: "rotateZ(3deg)" }}></Main_img>
         <Character
-          src={env.PUBLIC_URL + "/assets/sub_img/MC-A.png"}
+          style={{ bottom: -20, left: -130 }}
+          src={env.PUBLIC_URL + "/assets/sub_img/DG-A2.png"}
           alt="캐릭터"
         />
       </Illu_Box>
       <Illu_Box>
         <Title
-          src={env.PUBLIC_URL + "/assets/page2/이미지_출근준비.png"}
+          style={{ top: -50, right: -50 }}
+          src={env.PUBLIC_URL + "/assets/page2/이미지_퇴근.png"}
           alt="알림"
         />
-        <Main_img style={{ transform: "rotateZ(-5deg)" }}></Main_img>
+        <Main_img style={{ transform: "rotateZ(-3deg)" }}></Main_img>
         <Character
-          src={env.PUBLIC_URL + "/assets/sub_img/MC-A.png"}
+          style={{ right: -130, bottom: -5 }}
+          src={env.PUBLIC_URL + "/assets/sub_img/BM-A.png"}
           alt="캐릭터"
         />
       </Illu_Box>

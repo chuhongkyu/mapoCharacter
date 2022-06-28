@@ -1,7 +1,7 @@
 export const Buddies_data = [
   {
     id: 0,
-    character: "/assets/characters/M.png",
+    character: "/assets/characters/BM.png",
     name: "브래드 M",
     nickname: "마포 버디즈의 행동대장",
     hashs: ["고양이", "스트릿 출신", "정의의 사도"],
@@ -18,7 +18,7 @@ export const Buddies_data = [
   },
   {
     id: 1,
-    character: "/assets/characters/Bunny.png",
+    character: "/assets/characters/BY.png",
     name: "버니 M",
     nickname: "마포 버디즈의 행동대장",
     hashs: ["고양이", "스트릿 출신", "정의의 사도"],

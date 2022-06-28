@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -24,7 +25,6 @@ const NavBarContainer = styled.div`
   height: 250px;
   border-radius: 50px;
   background-color: ${(props) => props.theme.black};
-  border: 4px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,11 +42,13 @@ const NavBarContainer = styled.div`
 const NavBtn = styled.span`
   width: 100px;
   height: 70px;
-  border-bottom: 1px solid black;
+  font-weight: 700;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  white-space: nowrap;
 `;
 
 const ArrowBtn = styled.span`
@@ -58,6 +60,9 @@ const ArrowBtn = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 const Variants = {
@@ -82,6 +87,10 @@ const NavBar = () => {
   const onMiddle = () => {
     window.scrollTo({ top: 1200, behavior: "smooth" });
   };
+  const onBottom = () => {
+    window.scrollTo({ top: 9999, behavior: "smooth" });
+  };
+
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
       <NavBarContainer>
@@ -96,9 +105,9 @@ const NavBar = () => {
           src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
           alt="편지"
         />
-        <NavBtn onClick={onTop}>버디즈 소개</NavBtn>
-        <NavBtn onClick={onMiddle}>버디즈 소개</NavBtn>
-        <NavBtn style={{ borderBottom: "none" }}>버디즈 소개</NavBtn>
+        <NavBtn onClick={onTop}>마포 버디즈 소개</NavBtn>
+        <NavBtn onClick={onMiddle}>버디즈의 하루</NavBtn>
+        <NavBtn onClick={onBottom}>버디레터 신청</NavBtn>
       </NavBarContainer>
       <ArrowBtn onClick={onTop}>
         <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="top" />

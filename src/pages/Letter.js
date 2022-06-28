@@ -20,7 +20,7 @@ const Wrapper = styled(motion.section)`
   flex-direction: column;
   position: relative;
   background-image: url("${env.PUBLIC_URL}/assets/page3/Bg_2.png");
-  background-position: bottom;
+  background-position: bottom center;
   background-repeat: no-repeat;
 `;
 
@@ -43,7 +43,7 @@ const TextBox = styled.div`
     margin-bottom: 10px;
     h1 {
       font-weight: 700;
-      font-size: 90px;
+      font-size: 80px;
       line-height: 140%;
       text-align: center;
       margin-bottom: 10px;
