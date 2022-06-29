@@ -1,23 +1,28 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled(motion.div)`
+  margin-top: 50px;
   position: fixed;
   left: 0;
-  bottom: 50px;
   width: 180px;
-  height: 70vh;
-  margin-top: 10px;
+  height: 100%;
   z-index: 99;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   color: ${(props) => props.theme.white.light};
+  @media ${(props) => props.theme.device.tablet} {
+    width: 140px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 100px;
+    height: 50%;
+  }
 `;
 
 const NavBarContainer = styled.div`
@@ -37,6 +42,24 @@ const NavBarContainer = styled.div`
     z-index: 99;
     transform: rotateZ(10deg);
   }
+  @media ${(props) => props.theme.device.tablet} {
+    width: 80px;
+    height: 230px;
+    img {
+      width: 40px;
+      top: -25px;
+      left: -5px;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 60px;
+    height: 150px;
+    img {
+      width: 30px;
+      top: -10px;
+      left: 0px;
+    }
+  }
 `;
 
 const NavBtn = styled.span`
@@ -49,6 +72,17 @@ const NavBtn = styled.span`
   align-items: center;
   cursor: pointer;
   white-space: nowrap;
+  @media ${(props) => props.theme.device.tablet} {
+    width: 80px;
+    height: 60px;
+    font-size: 12px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 70px;
+    height: 50px;
+    font-size: 5px;
+    font-weight: 400;
+  }
 `;
 
 const ArrowBtn = styled.span`
@@ -56,12 +90,25 @@ const ArrowBtn = styled.span`
   height: 100px;
   border-radius: 50%;
   background-color: ${(props) => props.theme.black};
-  font-size: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   &:hover {
     transform: translateY(-5px);
+  }
+  @media ${(props) => props.theme.device.tablet} {
+    width: 100px;
+    height: 100px;
+    img {
+      width: 40px;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 50px;
+    height: 50px;
+    img {
+      width: 30px;
+    }
   }
 `;
 
