@@ -9,4 +9,8 @@ export const theme = {
     light: "RGB(255, 255, 255)",
   },
   black: "rgb(0,0,0)",
+  device: {
+    mobile: "screen and (max-width: 768px)",
+    tablet: "screen and (max-width: 1024px)",
+  },
 };

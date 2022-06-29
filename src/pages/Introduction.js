@@ -14,6 +14,16 @@ const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   padding: 100px 0px;
+  @media ${(props) => props.theme.device.tablet} {
+    img {
+      width: 500px;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    img {
+      width: 300px;
+    }
+  }
 `;
 
 const Text_Box = styled.div`
