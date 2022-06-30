@@ -16,6 +16,10 @@ const Wrapper = styled(motion.section)`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+  }
 `;
 
 const Modal = styled.div`
@@ -26,6 +30,16 @@ const Modal = styled.div`
 const ArrowBtn = styled.img`
   position: relative;
   z-index: 5;
+  img {
+    width: 20px;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    img {
+      height: 50px;
+    }
+  }
 `;
 
 const Variants = {
