@@ -9,16 +9,21 @@ const Wrapper = styled.section`
   font-size: 45px;
   position: relative;
   margin-top: 50px;
+  @media ${(props) => props.theme.device.tablet} {
+    font-size: 40px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    font-size: 30px;
+  }
 `;
 
-const Text_Box = styled.div`
+const TextBox = styled.div`
   width: 400px;
   position: relative;
   z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 45px;
   h1 {
     margin-left: 10px;
   }
@@ -34,6 +39,20 @@ const Text_Box = styled.div`
     color: white;
     font-weight: 800;
   }
+  @media ${(props) => props.theme.device.tablet} {
+    span {
+      width: 40px;
+      height: 40px;
+      padding: 30px;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    span {
+      width: 20px;
+      height: 20px;
+      padding: 20px;
+    }
+  }
 `;
 
 const Shadow = styled.div`
@@ -43,15 +62,23 @@ const Shadow = styled.div`
   bottom: 5px;
   z-index: 2;
   background-color: ${(props) => props.theme.yellow};
+  @media ${(props) => props.theme.device.tablet} {
+    width: 350px;
+    height: 30px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 265px;
+    height: 20px;
+  }
 `;
 
 const Sub_Title = ({ title, order }) => {
   return (
     <Wrapper>
-      <Text_Box>
+      <TextBox>
         <span>{order}</span>
         <h1>{title}</h1>
-      </Text_Box>
+      </TextBox>
       <Shadow />
     </Wrapper>
   );

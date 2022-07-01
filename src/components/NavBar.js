@@ -93,6 +93,7 @@ const ArrowBtn = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   &:hover {
     transform: translateY(-5px);
   }
@@ -107,7 +108,7 @@ const ArrowBtn = styled.span`
     width: 50px;
     height: 50px;
     img {
-      width: 30px;
+      width: 20px;
     }
   }
 `;

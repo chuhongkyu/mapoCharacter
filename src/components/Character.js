@@ -13,8 +13,12 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Main_img = styled.img`
-  width: 256px;
+  width: 200px;
   margin-right: 100px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+  }
 `;
 
 const TextBox = styled.div`

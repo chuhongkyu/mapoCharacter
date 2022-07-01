@@ -31,6 +31,18 @@ const Container = styled.div`
   align-items: flex-start;
 `;
 
+const BigBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+`;
+
 const TextBox = styled.div`
   display: flex;
   justify-content: center;
@@ -71,6 +83,12 @@ const FormContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin-top: 50px;
+  position: relative;
+  .right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
 
 const InputDiv = styled.div`
@@ -111,6 +129,11 @@ const Btn = styled.button`
   }
 `;
 
+const Doneun = styled.img`
+  margin-left: 50px;
+  margin-bottom: 20px;
+`;
+
 const Modal = styled.div`
   width: 100%;
   height: 100vh;
@@ -130,13 +153,13 @@ const Modal = styled.div`
 `;
 
 const ErrorBox = styled.div`
-  font-size: 11px;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 15px;
   p {
-    width: 100%;
-    text-align: end;
+    font-size: 13px;
   }
   margin-bottom: 50px;
 `;
@@ -191,62 +214,72 @@ const Letter = () => {
                 <br /> 편지를 받아보고 싶으신가요?
               </h1>
             </header>
-            <div>
-              <p>
-                캐릭터 라이선싱 페어 참여자분들에게
-                <br /> 시범운영으로 버디레터를 무료로 보내드리고 있어요!
-              </p>
-              <p>
-                <span>이벤트 기간</span>: 7월 14일 ~7월 19일
-                <br />
-                <span>참여자</span>: ~200명 선착순
-              </p>
-            </div>
           </TextBox>
+          <BigBox>
+            <div className="center">
+              <TextBox>
+                <div>
+                  <p>
+                    캐릭터 라이선싱 페어 참여자분들에게
+                    <br /> 시범운영으로 버디레터를 무료로 보내드리고 있어요!
+                  </p>
+                  <p>
+                    <span>이벤트 기간</span>: 7월 14일 ~7월 19일
+                    <br />
+                    <span>참여자</span>: ~200명 선착순
+                  </p>
+                </div>
+              </TextBox>
 
-          <FormContainer>
-            <form ref={form} onSubmit={sendEmail}>
-              <InputDiv>
-                <label htmlFor="user_name">닉네임</label>
-                <input
-                  id="user_name"
-                  type="text"
-                  name="user_name"
-                  placeholder="닉네임을 입력해 주세요."
-                  minLength="1"
-                  maxLength="15"
-                />
-              </InputDiv>
-              <InputDiv>
-                <label htmlFor="user_email">이메일</label>
-                <input
-                  id="user_email"
-                  type="email"
-                  name="user_email"
-                  placeholder="이메일을 입력해 주세요."
-                  onBlur={isEmail}
-                />
-              </InputDiv>
-              <ErrorBox>
-                <p>
-                  {!checkMail
-                    ? "🍳이메일을 확인해주세요"
-                    : "이메일을 확인 완료"}
-                </p>
-              </ErrorBox>
-              <Btn
-                type="submit"
-                disabled={!checkMail}
-                style={
-                  !checkMail
-                    ? { backgroundColor: "#FFC100" }
-                    : { backgroundColor: "#FFC100" }
-                }
-              >
-                버디레터 받기
-              </Btn>
-            </form>
-          </FormContainer>
+              <FormContainer>
+                <form ref={form} onSubmit={sendEmail}>
+                  <InputDiv>
+                    <label htmlFor="user_name">닉네임</label>
+                    <input
+                      id="user_name"
+                      type="text"
+                      name="user_name"
+                      placeholder="닉네임을 입력해 주세요."
+                      minLength="1"
+                      maxLength="15"
+                    />
+                  </InputDiv>
+                  <InputDiv>
+                    <label htmlFor="user_email">이메일</label>
+                    <input
+                      id="user_email"
+                      type="email"
+                      name="user_email"
+                      placeholder="이메일을 입력해 주세요."
+                      onBlur={isEmail}
+                    />
+                  </InputDiv>
+                  <ErrorBox>
+                    <p>
+                      {!checkMail
+                        ? "*개인정보 자료는 이벤트 기간 이후 모두 일괄 폐기됩니다."
+                        : "이메일을 확인 완료"}
+                    </p>
+                  </ErrorBox>
+                  <div className="right">
+                    <Btn
+                      type={!checkMail ? "button" : "submit"}
+                      onClick={!checkMail ? onCheck : null}
+                      style={
+                        !checkMail ? { color: "gray" } : { color: "black" }
+                      }
+                    >
+                      버디레터 받기
+                    </Btn>
+                  </div>
+                </form>
+              </FormContainer>
+            </div>
+            <Doneun
+              src={env.PUBLIC_URL + "/assets/dongeun.png"}
+              alt="전송 완료"
+            />
+          </BigBox>
         </Container>
       ) : (
         <Modal>

@@ -5,16 +5,20 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 const Header = styled.header`
   width: 100%;
-  height: 5vh;
+  padding: 10px;
   background-color: ${(props) => props.theme.black};
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    width: 182px;
+    height: 31.45px;
+  }
 `;
 
 const Container = styled.div`

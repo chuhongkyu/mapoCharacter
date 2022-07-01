@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Buddies_data } from "../utils/mapoCharacterData";
 import Character from "./Character";
@@ -16,6 +16,10 @@ const Wrapper = styled(motion.section)`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+  }
 `;
 
 const Modal = styled.div`
@@ -23,10 +27,15 @@ const Modal = styled.div`
   display: flex;
 `;
 
-const ArrowBtn = styled.img`
+const ArrowBtn = styled.div`
   position: relative;
   z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
+const ArrowSvg = styled(motion.svg)``;
 
 const Variants = {
   initial: {
@@ -62,12 +71,25 @@ const Characters = () => {
   }, [index]);
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
-      <ArrowBtn
-        style={{ marginLeft: 200 }}
-        src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
-        alt="left"
-        onClick={onDecrease}
-      />
+      <ArrowBtn>
+        <ArrowSvg
+          style={{ marginLeft: 200 }}
+          onClick={onDecrease}
+          width="82"
+          height="148"
+          viewBox="0 0 82 148"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          whileHover={{ stroke: "RGB(48, 48, 48)" }}
+          stroke="rgb(0,0,0)"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <motion.path d="M74 140L8.00001 74L74 8" />
+        </ArrowSvg>
+      </ArrowBtn>
+
       <Modal>
         {Buddies_data.map((intro) =>
           index === intro.id ? (
@@ -83,12 +105,24 @@ const Characters = () => {
           ) : null
         )}
       </Modal>
-      <ArrowBtn
-        style={{ marginRight: 200, transform: "rotateY(180deg)" }}
-        src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"}
-        alt="right"
-        onClick={onIncrease}
-      />
+      <ArrowBtn>
+        <ArrowSvg
+          style={{ marginRight: 200, transform: "rotateZ(180deg)" }}
+          onClick={onIncrease}
+          width="82"
+          height="148"
+          viewBox="0 0 82 148"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          whileHover={{ stroke: "RGB(48, 48, 48)" }}
+          stroke="rgb(0,0,0)"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <motion.path d="M74 140L8.00001 74L74 8" />
+        </ArrowSvg>
+      </ArrowBtn>
     </Wrapper>
   );
 };

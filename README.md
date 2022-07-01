@@ -17,8 +17,13 @@
 
 ---
 
-# 사용
+# 사용 hook
 
 - styled-components
-- react-three/fiber
 - framer-motion
+
+# 기능
+
+- 캐릭터 소개
+- 캐릭터 상세 페이지 슬라이드 컨테이너
+- Email.js를 통한 이메일 구독 기능
