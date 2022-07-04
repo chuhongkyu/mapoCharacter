@@ -20,7 +20,7 @@ const Wrapper = styled(motion.div)`
     width: 140px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 100px;
+    width: 80px;
     height: 50%;
   }
 `;
@@ -52,8 +52,8 @@ const NavBarContainer = styled.div`
     }
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 60px;
-    height: 150px;
+    width: 50px;
+    height: 140px;
     img {
       width: 30px;
       top: -10px;
@@ -75,13 +75,13 @@ const NavBtn = styled.span`
   @media ${(props) => props.theme.device.tablet} {
     width: 80px;
     height: 60px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 70px;
     height: 50px;
-    font-size: 5px;
-    font-weight: 400;
+    font-size: 9px;
   }
 `;
 
