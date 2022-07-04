@@ -49,6 +49,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+  width: 100%;
   background: ${(prop) => prop.theme.bgColor};
 	line-height: 1;
   font-family: "Maple_story";
