@@ -21,7 +21,6 @@ const Wrapper = styled(motion.div)`
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 80px;
-    height: 50%;
   }
 `;
 

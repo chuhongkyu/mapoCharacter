@@ -50,7 +50,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   width: 100%;
-  background: ${(prop) => prop.theme.bgColor};
+  background-color: white;
 	line-height: 1;
   font-family: "Maple_story";
   overflow-x: hidden;

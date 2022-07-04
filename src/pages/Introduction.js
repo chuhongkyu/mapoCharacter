@@ -37,7 +37,16 @@ const TextBox = styled.div`
   margin-top: 50px;
   margin-bottom: 50px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 36px;
+  line-height: 160%;
+  @media ${(props) => props.theme.device.tablet} {
+    font-size: 30px;
+    line-height: 160%;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    font-size: 20px;
+    line-height: 150%;
+  }
 `;
 
 const Btn = styled.span`
