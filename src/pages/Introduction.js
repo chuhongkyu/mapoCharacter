@@ -15,18 +15,20 @@ const Wrapper = styled.section`
   flex-direction: column;
   padding: 100px 0px;
   @media ${(props) => props.theme.device.tablet} {
+    padding: 70px 0px;
     .buddies {
       width: 500px;
     }
   }
   @media ${(props) => props.theme.device.mobile} {
+    padding: 30px 0px;
     .buddies {
       width: 300px;
     }
   }
 `;
 
-const Text_Box = styled.div`
+const TextBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -111,10 +113,10 @@ const Introduction = () => {
   return (
     <Wrapper>
       <SubTitle title={"마포 버디즈란?"} order={1} />
-      <Text_Box>
+      <TextBox>
         <h3>'마포 버디즈'는 (예비) '마포구 홍보대사'이자</h3>
         <h3>편지를 전하는 '동물 우체부'예요!</h3>
-      </Text_Box>
+      </TextBox>
       <img
         className="buddies"
         src={env.PUBLIC_URL + "/assets/Buddies_Cha_01.png"}
@@ -122,10 +124,10 @@ const Introduction = () => {
       />
       {!open ? null : <Characters />}
       <Btn onClick={onClick}>상세보기</Btn>
-      <Text_Box>
+      <TextBox>
         <h3>버디즈의 주요 업무는 마포구 전역을 돌면서</h3>
         <h3>구민들에게 '편지를 전하기'입니다</h3>
-      </Text_Box>
+      </TextBox>
       <MapBox>
         <div>
           <img
@@ -309,10 +311,10 @@ const Introduction = () => {
         </div>
       </MapBox>
 
-      <Text_Box>
+      <TextBox>
         <h3>마포 버디즈가 전하는 편지들에는</h3>
         <h3>희망과 소식, 그리고 행운이 담겨있어요!</h3>
-      </Text_Box>
+      </TextBox>
       <Symbol>
         <div>
           <img

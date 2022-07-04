@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   padding: 200px 0px;
 `;
 
-const Text_Box = styled.div`
+const TextBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -25,12 +25,12 @@ const Text_Box = styled.div`
   font-size: 22px;
 `;
 
-const Illu_Box = styled.div`
+const IlluBox = styled.div`
   position: relative;
   margin-bottom: 50px;
 `;
 
-const Main_img = styled.div`
+const MainImg = styled.div`
   width: 992px;
   height: 550px;
   background-color: white;
@@ -51,65 +51,65 @@ const Illustration = () => {
   return (
     <Wrapper>
       <SubTitle title={"마포 버디즈의 하루"} order={2} />
-      <Text_Box>
+      <TextBox>
         <h3>
           이번에는 마포버디즈의
           <br />
           하루일과를 소개해드릴게요!
         </h3>
-      </Text_Box>
-      <Illu_Box>
+      </TextBox>
+      <IlluBox>
         <Title
           style={{ top: -50, left: -50 }}
           src={env.PUBLIC_URL + "/assets/page2/이미지_출근준비.png"}
           alt="알림"
         />
-        <Main_img></Main_img>
+        <MainImg></MainImg>
         <Character
           style={{ bottom: -40, left: -130 }}
           src={env.PUBLIC_URL + "/assets/sub_img/MC-A.png"}
           alt="캐릭터"
         />
-      </Illu_Box>
-      <Illu_Box>
+      </IlluBox>
+      <IlluBox>
         <Title
           style={{ top: -50, right: -50 }}
           src={env.PUBLIC_URL + "/assets/page2/이미지_점심.png"}
           alt="알림"
         />
-        <Main_img style={{ transform: "rotateZ(-3deg)" }}></Main_img>
+        <MainImg style={{ transform: "rotateZ(-3deg)" }}></MainImg>
         <Character
           style={{ right: -130, bottom: 0 }}
           src={env.PUBLIC_URL + "/assets/sub_img/BY-A.png"}
           alt="캐릭터"
         />
-      </Illu_Box>
-      <Illu_Box>
+      </IlluBox>
+      <IlluBox>
         <Title
           style={{ top: -50, left: -50 }}
           src={env.PUBLIC_URL + "/assets/page2/이미지_오후근무.png"}
           alt="알림"
         />
-        <Main_img style={{ transform: "rotateZ(3deg)" }}></Main_img>
+        <MainImg style={{ transform: "rotateZ(3deg)" }}></MainImg>
         <Character
           style={{ bottom: -20, left: -130 }}
           src={env.PUBLIC_URL + "/assets/sub_img/DG-A2.png"}
           alt="캐릭터"
         />
-      </Illu_Box>
-      <Illu_Box>
+      </IlluBox>
+      <IlluBox>
         <Title
           style={{ top: -50, right: -50 }}
           src={env.PUBLIC_URL + "/assets/page2/이미지_퇴근.png"}
           alt="알림"
         />
-        <Main_img style={{ transform: "rotateZ(-3deg)" }}></Main_img>
+        <MainImg style={{ transform: "rotateZ(-3deg)" }}></MainImg>
         <Character
           style={{ right: -130, bottom: -5 }}
           src={env.PUBLIC_URL + "/assets/sub_img/BM-A.png"}
           alt="캐릭터"
         />
-      </Illu_Box>
+      </IlluBox>
     </Wrapper>
   );
 };
