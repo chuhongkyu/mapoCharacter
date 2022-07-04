@@ -8,6 +8,7 @@ import Letter from "./Letter";
 
 const Wrapper = styled.section`
   width: 100%;
+  overflow-x: hidden;
 `;
 
 const Home = () => {

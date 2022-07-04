@@ -1,14 +1,17 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+  }
 `;
 
 const Main_img = styled.img`
@@ -18,7 +21,7 @@ const Main_img = styled.img`
     margin-right: 70px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 70px;
+    width: 100px;
     margin-right: 30px;
   }
 `;
@@ -44,8 +47,9 @@ const TextBox = styled.div`
     line-height: 25px;
     margin-bottom: 20px;
   }
-  img {
+  .small_img {
     width: 100px;
+    height: auto;
   }
   div {
     display: flex;
@@ -53,6 +57,10 @@ const TextBox = styled.div`
     align-items: center;
   }
   @media ${(props) => props.theme.device.tablet} {
+    .small_img {
+      width: 70px;
+      height: auto;
+    }
   }
   @media ${(props) => props.theme.device.mobile} {
     h4 {
@@ -73,8 +81,9 @@ const TextBox = styled.div`
       margin-bottom: 15px;
       font-size: 12px;
     }
-    img {
+    .small_img {
       width: 50px;
+      height: auto;
     }
   }
 `;
@@ -107,7 +116,12 @@ const Character = ({
         </p>
         <div>
           {subImg.map((img, index) => (
-            <img key={index} src={env.PUBLIC_URL + img} alt={index} />
+            <img
+              className="small_img"
+              key={index}
+              src={env.PUBLIC_URL + img}
+              alt={index}
+            />
           ))}
         </div>
       </TextBox>

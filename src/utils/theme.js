@@ -10,7 +10,7 @@ export const theme = {
   },
   black: "rgb(0,0,0)",
   device: {
-    mobile: "screen and (max-width: 768px)",
+    mobile: "screen and (max-width: 780px)",
     tablet: "screen and (max-width: 1024px)",
   },
 };

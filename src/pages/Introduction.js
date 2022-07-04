@@ -15,12 +15,12 @@ const Wrapper = styled.section`
   flex-direction: column;
   padding: 100px 0px;
   @media ${(props) => props.theme.device.tablet} {
-    img {
+    .buddies {
       width: 500px;
     }
   }
   @media ${(props) => props.theme.device.mobile} {
-    img {
+    .buddies {
       width: 300px;
     }
   }
@@ -115,7 +115,11 @@ const Introduction = () => {
         <h3>'마포 버디즈'는 (예비) '마포구 홍보대사'이자</h3>
         <h3>편지를 전하는 '동물 우체부'예요!</h3>
       </Text_Box>
-      <img src={env.PUBLIC_URL + "/assets/Buddies_Cha_01.png"} alt="캐릭터" />
+      <img
+        className="buddies"
+        src={env.PUBLIC_URL + "/assets/Buddies_Cha_01.png"}
+        alt="캐릭터"
+      />
       {!open ? null : <Characters />}
       <Btn onClick={onClick}>상세보기</Btn>
       <Text_Box>
