@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
 import Characters from "../components/Characters";
-import Sub_Title from "../components/Sub_Title";
+import SubTitle from "../components/SubTitle";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -110,7 +110,7 @@ const Introduction = () => {
   };
   return (
     <Wrapper>
-      <Sub_Title title={"마포 버디즈란?"} order={1} />
+      <SubTitle title={"마포 버디즈란?"} order={1} />
       <Text_Box>
         <h3>'마포 버디즈'는 (예비) '마포구 홍보대사'이자</h3>
         <h3>편지를 전하는 '동물 우체부'예요!</h3>

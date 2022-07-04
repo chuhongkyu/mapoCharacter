@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Sub_Title from "../components/Sub_Title";
+import SubTitle from "../components/SubTitle";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -50,7 +50,7 @@ const Character = styled.img`
 const Illustration = () => {
   return (
     <Wrapper>
-      <Sub_Title title={"마포 버디즈의 하루"} order={2} />
+      <SubTitle title={"마포 버디즈의 하루"} order={2} />
       <Text_Box>
         <h3>
           이번에는 마포버디즈의
