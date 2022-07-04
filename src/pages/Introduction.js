@@ -77,6 +77,9 @@ const Symbol = styled.div`
     align-items: center;
     margin-right: 50px;
     flex-direction: column;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   img {
     border-radius: 50%;
@@ -91,6 +94,29 @@ const Symbol = styled.div`
     background-color: ${(props) => props.theme.black};
     color: white;
     border-radius: 25px;
+    font-size: 20px;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    div {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: ${(props) => props.theme.black};
+      background-position: center center;
+      background-size: cover;
+      padding: 0.7rem;
+    }
+    span {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -103,6 +129,9 @@ const MapBox = styled.div`
     width: 1116px;
     height: 875px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   img {
     position: absolute;
@@ -110,9 +139,27 @@ const MapBox = styled.div`
     height: 100px;
     z-index: 5;
   }
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    div {
+      width: 800px;
+      height: 575px;
+    }
+    img {
+      display: none;
+    }
+  }
 `;
 
-const Svg = styled(motion.svg)``;
+const Svg = styled(motion.svg)`
+  @media ${(props) => props.theme.device.tablet} {
+    width: 800px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 500px;
+  }
+`;
 
 const Introduction = () => {
   const [open, setOpen] = useState(false);

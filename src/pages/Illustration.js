@@ -11,6 +11,12 @@ const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   padding: 200px 0px;
+  @media ${(props) => props.theme.device.tablet} {
+    padding: 100px 0px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    padding: 70px 0px;
+  }
 `;
 
 const TextBox = styled.div`
@@ -37,6 +43,11 @@ const TextBox = styled.div`
 const IlluBox = styled.div`
   position: relative;
   margin-bottom: 50px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    margin-bottom: 30px;
+  }
 `;
 
 const MainImg = styled.div`
@@ -44,16 +55,37 @@ const MainImg = styled.div`
   height: 550px;
   background-color: white;
   border: 2px solid black;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 400px;
+    height: 250px;
+  }
 `;
 
 const Title = styled.img`
   position: absolute;
   z-index: 2;
+  width: 248px;
+  height: 114px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 100px;
+    height: auto;
+    margin-top: 25px;
+  }
 `;
 
 const Character = styled.img`
   position: absolute;
   width: 200px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 100px;
+    height: auto;
+  }
 `;
 
 const Illustration = () => {
