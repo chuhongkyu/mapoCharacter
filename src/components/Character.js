@@ -9,15 +9,17 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  float: left;
 `;
 
 const Main_img = styled.img`
   width: 200px;
   margin-right: 100px;
   @media ${(props) => props.theme.device.tablet} {
+    margin-right: 70px;
   }
   @media ${(props) => props.theme.device.mobile} {
+    width: 70px;
+    margin-right: 30px;
   }
 `;
 
@@ -36,6 +38,7 @@ const TextBox = styled.div`
   span {
     padding: 5px 10px;
     margin-bottom: 5px;
+    white-space: nowrap;
   }
   p {
     line-height: 25px;
@@ -48,6 +51,31 @@ const TextBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    h4 {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    span {
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+    }
+    p {
+      line-height: 13px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+    img {
+      width: 50px;
+    }
   }
 `;
 
