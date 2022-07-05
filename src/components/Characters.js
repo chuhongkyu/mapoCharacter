@@ -34,26 +34,24 @@ const Modal = styled.div`
 `;
 
 const ArrowBtn = styled.div`
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #e6e6e6;
   cursor: pointer;
+  img {
+    width: 12px;
+    height: 21px;
+  }
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
     position: absolute;
     bottom: -50px;
-    left: 40%;
-  }
-`;
-
-const ArrowSvg = styled(motion.svg)`
-  width: 50px;
-  @media ${(props) => props.theme.device.tablet} {
-    width: 40px;
-  }
-  @media ${(props) => props.theme.device.mobile} {
-    width: 20px;
+    right: 60%;
   }
 `;
 
@@ -101,21 +99,7 @@ const Characters = () => {
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
       <ArrowBtn>
-        <ArrowSvg
-          onClick={onDecrease}
-          width="82"
-          height="148"
-          viewBox="0 0 82 148"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          whileHover={{ stroke: "RGB(48, 48, 48)" }}
-          stroke="rgb(0,0,0)"
-          strokeWidth="15"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <motion.path d="M74 140L8.00001 74L74 8" />
-        </ArrowSvg>
+        <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="left" />
       </ArrowBtn>
 
       <Modal>
@@ -133,23 +117,7 @@ const Characters = () => {
           ) : null
         )}
       </Modal>
-      <RightArrowBtn>
-        <ArrowSvg
-          onClick={onIncrease}
-          width="82"
-          height="148"
-          viewBox="0 0 82 148"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          whileHover={{ stroke: "RGB(48, 48, 48)" }}
-          stroke="rgb(0,0,0)"
-          strokeWidth="15"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <motion.path d="M74 140L8.00001 74L74 8" />
-        </ArrowSvg>
-      </RightArrowBtn>
+      <RightArrowBtn></RightArrowBtn>
     </Wrapper>
   );
 };

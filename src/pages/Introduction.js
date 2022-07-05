@@ -32,7 +32,6 @@ const ScrabBox = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  z-index: 4;
   border: 6px solid #7d613b;
   .scrab_header {
     position: absolute;
@@ -59,14 +58,20 @@ const ScrabBox = styled.div`
     font-size: 45px;
     line-height: 160%;
   }
+  .buddies {
+    width: 668px;
+    height: 276px;
+  }
   @media ${(props) => props.theme.device.tablet} {
     .buddies {
       width: 500px;
+      height: auto;
     }
   }
   @media ${(props) => props.theme.device.mobile} {
     .buddies {
       width: 300px;
+      height: auto;
     }
   }
 `;
@@ -74,13 +79,11 @@ const ScrabBox = styled.div`
 const LongBong = styled.img`
   position: absolute;
   bottom: -110px;
-  z-index: 7;
 `;
 
 const ShortBong = styled.img`
   position: absolute;
   bottom: -110px;
-  z-index: 7;
 `;
 
 const TextBox = styled.div`
@@ -183,13 +186,13 @@ const Introduction = () => {
         color={"#FA9600"}
         title={"마포버디즈 소개"}
       />
-      <ScrabBox style={{ padding: "120px 0px" }}>
+      <ScrabBox style={{ zIndex: 4, padding: "120px 0px" }}>
         <div className="scrab_header ">
           <h1>캐릭터 소개</h1>
         </div>
         <img
           className="buddies"
-          src={env.PUBLIC_URL + "/assets/Buddies_Cha_01.png"}
+          src={env.PUBLIC_URL + "/assets/main_img.png"}
           alt="캐릭터"
         />
         <TextBox>
@@ -200,7 +203,7 @@ const Introduction = () => {
         <Btn onClick={onClick}>상세보기</Btn>
         <div className="scrab_footer"></div>
         <LongBong
-          style={{ left: 15, zIndex: 10 }}
+          style={{ left: 15 }}
           src={env.PUBLIC_URL + "/assets/pattern/bong1.png"}
           alt="bong1"
         />
@@ -211,7 +214,9 @@ const Introduction = () => {
         />
       </ScrabBox>
 
-      <ScrabBox style={{ transform: "rotate(-0.86deg)", height: "788px" }}>
+      <ScrabBox
+        style={{ zIndex: 3, transform: "rotate(-0.86deg)", height: "788px" }}
+      >
         <div className="scrab_header ">
           <h1>업무 소개</h1>
         </div>
@@ -233,7 +238,9 @@ const Introduction = () => {
         />
       </ScrabBox>
 
-      <ScrabBox style={{ transform: "rotateZ(1deg)", height: "788px" }}>
+      <ScrabBox
+        style={{ zIndex: 2, transform: "rotateZ(1deg)", height: "788px" }}
+      >
         <div className="scrab_header ">
           <h1>버디 레터</h1>
         </div>
