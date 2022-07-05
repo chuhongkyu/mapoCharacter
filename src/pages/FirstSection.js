@@ -5,96 +5,29 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 100%;
-`;
-
-const Header = styled.header`
-  width: 100%;
-  padding: 10px;
-  background-color: ${(props) => props.theme.black};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 182px;
-    height: 31.45px;
-  }
+  height: 100vh;
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: 95vh;
-  background-image: url("${env.PUBLIC_URL}/assets/page1/Bg.png");
+  height: 100%;
+  background-image: url("${env.PUBLIC_URL}/assets/page1/bg.jpg");
   background-size: cover;
-  background-position: center bottom;
+  background-position: center top;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
   position: relative;
   @media ${(props) => props.theme.device.tablet} {
-    height: 70%;
+    height: 90%;
   }
   @media ${(props) => props.theme.device.mobile} {
     height: 50%;
   }
 `;
 
-const Title = styled.div`
-  width: 594px;
-  height: 350px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 30px;
-  span {
-    padding: 5px 40px;
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 160%;
-    background-color: ${(props) => props.theme.black};
-    color: ${(props) => props.theme.white.light};
-    border-radius: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-    h2 {
-      margin: 0 20px;
-    }
-  }
-  @media ${(props) => props.theme.device.tablet} {
-    span {
-      padding: 5px 30px;
-      font-weight: 300;
-      font-size: 25px;
-      line-height: 160%;
-    }
-  }
-  @media ${(props) => props.theme.device.mobile} {
-    span {
-      padding: 5px 25px;
-      font-weight: 300;
-      font-size: 15px;
-      line-height: 160%;
-    }
-  }
-`;
-
-const TitleImg = styled.img`
-  width: 554px;
-  @media ${(props) => props.theme.device.tablet} {
-    width: 400px;
-  }
-  @media ${(props) => props.theme.device.mobile} {
-    width: 300px;
-  }
-`;
-
 const MoveBtn = styled.div`
-  position: relative;
-  bottom: 60px;
+  position: absolute;
+  bottom: 15px;
   width: 258px;
   height: 76px;
   background-color: ${(props) => props.theme.black};
@@ -178,29 +111,7 @@ const FirstSection = () => {
   };
   return (
     <Wrapper>
-      <Header>
-        <img src={env.PUBLIC_URL + "/assets/icons/header.png"} alt="header" />
-      </Header>
       <Container>
-        <Title>
-          <TitleImg
-            src={env.PUBLIC_URL + "/assets/page1/title.png"}
-            alt="title"
-          />
-          <span>
-            <img
-              style={{ width: 32, height: 25 }}
-              src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
-              alt="편지"
-            />
-            <h2>희망과 소식을 전하는 우체부</h2>
-            <img
-              style={{ width: 32, height: 25 }}
-              src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
-              alt="편지"
-            />
-          </span>
-        </Title>
         <MoveBtn onClick={onClick}>
           버디즈 보러가기
           <span>

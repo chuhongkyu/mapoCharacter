@@ -204,7 +204,6 @@ const Letter = () => {
 
   return (
     <Wrapper>
-      <SubTitle title={"버디레터 신청하기"} />
       {!subscribe ? (
         <Container>
           <TextBox>

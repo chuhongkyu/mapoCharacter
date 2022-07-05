@@ -163,7 +163,11 @@ const Illustration = () => {
       >
         {scrollY}
       </Moon>
-      <SubTitle title={"마포 버디즈의 하루"} />
+      <SubTitle
+        sub={"버디즈의 업무는?"}
+        color={"#FA9600"}
+        title={"버디즈의 하루"}
+      />
       <TextBox>
         <h3>
           이번에는 마포버디즈의
