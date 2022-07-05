@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Introduction from "./pages/Introduction";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -50,10 +49,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   width: 100%;
-  background-color: white;
 	line-height: 1;
   font-family: "Maple_story";
   overflow-x: hidden;
+  background: ${(prop) => prop.theme.bgColor};
 }
 h1{
   font-weight: bold;

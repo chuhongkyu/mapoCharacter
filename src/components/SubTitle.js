@@ -6,9 +6,18 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 45px;
+  color: white;
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 146.69%;
   position: relative;
+  -webkit-text-stroke: 5px #000;
   margin-top: 50px;
+  width: 1110px;
+  height: 179px;
+  background-color: white;
+  border: 6px solid #7d613b;
+  border-radius: 60px;
   @media ${(props) => props.theme.device.tablet} {
     font-size: 40px;
   }
@@ -18,7 +27,7 @@ const Wrapper = styled.section`
 `;
 
 const TextBox = styled.div`
-  width: 400px;
+  width: 100%;
   position: relative;
   z-index: 4;
   display: flex;
@@ -56,12 +65,12 @@ const TextBox = styled.div`
 `;
 
 const Shadow = styled.div`
-  width: 400px;
-  height: 30px;
+  width: 600px;
+  height: 70px;
+  background: #000000;
+  border-radius: 65px;
   position: absolute;
-  bottom: 5px;
   z-index: 2;
-  background-color: ${(props) => props.theme.yellow};
   @media ${(props) => props.theme.device.tablet} {
     width: 350px;
     height: 30px;
@@ -72,11 +81,10 @@ const Shadow = styled.div`
   }
 `;
 
-const Sub_Title = ({ title, order }) => {
+const Sub_Title = ({ title }) => {
   return (
     <Wrapper>
       <TextBox>
-        <span>{order}</span>
         <h1>{title}</h1>
       </TextBox>
       <Shadow />

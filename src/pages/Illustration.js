@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SubTitle from "../components/SubTitle";
+import { motion } from "framer-motion";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -11,6 +13,7 @@ const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   padding: 200px 0px;
+  position: relative;
   @media ${(props) => props.theme.device.tablet} {
     padding: 100px 0px;
   }
@@ -88,10 +91,79 @@ const Character = styled.img`
   }
 `;
 
+const Moon = styled(motion.div)`
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+`;
+
 const Illustration = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [positionX, setXPosition] = useState(-700);
+  const [positionY, setYPosition] = useState(0);
+  const listener = () => {
+    setScrollY(window.pageYOffset);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  });
+  useEffect(() => {
+    if (scrollY <= 3220) {
+      setYPosition(0);
+      setXPosition(-700);
+    }
+    if (scrollY >= 3390) {
+      setYPosition(300);
+      setXPosition(100);
+      console.log("달");
+    }
+    if (scrollY >= 3900) {
+      setYPosition(800);
+      setXPosition(600);
+      console.log("반달");
+    }
+    if (scrollY >= 4497) {
+      setYPosition(1350);
+      setXPosition(700);
+      console.log("초승달");
+    }
+    if (scrollY >= 5050) {
+      setYPosition(1750);
+      setXPosition(600);
+      console.log("반달");
+    }
+    if (scrollY >= 5620) {
+      setYPosition(2300);
+      setXPosition(0);
+      console.log("달");
+    }
+    if (scrollY >= 5900) {
+      setYPosition(2800);
+      setXPosition(-700);
+    } else {
+      console.log("헷");
+    }
+  }, [scrollY]);
   return (
     <Wrapper>
-      <SubTitle title={"마포 버디즈의 하루"} order={2} />
+      <Moon
+        initial={{ y: 0, x: -700 }}
+        animate={{
+          y: positionY,
+          x: positionX,
+          // y: [0, 1000, 2000, 3000],
+          // x: [-700, 500, 700, 500, -700],
+          transition: { duration: 1 },
+        }}
+      >
+        {scrollY}
+      </Moon>
+      <SubTitle title={"마포 버디즈의 하루"} />
       <TextBox>
         <h3>
           이번에는 마포버디즈의

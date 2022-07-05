@@ -168,7 +168,7 @@ const Introduction = () => {
   };
   return (
     <Wrapper>
-      <SubTitle title={"마포 버디즈란?"} order={1} />
+      <SubTitle title={"마포버디즈 소개"} />
       <TextBox>
         <h3>'마포 버디즈'는 (예비) '마포구 홍보대사'이자</h3>
         <h3>편지를 전하는 '동물 우체부'예요!</h3>
