@@ -10,8 +10,8 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled(motion.section)`
   width: 100%;
-  height: auto;
-  padding: 60px 250px;
+  height: 500px;
+  padding: 0px 50px;
   transform-origin: top;
   display: flex;
   justify-content: space-between;
@@ -19,10 +19,8 @@ const Wrapper = styled(motion.section)`
   overflow: hidden;
   position: relative;
   @media ${(props) => props.theme.device.tablet} {
-    padding: 60px 150px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    padding: 60px 0px;
   }
 `;
 
@@ -33,9 +31,9 @@ const Modal = styled.div`
   align-items: center;
 `;
 
-const ArrowBtn = styled.div`
+const ArrowBtn = styled(motion.div)`
   width: 73px;
-  height: 73px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -98,8 +96,14 @@ const Characters = () => {
   }, [index]);
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
-      <ArrowBtn>
-        <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="left" />
+      <ArrowBtn
+        onClick={onIncrease}
+        whileHover={{
+          backgroundColor: "#FFC143",
+          transition: { duration: 0.5 },
+        }}
+      >
+        <img src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"} alt="left" />
       </ArrowBtn>
 
       <Modal>
@@ -117,7 +121,16 @@ const Characters = () => {
           ) : null
         )}
       </Modal>
-      <RightArrowBtn></RightArrowBtn>
+
+      <RightArrowBtn
+        onClick={onDecrease}
+        whileHover={{
+          backgroundColor: "#FFC143",
+          transition: { duration: 0.5 },
+        }}
+      >
+        <img src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"} alt="right" />
+      </RightArrowBtn>
     </Wrapper>
   );
 };

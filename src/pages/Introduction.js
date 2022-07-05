@@ -108,10 +108,10 @@ const TextBox = styled.div`
 `;
 
 const Btn = styled.span`
-  width: 388px;
-  height: 96px;
-  font-size: 45px;
+  width: 370px;
+  height: 80px;
   font-weight: 700;
+  font-size: 36px;
   line-height: 160%;
   border-radius: 50px;
   background-color: ${(props) => props.theme.yellow};
@@ -199,8 +199,14 @@ const Introduction = () => {
           <h3>'마포 버디즈'는 (예비) '마포구 홍보대사'이자</h3>
           <h3>편지를 전하는 '동물 우체부'예요!</h3>
         </TextBox>
-        {!open ? null : <Characters />}
-        <Btn onClick={onClick}>상세보기</Btn>
+        {!open ? (
+          <Btn onClick={onClick}>상세보기</Btn>
+        ) : (
+          <>
+            <Characters />
+            <Btn onClick={onClick}>접기</Btn>
+          </>
+        )}
         <div className="scrab_footer"></div>
         <LongBong
           style={{ left: 15 }}

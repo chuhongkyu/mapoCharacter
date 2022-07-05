@@ -15,14 +15,15 @@ const Wrapper = styled.div`
 `;
 
 const Main_img = styled.img`
-  width: 200px;
-  margin-right: 100px;
+  width: 400px;
+  height: auto;
+  margin-right: 30px;
   @media ${(props) => props.theme.device.tablet} {
-    margin-right: 70px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 100px;
-    margin-right: 30px;
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
   }
 `;
 
