@@ -32,6 +32,13 @@ const Panel = styled.span`
   background-color: #cd782a;
   color: white;
   margin-bottom: 50px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    padding: 5px 20px;
+    font-weight: 300;
+    font-size: 22px;
+  }
 `;
 
 const IlluBox = styled.div`

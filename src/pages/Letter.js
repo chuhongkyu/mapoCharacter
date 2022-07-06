@@ -32,19 +32,23 @@ const Panel = styled.span`
   background-color: #362a64;
   color: white;
   margin-bottom: 50px;
+  @media ${(props) => props.theme.device.mobile} {
+    padding: 5px 20px;
+    font-weight: 300;
+    font-size: 22px;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   flex-direction: column;
   background-color: #ffffff;
   border: 6px solid #362a64;
   border-radius: 20px;
-  width: 1005px;
-  height: 836px;
+  padding: 70px 100px;
 `;
 
 const Logo = styled(motion.img)`
@@ -134,19 +138,21 @@ const ErrorBox = styled.div`
 
 const Modal = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 40px;
+    margin-bottom: 55px;
     margin-top: 50px;
+    color: #ffc100;
   }
   h3 {
-    font-size: 21px;
+    font-size: 25px;
     font-weight: 300;
+    color: white;
+    line-height: 30px;
   }
 `;
 
