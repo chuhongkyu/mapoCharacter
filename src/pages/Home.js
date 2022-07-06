@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import FirstSection from "./FirstSection";
 import Illustration from "./Illustration";
@@ -24,7 +23,6 @@ const Home = () => {
         <Introduction />
         <Illustration />
         <Letter />
-        <Footer />
       </BackGround>
     </Wrapper>
   );

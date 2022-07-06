@@ -68,6 +68,22 @@ const IlluBox = styled.div`
     color: #c4b7a6;
     text-align: center;
   }
+  .Illu_title2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    div {
+      h1 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 180%;
+      }
+      p {
+      }
+    }
+  }
 `;
 
 const MainImg = styled.div`
@@ -85,11 +101,14 @@ const MainImg = styled.div`
 `;
 
 const Moon = styled(motion.div)`
-  width: 100px;
-  height: 100px;
+  width: 167px;
+  height: 167px;
   position: absolute;
   background-color: white;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Illustration = () => {
@@ -106,38 +125,33 @@ const Illustration = () => {
     };
   });
   useEffect(() => {
-    if (scrollY <= 3220) {
+    if (scrollY <= 3600) {
       setYPosition(0);
       setXPosition(-700);
     }
-    if (scrollY >= 3390) {
-      setYPosition(300);
-      setXPosition(100);
-      console.log("달");
-    }
-    if (scrollY >= 3900) {
+    if (scrollY >= 4000) {
       setYPosition(800);
-      setXPosition(600);
+      setXPosition(500);
       console.log("반달");
     }
-    if (scrollY >= 4497) {
+    if (scrollY >= 4700) {
       setYPosition(1350);
-      setXPosition(700);
+      setXPosition(850);
+      console.log("달");
+    }
+    if (scrollY >= 5200) {
+      setYPosition(1950);
+      setXPosition(600);
       console.log("초승달");
     }
-    if (scrollY >= 5050) {
-      setYPosition(1750);
-      setXPosition(600);
-      console.log("반달");
-    }
-    if (scrollY >= 5620) {
+    if (scrollY >= 6020) {
       setYPosition(2300);
-      setXPosition(0);
+      setXPosition(500);
       console.log("달");
     }
-    if (scrollY >= 5900) {
-      setYPosition(2800);
-      setXPosition(-700);
+    if (scrollY >= 6230) {
+      setYPosition(3000);
+      setXPosition(0);
     } else {
       console.log("헷");
     }
@@ -149,15 +163,18 @@ const Illustration = () => {
         animate={{
           y: positionY,
           x: positionX,
-          transition: { duration: 1 },
+          transition: { duration: 1.5 },
         }}
       >
         {scrollY}
       </Moon>
+
       <SubTitle
-        sub={"버디즈의 업무는?"}
-        color={"#FA9600"}
         title={"버디즈의 하루"}
+        bColor={"black"}
+        sub={"버디즈의 업무는?"}
+        sColor={"#FA9600"}
+        stroke={false}
       />
       <Panel>마포 버디즈 하루일과 : 9:00~18:00</Panel>
 
@@ -171,7 +188,7 @@ const Illustration = () => {
         </div>
         <MainImg
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/01.jpg)`
+            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/01.jpg)`,
           }}
         ></MainImg>
       </IlluBox>
@@ -179,27 +196,31 @@ const Illustration = () => {
       <IlluBox style={{ transform: "rotateZ(-2deg)" }}>
         <MainImg
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/02.jpg)`
+            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/02.jpg)`,
           }}
         ></MainImg>
-        <div className="Illu_title">
+        <div className="Illu_title2">
           <div>
             <h1>오전 근무</h1>
             <p>9:00~11:00</p>
           </div>
-          <h2 className="Illu_botton">편지 배달중..!<</h2>
+          <h2 className="Illu_botton">편지 배달중..!</h2>
         </div>
       </IlluBox>
 
       <IlluBox style={{ transform: "rotate(2.39deg)" }}>
         <div className="Illu_title">
           <div>
-            <h1>{점심&휴식}</h1>
+            <h1>{"점심&휴식"}</h1>
             <p>11:00~14:00</p>
           </div>
           <h2 className="Illu_botton">식후 운동 좋아</h2>
         </div>
-        <MainImg style={{backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/03.jpg)`}}></MainImg>
+        <MainImg
+          style={{
+            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/03.jpg)`,
+          }}
+        ></MainImg>
       </IlluBox>
 
       <IlluBox style={{ transform: "rotateZ(-2deg)" }}>
@@ -214,14 +235,18 @@ const Illustration = () => {
       </IlluBox>
 
       <IlluBox style={{ transform: "rotate(2.39deg)" }}>
-        <div className="Illu_title">
+        <MainImg
+          style={{
+            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/05.jpg)`,
+          }}
+        ></MainImg>
+        <div className="Illu_title2">
           <div>
             <h1>퇴근 이후</h1>
             <p>7:00~8:00</p>
           </div>
-          <h2 className="Illu_botton">지각 위기..</h2>
+          <h2 className="Illu_botton">버디즈는 휴식중..</h2>
         </div>
-        <MainImg style={{backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/05.jpg)`}}></MainImg>
       </IlluBox>
     </Wrapper>
   );

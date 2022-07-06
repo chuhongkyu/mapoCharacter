@@ -22,6 +22,9 @@ const TextBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  .stroke {
+    -webkit-text-stroke: 2px #000;
+  }
   h1 {
     color: black;
     font-weight: 700;
@@ -36,14 +39,16 @@ const TextBox = styled.div`
   }
 `;
 
-const SubTitle = ({ title, sub, color }) => {
+const SubTitle = ({ title, sub, sColor, bColor, stroke }) => {
   return (
     <Wrapper>
       <HashText>
-        <h2 style={{ color: color }}># {sub}</h2>
+        <h2 style={{ color: sColor }}># {sub}</h2>
       </HashText>
       <TextBox>
-        <h1>{title}</h1>
+        <h1 className={stroke ? "stroke" : null} style={{ color: bColor }}>
+          {title}
+        </h1>
       </TextBox>
     </Wrapper>
   );
@@ -51,7 +56,10 @@ const SubTitle = ({ title, sub, color }) => {
 
 SubTitle.propTypes = {
   title: PropTypes.string,
-  order: PropTypes.number,
+  sub: PropTypes.string,
+  sColor: PropTypes.string,
+  bColor: PropTypes.string,
+  stroke: PropTypes.bool,
 };
 
 export default SubTitle;

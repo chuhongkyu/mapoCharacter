@@ -182,9 +182,11 @@ const Introduction = () => {
   return (
     <Wrapper>
       <SubTitle
-        sub={"버디즈를 알아보자"}
-        color={"#FA9600"}
         title={"마포버디즈 소개"}
+        bColor={"black"}
+        sub={"버디즈를 알아보자"}
+        sColor={"#FA9600"}
+        stroke={false}
       />
       <ScrabBox style={{ zIndex: 4, padding: "120px 0px" }}>
         <div className="scrab_header ">
