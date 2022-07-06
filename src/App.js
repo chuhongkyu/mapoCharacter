@@ -53,7 +53,6 @@ body {
 	line-height: 1;
   font-family: "Maple_story";
   overflow-x: hidden;
-  background: ${(prop) => prop.theme.bgColor};
   position: relative;
 }
 h1{

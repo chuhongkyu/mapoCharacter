@@ -10,16 +10,22 @@ const Wrapper = styled.section`
   width: 100%;
   overflow-x: hidden;
 `;
+const BackGround = styled.section`
+  width: 100%;
+  background: ${(prop) => prop.theme.bgColor};
+`;
 
 const Home = () => {
   return (
     <Wrapper>
       <NavBar />
       <FirstSection />
-      <Introduction />
-      <Illustration />
-      <Letter />
-      <Footer />
+      <BackGround>
+        <Introduction />
+        <Illustration />
+        <Letter />
+        <Footer />
+      </BackGround>
     </Wrapper>
   );
 };
