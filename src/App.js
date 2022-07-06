@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Introduction from "./pages/Introduction";
+import CreatePattern from "./components/CreatePattern";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -50,10 +50,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   width: 100%;
-  background: ${(prop) => prop.theme.bgColor};
 	line-height: 1;
   font-family: "Maple_story";
   overflow-x: hidden;
+  position: relative;
 }
 h1{
   font-weight: bold;
@@ -88,6 +88,8 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <CreatePattern />
+      <CreatePattern />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -21,7 +21,6 @@ const Wrapper = styled(motion.div)`
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 80px;
-    height: 50%;
   }
 `;
 
@@ -153,9 +152,9 @@ const NavBar = () => {
           src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
           alt="편지"
         />
-        <NavBtn onClick={onTop}>마포 버디즈 소개</NavBtn>
-        <NavBtn onClick={onMiddle}>버디즈의 하루</NavBtn>
-        <NavBtn onClick={onBottom}>버디레터 신청</NavBtn>
+        <NavBtn onClick={onTop}>마포버디즈</NavBtn>
+        <NavBtn onClick={onMiddle}>하루일과 </NavBtn>
+        <NavBtn onClick={onBottom}>버디레터 </NavBtn>
       </NavBarContainer>
       <ArrowBtn onClick={onTop}>
         <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="top" />
