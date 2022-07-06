@@ -1,23 +1,29 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  float: left;
-`;
-
-const Main_img = styled.img`
-  width: 200px;
-  margin-right: 100px;
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
+  }
+`;
+
+const Main_img = styled.img`
+  width: 400px;
+  height: auto;
+  margin-right: 30px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
   }
 `;
 
@@ -36,18 +42,50 @@ const TextBox = styled.div`
   span {
     padding: 5px 10px;
     margin-bottom: 5px;
+    white-space: nowrap;
   }
   p {
     line-height: 25px;
     margin-bottom: 20px;
   }
-  img {
+  .small_img {
     width: 100px;
+    height: auto;
   }
   div {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+    .small_img {
+      width: 70px;
+      height: auto;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    h4 {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    span {
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+    }
+    p {
+      line-height: 13px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+    .small_img {
+      width: 50px;
+      height: auto;
+    }
   }
 `;
 
@@ -79,7 +117,12 @@ const Character = ({
         </p>
         <div>
           {subImg.map((img, index) => (
-            <img key={index} src={env.PUBLIC_URL + img} alt={index} />
+            <img
+              className="small_img"
+              key={index}
+              src={env.PUBLIC_URL + img}
+              alt={index}
+            />
           ))}
         </div>
       </TextBox>

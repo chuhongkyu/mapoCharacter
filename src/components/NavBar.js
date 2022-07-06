@@ -20,8 +20,7 @@ const Wrapper = styled(motion.div)`
     width: 140px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 100px;
-    height: 50%;
+    width: 80px;
   }
 `;
 
@@ -52,8 +51,8 @@ const NavBarContainer = styled.div`
     }
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 60px;
-    height: 150px;
+    width: 50px;
+    height: 140px;
     img {
       width: 30px;
       top: -10px;
@@ -75,13 +74,13 @@ const NavBtn = styled.span`
   @media ${(props) => props.theme.device.tablet} {
     width: 80px;
     height: 60px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 70px;
     height: 50px;
-    font-size: 5px;
-    font-weight: 400;
+    font-size: 9px;
   }
 `;
 
@@ -153,9 +152,9 @@ const NavBar = () => {
           src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
           alt="편지"
         />
-        <NavBtn onClick={onTop}>마포 버디즈 소개</NavBtn>
-        <NavBtn onClick={onMiddle}>버디즈의 하루</NavBtn>
-        <NavBtn onClick={onBottom}>버디레터 신청</NavBtn>
+        <NavBtn onClick={onTop}>마포버디즈</NavBtn>
+        <NavBtn onClick={onMiddle}>하루일과 </NavBtn>
+        <NavBtn onClick={onBottom}>버디레터 </NavBtn>
       </NavBarContainer>
       <ArrowBtn onClick={onTop}>
         <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="top" />

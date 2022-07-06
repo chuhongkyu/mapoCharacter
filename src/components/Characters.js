@@ -10,12 +10,14 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled(motion.section)`
   width: 100%;
-  height: 60vh;
+  height: 500px;
+  padding: 0px 50px;
   transform-origin: top;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  position: relative;
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
@@ -25,17 +27,40 @@ const Wrapper = styled(motion.section)`
 const Modal = styled.div`
   width: 100%;
   display: flex;
-`;
-
-const ArrowBtn = styled.div`
-  position: relative;
-  z-index: 5;
-  display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const ArrowSvg = styled(motion.svg)``;
+const ArrowBtn = styled(motion.div)`
+  width: 73px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  cursor: pointer;
+  img {
+    width: 12px;
+    height: 21px;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    position: absolute;
+    bottom: -50px;
+    right: 60%;
+  }
+`;
+
+const RightArrowBtn = styled(ArrowBtn)`
+  transform: rotateZ(180deg);
+  @media ${(props) => props.theme.device.mobile} {
+    position: absolute;
+    bottom: -50px;
+    left: 60%;
+  }
+`;
 
 const Variants = {
   initial: {
@@ -71,23 +96,14 @@ const Characters = () => {
   }, [index]);
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
-      <ArrowBtn>
-        <ArrowSvg
-          style={{ marginLeft: 200 }}
-          onClick={onDecrease}
-          width="82"
-          height="148"
-          viewBox="0 0 82 148"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          whileHover={{ stroke: "RGB(48, 48, 48)" }}
-          stroke="rgb(0,0,0)"
-          strokeWidth="15"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <motion.path d="M74 140L8.00001 74L74 8" />
-        </ArrowSvg>
+      <ArrowBtn
+        onClick={onIncrease}
+        whileHover={{
+          backgroundColor: "#FFC143",
+          transition: { duration: 0.5 },
+        }}
+      >
+        <img src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"} alt="left" />
       </ArrowBtn>
 
       <Modal>
@@ -105,24 +121,16 @@ const Characters = () => {
           ) : null
         )}
       </Modal>
-      <ArrowBtn>
-        <ArrowSvg
-          style={{ marginRight: 200, transform: "rotateZ(180deg)" }}
-          onClick={onIncrease}
-          width="82"
-          height="148"
-          viewBox="0 0 82 148"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          whileHover={{ stroke: "RGB(48, 48, 48)" }}
-          stroke="rgb(0,0,0)"
-          strokeWidth="15"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <motion.path d="M74 140L8.00001 74L74 8" />
-        </ArrowSvg>
-      </ArrowBtn>
+
+      <RightArrowBtn
+        onClick={onDecrease}
+        whileHover={{
+          backgroundColor: "#FFC143",
+          transition: { duration: 0.5 },
+        }}
+      >
+        <img src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"} alt="right" />
+      </RightArrowBtn>
     </Wrapper>
   );
 };
