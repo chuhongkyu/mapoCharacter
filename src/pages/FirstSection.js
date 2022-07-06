@@ -18,10 +18,8 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
   @media ${(props) => props.theme.device.tablet} {
-    height: 90%;
   }
   @media ${(props) => props.theme.device.mobile} {
-    height: 50%;
   }
 `;
 
