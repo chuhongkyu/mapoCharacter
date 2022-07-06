@@ -19,6 +19,7 @@ const Wrapper = styled(motion.section)`
   align-items: center;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 `;
 
 const Panel = styled.span`

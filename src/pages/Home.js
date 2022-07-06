@@ -12,6 +12,7 @@ const Wrapper = styled.section`
 const BackGround = styled.section`
   width: 100%;
   background: ${(prop) => prop.theme.bgColor};
+  overflow-x: hidden;
 `;
 
 const Home = () => {

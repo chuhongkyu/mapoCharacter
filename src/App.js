@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import CreatePattern from "./components/CreatePattern";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -88,8 +87,6 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <CreatePattern />
-      <CreatePattern />
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
