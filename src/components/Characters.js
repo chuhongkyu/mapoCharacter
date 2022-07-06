@@ -48,8 +48,8 @@ const ArrowBtn = styled(motion.div)`
   }
   @media ${(props) => props.theme.device.mobile} {
     position: absolute;
-    bottom: -50px;
-    right: 60%;
+    bottom: 20px;
+    right: 55%;
   }
 `;
 
@@ -57,8 +57,8 @@ const RightArrowBtn = styled(ArrowBtn)`
   transform: rotateZ(180deg);
   @media ${(props) => props.theme.device.mobile} {
     position: absolute;
-    bottom: -50px;
-    left: 60%;
+    bottom: 20px;
+    left: 55%;
   }
 `;
 
@@ -114,7 +114,6 @@ const Characters = () => {
               character={intro.character}
               name={intro.name}
               nickname={intro.nickname}
-              hashs={intro.hashs}
               description={intro.description}
               subImg={intro.subImg}
             />

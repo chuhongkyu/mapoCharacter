@@ -23,7 +23,7 @@ const Main_img = styled.img`
   @media ${(props) => props.theme.device.mobile} {
     width: 200px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 0px;
   }
 `;
 
@@ -89,25 +89,13 @@ const TextBox = styled.div`
   }
 `;
 
-const Character = ({
-  character,
-  name,
-  nickname,
-  hashs,
-  description,
-  subImg,
-}) => {
+const Character = ({ character, name, nickname, description, subImg }) => {
   return (
     <Wrapper>
       <Main_img src={env.PUBLIC_URL + character} alt={name} />
       <TextBox>
         <h4>{nickname}</h4>
         <h1>{name}</h1>
-        <div>
-          {hashs.map((hash, index) => (
-            <span key={index}>#{hash}</span>
-          ))}
-        </div>
         <p>
           {description[0]}
           <br />
