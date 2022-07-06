@@ -20,6 +20,12 @@ const Wrapper = styled(motion.section)`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  @media ${(props) => props.theme.device.tablet} {
+    height: 170vh;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    height: 150vh;
+  }
 `;
 
 const Panel = styled.span`
@@ -49,12 +55,25 @@ const Container = styled.div`
   border: 6px solid #362a64;
   border-radius: 20px;
   padding: 70px 100px;
+  @media ${(props) => props.theme.device.tablet} {
+    padding: 70px 100px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    padding: 50px 20px;
+  }
 `;
 
 const Logo = styled(motion.img)`
   width: 100px;
   height: 90px;
   margin-bottom: 50px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 40px;
+  }
 `;
 
 const TextBox = styled.div`
@@ -67,6 +86,20 @@ const TextBox = styled.div`
     font-weight: 300;
     font-size: 32px;
     line-height: 160%;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+    h1 {
+      font-weight: 300;
+      font-size: 27px;
+      line-height: 160%;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    h1 {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 160%;
+    }
   }
 `;
 
@@ -105,6 +138,26 @@ const InputDiv = styled.div`
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
       rgb(209, 213, 219) 0px 0px 0px 1px inset;
   }
+  @media ${(props) => props.theme.device.tablet} {
+    label {
+      font-weight: 800;
+      margin-right: 40px;
+    }
+    input {
+      width: 416px;
+      height: 43px;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    label {
+      font-weight: 800;
+      margin-right: 20px;
+    }
+    input {
+      width: 316px;
+      height: 43px;
+    }
+  }
 `;
 
 const Btn = styled.button`
@@ -113,11 +166,16 @@ const Btn = styled.button`
   background-color: ${(props) => props.theme.yellow};
   font-size: 40px;
   line-height: 160%;
-  width: 370px;
-  height: 80px;
+  padding: 10px 35px;
   font-weight: bold;
   &:hover {
     transform: translateY(-2px);
+  }
+  @media ${(props) => props.theme.device.tablet} {
+    font-size: 35px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    font-size: 30px;
   }
 `;
 
@@ -193,10 +251,19 @@ const LetterBottom = styled.footer`
   }
 
   @media ${(props) => props.theme.device.tablet} {
-    bottom: -100px;
+    bottom: -10px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    bottom: -200px;
+    bottom: -100px;
+    div {
+      padding-bottom: 20px;
+      h5 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
   }
 `;
 

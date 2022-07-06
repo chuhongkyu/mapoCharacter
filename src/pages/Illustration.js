@@ -48,10 +48,6 @@ const IlluBox = styled.div`
   border-radius: 10px;
   display: flex;
   padding: 20px 30px;
-  @media ${(props) => props.theme.device.tablet} {
-  }
-  @media ${(props) => props.theme.device.mobile} {
-  }
   .Illu_title {
     display: flex;
     justify-content: space-between;
@@ -91,6 +87,58 @@ const IlluBox = styled.div`
       }
     }
   }
+  @media ${(props) => props.theme.device.tablet} {
+    padding: 15px 25px;
+    .Illu_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 30px;
+      div {
+        h1 {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 180%;
+        }
+        p {
+          font-size: 11px;
+        }
+      }
+    }
+    .Illu_title2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      margin-left: 30px;
+      div {
+        h1 {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 180%;
+        }
+        p {
+        }
+      }
+    }
+    .Illu_botton {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 140%;
+      color: #c4b7a6;
+      text-align: center;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    padding: 10px 10px;
+    .Illu_title {
+      display: none;
+    }
+    .Illu_title2 {
+      display: none;
+    }
+  }
 `;
 
 const MainImg = styled.div`
@@ -102,8 +150,12 @@ const MainImg = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   @media ${(props) => props.theme.device.tablet} {
+    width: 594px;
+    height: 385px;
   }
   @media ${(props) => props.theme.device.mobile} {
+    width: 394px;
+    height: 185px;
   }
 `;
 
