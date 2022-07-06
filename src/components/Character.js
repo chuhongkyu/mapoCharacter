@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const env = process.env;
@@ -8,13 +9,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
   }
 `;
 
-const Main_img = styled.img`
+const MainImg = styled(motion.img)`
   width: 400px;
   height: auto;
   margin-right: 30px;
@@ -27,7 +29,7 @@ const Main_img = styled.img`
   }
 `;
 
-const TextBox = styled.div`
+const TextBox = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -92,8 +94,24 @@ const TextBox = styled.div`
 const Character = ({ character, name, nickname, description, subImg }) => {
   return (
     <Wrapper>
-      <Main_img src={env.PUBLIC_URL + character} alt={name} />
-      <TextBox>
+      <MainImg
+        initial={{ x: -200, opacity: 0 }}
+        animate={{
+          x: [-200, 0],
+          opacity: 1,
+          transition: { duration: 0.5, delay: 0.5 },
+        }}
+        src={env.PUBLIC_URL + character}
+        alt={name}
+      />
+      <TextBox
+        initial={{ x: 200, opacity: 0 }}
+        animate={{
+          x: [200, 0],
+          opacity: 1,
+          transition: { duration: 0.5, delay: 0.5 },
+        }}
+      >
         <h4>{nickname}</h4>
         <h1>{name}</h1>
         <p>

@@ -146,7 +146,7 @@ const TextBox = styled.div`
   }
 `;
 
-const Btn = styled.span`
+const Btn = styled(motion.span)`
   width: 370px;
   height: 80px;
   font-weight: 700;
@@ -154,8 +154,8 @@ const Btn = styled.span`
   line-height: 160%;
   border-radius: 50px;
   background-color: ${(props) => props.theme.yellow};
-  border: 3px solid #150b05;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* border: 3px solid #150b05;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,67 +192,73 @@ const Symbol = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-  .symbol_item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 50px;
-    flex-direction: column;
-    width: 232px;
-    height: 307px;
-    border: 3px solid #ffc100;
-    border-radius: 150px 150px 20px 20px;
-    position: relative;
-    &:last-child {
-      margin-right: 0;
-    }
-    img {
-    }
-    .symbol_name {
-      position: absolute;
-      bottom: 0;
-      margin-top: 10px;
-      width: 100%;
-      background: #ffc100;
-      border-bottom-right-radius: 10%;
-      border-bottom-left-radius: 10%;
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 160%;
-      text-align: center;
-    }
-  }
-
   @media ${(props) => props.theme.device.tablet} {
     margin-top: 180px;
-    .symbol_item {
-      width: 232px;
-      height: 307px;
-      margin-right: 20px;
-      img {
-        width: 100px;
-        height: auto;
-      }
-    }
   }
   @media ${(props) => props.theme.device.mobile} {
     margin-top: 100px;
-    .symbol_item {
+  }
+`;
+
+const SymbolItem = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  flex-direction: column;
+  width: 232px;
+  height: 307px;
+  border: 3px solid #ffc100;
+  border-radius: 150px 150px 20px 20px;
+  position: relative;
+  user-select: none;
+  &:last-child {
+    margin-right: 0;
+  }
+  img {
+    -webkit-user-drag: none;
+  }
+  .symbol_name {
+    position: absolute;
+    bottom: 0;
+    margin-top: 10px;
+    width: 100%;
+    background: #ffc100;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 160%;
+    text-align: center;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+    width: 232px;
+    height: 307px;
+    margin-right: 20px;
+    img {
       width: 100px;
-      height: 150px;
-      margin-right: 7px;
-      img {
-        width: 50px;
-        height: auto;
-      }
-      .symbol_name {
-        font-weight: 300;
-        font-size: 12px;
-        text-align: center;
-      }
+      height: auto;
+    }
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 120px;
+    height: 180px;
+    margin-right: 10px;
+    img {
+      width: 50px;
+      height: auto;
+    }
+    .symbol_name {
+      font-weight: 300;
+      font-size: 12px;
+      text-align: center;
     }
   }
 `;
+
+const Variants = {
+  whileHover: { scale: 1.1 },
+};
 
 const Introduction = () => {
   const [open, setOpen] = useState(false);
@@ -283,11 +289,23 @@ const Introduction = () => {
             <h3>편지를 전하는 '동물 우체부'예요!</h3>
           </TextBox>
           {!open ? (
-            <Btn onClick={onClick}>상세보기</Btn>
+            <Btn
+              whileHover={{ y: -5, backgroundColor: "#FFF082" }}
+              whileTap={{ backgroundColor: "#FFF082" }}
+              onClick={onClick}
+            >
+              상세보기
+            </Btn>
           ) : (
             <>
               <Characters />
-              <Btn onClick={onClick}>접기</Btn>
+              <Btn
+                whileHover={{ y: -5, backgroundColor: "#FFF082" }}
+                whileTap={{ backgroundColor: "#FFF082" }}
+                onClick={onClick}
+              >
+                접기
+              </Btn>
             </>
           )}
           <div className="post_footer"></div>
@@ -336,27 +354,27 @@ const Introduction = () => {
             <h1>버디 레터</h1>
           </div>
           <Symbol>
-            <div className="symbol_item">
+            <SymbolItem variants={Variants} whileHover="whileHover">
               <img
                 src={env.PUBLIC_URL + "/assets/intro/Re-leaf.png"}
                 alt="속식 단풍잎"
               />
               <div className="symbol_name">소식 단풍잎</div>
-            </div>
-            <div className="symbol_item">
+            </SymbolItem>
+            <SymbolItem variants={Variants} whileHover="whileHover">
               <img
                 src={env.PUBLIC_URL + "/assets/intro/Re-hope.png"}
                 alt="희망 결정체 "
               />
               <div className="symbol_name">희망 결정체</div>
-            </div>
-            <div className="symbol_item">
+            </SymbolItem>
+            <SymbolItem variants={Variants} whileHover="whileHover">
               <img
                 src={env.PUBLIC_URL + "/assets/intro/Re-hope.png"}
                 alt="캐릭터"
               />
               <div className="symbol_name">행운의 깃털</div>
-            </div>
+            </SymbolItem>
           </Symbol>
           <TextBox>
             <h3>마포 버디즈가 전하는 편지들에는</h3>

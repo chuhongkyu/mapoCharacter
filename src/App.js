@@ -81,6 +81,15 @@ a,ul,li{
   text-decoration: none;
   color: inherit;
 }
+::-moz-selection {
+  background: ${(prop) => prop.theme.yellow};
+  color: ${(prop) => prop.theme.white.light};
+}
+
+::selection {
+  background: ${(prop) => prop.theme.yellow};
+   color: ${(prop) => prop.theme.white.light};
+}
 `;
 
 function App() {

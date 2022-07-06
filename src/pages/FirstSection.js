@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const env = process.env;
@@ -23,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const MoveBtn = styled.div`
+const MoveBtn = styled(motion.div)`
   position: absolute;
   bottom: 15px;
   width: 258px;
@@ -37,6 +38,7 @@ const MoveBtn = styled.div`
   font-weight: 700;
   font-size: 25px;
   line-height: 160%;
+  user-select: none;
   span {
     width: 50px;
     height: 50px;
@@ -47,9 +49,6 @@ const MoveBtn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  &:hover {
-    transform: translateY(-5px);
   }
   @media ${(props) => props.theme.device.tablet} {
     width: 200px;
@@ -103,6 +102,25 @@ const Sns_Box = styled.div`
   }
 `;
 
+const Variants = {
+  initial: {
+    y: 10,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+  whileHover: {
+    y: -10,
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+};
+
 const FirstSection = () => {
   const onClick = () => {
     window.scrollTo({ top: 1100, behavior: "smooth" });
@@ -110,7 +128,13 @@ const FirstSection = () => {
   return (
     <Wrapper>
       <Container>
-        <MoveBtn onClick={onClick}>
+        <MoveBtn
+          variants={Variants}
+          initial="initial"
+          animate="animate"
+          whileHover="whileHover"
+          onClick={onClick}
+        >
           버디즈 보러가기
           <span>
             <img src={env.PUBLIC_URL + "/assets/icons/down.png"} alt="down" />

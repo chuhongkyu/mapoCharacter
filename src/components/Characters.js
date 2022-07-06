@@ -18,6 +18,7 @@ const Wrapper = styled(motion.section)`
   align-items: center;
   overflow: hidden;
   position: relative;
+  overflow-y: hidden;
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
@@ -65,9 +66,11 @@ const RightArrowBtn = styled(ArrowBtn)`
 const Variants = {
   initial: {
     scaleY: 0,
+    opacity: 0,
   },
   animate: {
     scaleY: 1,
+    opacity: 1,
     transition: {
       duration: 0.5,
     },
