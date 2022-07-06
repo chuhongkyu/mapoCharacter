@@ -40,6 +40,7 @@ const ArrowBtn = styled(motion.div)`
   justify-content: center;
   align-items: center;
   background-color: #e6e6e6;
+  user-select: none;
   cursor: pointer;
   img {
     width: 12px;
@@ -56,6 +57,7 @@ const ArrowBtn = styled(motion.div)`
 
 const RightArrowBtn = styled(ArrowBtn)`
   transform: rotateZ(180deg);
+  user-select: none;
   @media ${(props) => props.theme.device.mobile} {
     position: absolute;
     bottom: 20px;

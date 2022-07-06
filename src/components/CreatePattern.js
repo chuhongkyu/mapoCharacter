@@ -8,6 +8,7 @@ const Pattern = styled.img`
   width: 20px;
   position: absolute;
   z-index: 5;
+  display: flex;
 `;
 
 const CreatePattern = () => {
@@ -18,6 +19,7 @@ const CreatePattern = () => {
   useEffect(() => {
     randomPosition();
   }, []);
+
   return (
     <>
       <Pattern
