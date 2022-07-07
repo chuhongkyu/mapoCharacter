@@ -5,13 +5,13 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Anim = keyframes`
 0%{
-  transform: translateY(0);
+  transform: rotateZ(20deg) translateY(0);
 }
 50%{
-  transform: translateY(-5px);
+  transform: rotateZ(20deg) translateY(-5px);
 }
 100%{
-  transform: translateY(0);
+  transform: rotateZ(20deg) translateY(0);
 }
 `;
 
@@ -22,18 +22,22 @@ const Pattern = styled.img`
   z-index: 0;
   display: flex;
   animation: ${Anim} 4s ease-in-out infinite;
+  transform: rotateZ(20deg);
   transition: 0.5s;
 `;
 
 const CreatePattern = ({ alt, icon }) => {
   const randomX = Math.floor(Math.random() * 100);
-  const randomY = Math.floor(Math.random() * 200);
+  const randomY = Math.floor(Math.random() * 160);
   const positionX = randomX + "%";
   const positionY = randomY + "%";
   return (
     <>
       <Pattern
-        style={{ marginLeft: positionX, marginTop: positionY }}
+        style={{
+          marginLeft: positionX,
+          marginTop: positionY,
+        }}
         src={env.PUBLIC_URL + icon}
         alt={alt}
       />
