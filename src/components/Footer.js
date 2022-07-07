@@ -27,6 +27,7 @@ const LetterBottom = styled.div`
     flex-direction: column;
     background-color: ${(props) => props.theme.purple};
     color: ${(props) => props.theme.white.light};
+    white-space: nowrap;
     h5 {
       letter-spacing: 0.6em;
       font-weight: 300;
@@ -49,14 +50,13 @@ const LetterBottom = styled.div`
       h5 {
         letter-spacing: 0.6em;
         font-weight: 300;
-        font-size: 17px;
+        font-size: 15px;
         line-height: 22px;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
       }
       p {
         font-weight: 300;
-        font-size: 15px;
-        line-height: 22px;
+        font-size: 14px;
       }
     }
   }
