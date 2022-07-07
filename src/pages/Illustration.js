@@ -173,6 +173,12 @@ const Moon = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 const Illustration = () => {

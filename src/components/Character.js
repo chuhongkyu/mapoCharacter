@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {

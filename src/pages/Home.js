@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CreatePattern from "../components/CreatePattern";
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import FirstSection from "./FirstSection";
 import Illustration from "./Illustration";
@@ -14,7 +15,7 @@ const Wrapper = styled.section`
 const BackGround = styled.section`
   width: 100%;
   background: ${(prop) => prop.theme.bgColor};
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 `;
 
@@ -44,6 +45,7 @@ const Home = () => {
         <Introduction />
         <Illustration />
         <Letter />
+        <Footer />
       </BackGround>
     </Wrapper>
   );

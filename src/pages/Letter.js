@@ -13,7 +13,6 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled(motion.section)`
   width: 100%;
-  height: 190vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -21,10 +20,8 @@ const Wrapper = styled(motion.section)`
   position: relative;
   overflow: hidden;
   @media ${(props) => props.theme.device.tablet} {
-    height: 170vh;
   }
   @media ${(props) => props.theme.device.mobile} {
-    height: 150vh;
   }
 `;
 
@@ -214,59 +211,6 @@ const Modal = styled.div`
   }
 `;
 
-const LetterBottom = styled.footer`
-  position: absolute;
-  width: 100%;
-  height: 700px;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  bottom: 0;
-  img {
-    width: 100%;
-    height: auto;
-  }
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 50px;
-    color: ${(props) => props.theme.white.light};
-    h5 {
-      letter-spacing: 0.6em;
-      font-weight: 300;
-      font-size: 20px;
-      line-height: 22px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-weight: 300;
-      font-size: 20px;
-      line-height: 22px;
-    }
-  }
-
-  @media ${(props) => props.theme.device.tablet} {
-    bottom: -10px;
-  }
-  @media ${(props) => props.theme.device.mobile} {
-    bottom: -100px;
-    div {
-      padding-bottom: 20px;
-      h5 {
-        font-size: 15px;
-      }
-      p {
-        font-size: 14px;
-      }
-    }
-  }
-`;
-
 const Letter = () => {
   const [checkMail, setCheckMail] = useState(false);
   const form = useRef();
@@ -379,13 +323,6 @@ const Letter = () => {
           </h3>
         </Modal>
       )}
-      <LetterBottom>
-        <img src={env.PUBLIC_URL + "/assets/page3/Bg_2.png"} alt="전송 완료" />
-        <div>
-          <h5>희망과 소식을 전하는 마포 버디즈</h5>
-          <p>Copyright. Godlifes. All rights reserved.</p>
-        </div>
-      </LetterBottom>
     </Wrapper>
   );
 };
