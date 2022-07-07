@@ -48,15 +48,15 @@ const LetterBottom = styled.div`
     height: 300px;
     div {
       h5 {
-        letter-spacing: 0.6em;
+        letter-spacing: 0.5em;
         font-weight: 300;
-        font-size: 15px;
+        font-size: 12px;
         line-height: 22px;
         margin-bottom: 7px;
       }
       p {
         font-weight: 300;
-        font-size: 14px;
+        font-size: 11px;
       }
     }
   }

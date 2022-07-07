@@ -138,7 +138,7 @@ const InputDiv = styled.div`
     border-radius: 20px;
     width: 516px;
     height: 43px;
-    padding: 5px 10px;
+    padding: 5px 5px 5px 20px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
       rgb(209, 213, 219) 0px 0px 0px 1px inset;
   }
@@ -226,6 +226,22 @@ const Modal = styled.div`
     font-weight: 300;
     color: white;
     line-height: 30px;
+  }
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      margin-top: 50px;
+      color: #ffc100;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 300;
+      color: white;
+      line-height: 30px;
+    }
   }
 `;
 
