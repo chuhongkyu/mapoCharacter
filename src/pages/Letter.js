@@ -38,7 +38,7 @@ const Panel = styled.span`
   @media ${(props) => props.theme.device.mobile} {
     padding: 5px 20px;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 21px;
   }
 `;
 
@@ -56,7 +56,7 @@ const Container = styled.div`
     padding: 70px 100px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    padding: 50px 20px;
+    padding: 30px 15px;
   }
 `;
 
@@ -94,7 +94,7 @@ const TextBox = styled.div`
   @media ${(props) => props.theme.device.mobile} {
     h1 {
       font-weight: 300;
-      font-size: 20px;
+      font-size: 15px;
       line-height: 160%;
     }
   }
@@ -112,6 +112,12 @@ const FormContainer = styled.div`
     align-items: center;
     flex-direction: column;
   }
+  @media ${(props) => props.theme.device.tablet} {
+    margin-top: 40px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    margin-top: 20px;
+  }
 `;
 
 const InputDiv = styled.div`
@@ -124,6 +130,7 @@ const InputDiv = styled.div`
   label {
     font-weight: 800;
     margin-right: 50px;
+    white-space: nowrap;
   }
   input {
     background: #ffffff;
@@ -146,12 +153,14 @@ const InputDiv = styled.div`
     }
   }
   @media ${(props) => props.theme.device.mobile} {
+    justify-content: center;
     label {
+      font-size: 15px;
       font-weight: 800;
-      margin-right: 20px;
+      margin-right: 15px;
     }
     input {
-      width: 316px;
+      width: 266px;
       height: 43px;
     }
   }
@@ -182,13 +191,22 @@ const ErrorBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  margin-bottom: 50px;
   p {
     font-weight: 300;
     font-size: 15px;
     line-height: 160%;
     color: #8a8a8a;
   }
-  margin-bottom: 50px;
+  @media ${(props) => props.theme.device.tablet} {
+    margin-bottom: 40px;
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    margin-bottom: 30px;
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 const Modal = styled.div`

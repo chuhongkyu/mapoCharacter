@@ -37,7 +37,7 @@ const Panel = styled.span`
   @media ${(props) => props.theme.device.mobile} {
     padding: 5px 20px;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 21px;
   }
 `;
 
@@ -131,7 +131,7 @@ const IlluBox = styled.div`
     }
   }
   @media ${(props) => props.theme.device.mobile} {
-    padding: 10px 10px;
+    padding: 5px 5px;
     .Illu_title {
       display: none;
     }
@@ -158,8 +158,8 @@ const MainImg = styled.div`
     height: 385px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 394px;
-    height: 185px;
+    width: 344px;
+    height: 135px;
   }
 `;
 

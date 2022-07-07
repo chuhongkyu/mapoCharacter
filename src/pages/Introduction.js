@@ -35,6 +35,7 @@ const PostBox = styled.div`
     border: 6px solid #7d613b;
     position: relative;
     padding: 50px 0px;
+    white-space: nowrap;
     .post_header {
       position: absolute;
       top: 0;
@@ -73,24 +74,28 @@ const PostBox = styled.div`
         height: auto;
       }
     }
-    h1 {
-      font-weight: 700;
-      font-size: 35px;
-      line-height: 160%;
+    .post_header {
+      h1 {
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 160%;
+      }
     }
   }
   @media ${(props) => props.theme.device.mobile} {
     .post_main {
-      width: 430px;
+      width: 330px;
       .buddies {
-        width: 300px;
+        width: 250px;
         height: auto;
       }
     }
-    h1 {
-      font-weight: 700;
-      font-size: 25px;
-      line-height: 160%;
+    .post_header {
+      h1 {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 100%;
+      }
     }
   }
 `;
@@ -110,19 +115,33 @@ const Shadow = styled.div`
     height: 700px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 430px;
-    height: 520px;
+    width: 330px;
+    height: 460px;
   }
 `;
 
 const LongBong = styled.img`
   position: absolute;
   bottom: -110px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    bottom: -100px;
+    width: 40px;
+    height: auto;
+  }
 `;
 
 const ShortBong = styled.img`
   position: absolute;
   bottom: -110px;
+  @media ${(props) => props.theme.device.tablet} {
+  }
+  @media ${(props) => props.theme.device.mobile} {
+    bottom: -90px;
+    width: 40px;
+    height: auto;
+  }
 `;
 
 const TextBox = styled.div`
@@ -141,7 +160,7 @@ const TextBox = styled.div`
     line-height: 160%;
   }
   @media ${(props) => props.theme.device.mobile} {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 150%;
   }
 `;
@@ -194,7 +213,7 @@ const Symbol = styled.div`
     margin-top: 180px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    margin-top: 100px;
+    margin-top: 70px;
   }
 `;
 
@@ -239,8 +258,8 @@ const SymbolItem = styled(motion.div)`
     }
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 120px;
-    height: 180px;
+    width: 90px;
+    height: 140px;
     margin-right: 10px;
     img {
       width: 50px;
