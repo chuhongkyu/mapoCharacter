@@ -158,8 +158,8 @@ const MainImg = styled.div`
     height: 385px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 344px;
-    height: 135px;
+    width: 335px;
+    height: 215px;
   }
 `;
 

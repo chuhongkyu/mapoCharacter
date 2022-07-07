@@ -22,6 +22,8 @@ const Wrapper = styled(motion.section)`
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
+    height: 300px;
+    padding: 10px 20px;
   }
 `;
 
@@ -49,6 +51,12 @@ const ArrowBtn = styled(motion.div)`
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
+    img {
+      width: 10px;
+      height: 14px;
+    }
+    width: 43px;
+    height: 43px;
     position: absolute;
     bottom: 20px;
     right: 55%;
@@ -118,7 +126,6 @@ const Characters = () => {
               key={intro.id}
               character={intro.character}
               name={intro.name}
-              nickname={intro.nickname}
               description={intro.description}
               subImg={intro.subImg}
             />

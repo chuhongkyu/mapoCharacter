@@ -30,10 +30,10 @@ const Wrapper = styled.section`
   }
   @media ${(props) => props.theme.device.mobile} {
     h1 {
-      font-size: 45px;
+      font-size: 40px;
     }
     h2 {
-      font-size: 25px;
+      font-size: 24px;
     }
   }
 `;

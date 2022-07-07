@@ -35,8 +35,8 @@ const PostBox = styled.div`
     border: 6px solid #7d613b;
     position: relative;
     padding: 50px 0px;
-    white-space: nowrap;
     .post_header {
+      white-space: nowrap;
       position: absolute;
       top: 0;
       width: 100%;
@@ -46,6 +46,12 @@ const PostBox = styled.div`
       justify-content: center;
       align-items: center;
       padding: 15px 0px;
+      white-space: nowrap;
+      h1 {
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 160%;
+      }
     }
     .post_footer {
       position: absolute;
@@ -55,11 +61,7 @@ const PostBox = styled.div`
       border-radius: 5px 5px 15px 15px;
       padding: 15px;
     }
-    h1 {
-      font-weight: 700;
-      font-size: 45px;
-      line-height: 160%;
-    }
+
     .buddies {
       margin-top: 100px;
       width: 668px;
@@ -73,12 +75,12 @@ const PostBox = styled.div`
         width: 500px;
         height: auto;
       }
-    }
-    .post_header {
-      h1 {
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 160%;
+      .post_header {
+        h1 {
+          font-weight: 700;
+          font-size: 35px;
+          line-height: 160%;
+        }
       }
     }
   }
@@ -89,12 +91,12 @@ const PostBox = styled.div`
         width: 250px;
         height: auto;
       }
-    }
-    .post_header {
-      h1 {
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 100%;
+      .post_header {
+        h1 {
+          font-weight: 500;
+          font-size: 30px;
+          line-height: 100%;
+        }
       }
     }
   }
@@ -161,7 +163,6 @@ const TextBox = styled.div`
   }
   @media ${(props) => props.theme.device.mobile} {
     font-size: 15px;
-    line-height: 150%;
   }
 `;
 

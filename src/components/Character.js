@@ -22,7 +22,7 @@ const MainImg = styled(motion.img)`
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
-    width: 200px;
+    width: 145px;
     height: auto;
     margin-right: 0px;
   }
@@ -33,17 +33,9 @@ const TextBox = styled(motion.div)`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  h4 {
-    margin-bottom: 10px;
-  }
   h1 {
     margin-bottom: 10px;
-    font-size: 25px;
-  }
-  span {
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    white-space: nowrap;
+    font-size: 45px;
   }
   p {
     line-height: 25px;
@@ -65,23 +57,14 @@ const TextBox = styled(motion.div)`
     }
   }
   @media ${(props) => props.theme.device.mobile} {
-    h4 {
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
     h1 {
       margin-bottom: 10px;
       font-size: 20px;
     }
-    span {
-      font-size: 12px;
-      padding: 5px 10px;
-      margin-bottom: 5px;
-    }
     p {
       line-height: 13px;
       margin-bottom: 15px;
-      font-size: 12px;
+      font-size: 11px;
     }
     .small_img {
       width: 50px;
@@ -90,7 +73,7 @@ const TextBox = styled(motion.div)`
   }
 `;
 
-const Character = ({ character, name, nickname, description, subImg }) => {
+const Character = ({ character, name, description, subImg }) => {
   return (
     <Wrapper>
       <MainImg
@@ -111,7 +94,6 @@ const Character = ({ character, name, nickname, description, subImg }) => {
           transition: { duration: 0.5, delay: 0.5 },
         }}
       >
-        <h4>{nickname}</h4>
         <h1>{name}</h1>
         <p>
           {description[0]}
