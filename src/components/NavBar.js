@@ -71,6 +71,7 @@ const NavBtn = styled.span`
   align-items: center;
   cursor: pointer;
   white-space: nowrap;
+  user-select: none;
   @media ${(props) => props.theme.device.tablet} {
     width: 80px;
     height: 60px;
@@ -93,6 +94,7 @@ const ArrowBtn = styled.span`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  user-select: none;
   &:hover {
     transform: translateY(-5px);
   }
@@ -132,10 +134,13 @@ const NavBar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const onMiddle = () => {
-    window.scrollTo({ top: 1200, behavior: "smooth" });
+    window.scrollTo({ top: 1100, behavior: "smooth" });
+  };
+  const onMiddleOfMiddle = () => {
+    window.scrollTo({ top: 4000, behavior: "smooth" });
   };
   const onBottom = () => {
-    window.scrollTo({ top: 9999, behavior: "smooth" });
+    window.scrollTo({ top: 7400, behavior: "smooth" });
   };
 
   return (
@@ -152,8 +157,8 @@ const NavBar = () => {
           src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
           alt="편지"
         />
-        <NavBtn onClick={onTop}>마포버디즈</NavBtn>
-        <NavBtn onClick={onMiddle}>하루일과 </NavBtn>
+        <NavBtn onClick={onMiddle}>마포버디즈</NavBtn>
+        <NavBtn onClick={onMiddleOfMiddle}>하루일과 </NavBtn>
         <NavBtn onClick={onBottom}>버디레터 </NavBtn>
       </NavBarContainer>
       <ArrowBtn onClick={onTop}>

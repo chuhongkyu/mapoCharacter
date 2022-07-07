@@ -149,6 +149,10 @@ const MainImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  &:hover {
+    background-position: top center;
+    transition: 0.5s;
+  }
   @media ${(props) => props.theme.device.tablet} {
     width: 594px;
     height: 385px;

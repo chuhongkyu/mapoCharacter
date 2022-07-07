@@ -1,29 +1,45 @@
-import { useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
 
-const Pattern = styled.img`
-  width: 20px;
-  position: absolute;
-  z-index: 5;
+const Anim = keyframes`
+0%{
+  transform: rotateZ(20deg) translateY(0);
+}
+50%{
+  transform: rotateZ(20deg) translateY(-5px);
+}
+100%{
+  transform: rotateZ(20deg) translateY(0);
+}
 `;
 
-const CreatePattern = () => {
-  const randomPosition = () => {
-    Math.floor(Math.random() * 100);
-  };
-  const position = randomPosition() + "%";
-  useEffect(() => {
-    randomPosition();
-  }, []);
+const Pattern = styled.img`
+  width: 40px;
+  height: auto;
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  animation: ${Anim} 4s ease-in-out infinite;
+  transform: rotateZ(20deg);
+  transition: 0.5s;
+`;
+
+const CreatePattern = ({ alt, icon }) => {
+  const randomX = Math.floor(Math.random() * 100);
+  const randomY = Math.floor(Math.random() * 160);
+  const positionX = randomX + "%";
+  const positionY = randomY + "%";
   return (
     <>
       <Pattern
-        style={{ marginLeft: position }}
-        src={env.PUBLIC_URL + "/assets/pattern/1.png"}
-        alt="1"
+        style={{
+          marginLeft: positionX,
+          marginTop: positionY,
+        }}
+        src={env.PUBLIC_URL + icon}
+        alt={alt}
       />
     </>
   );
