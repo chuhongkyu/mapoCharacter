@@ -166,9 +166,10 @@ const MainImg = styled.div`
 const Moon = styled(motion.div)`
   width: 167px;
   height: 167px;
-  position: absolute;
-  background-color: white;
   border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 4px 90px #ffc100;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,6 +179,9 @@ const Illustration = () => {
   const [scrollY, setScrollY] = useState(0);
   const [positionX, setXPosition] = useState(-700);
   const [positionY, setYPosition] = useState(0);
+  const [moon1, setMoon1] = useState("white");
+  const [moon2, setMoon2] = useState("0px 4px 90px #ffc100");
+
   const listener = () => {
     setScrollY(window.pageYOffset);
   };
@@ -191,32 +195,40 @@ const Illustration = () => {
     if (scrollY <= 3600) {
       setYPosition(0);
       setXPosition(-700);
+      setMoon1("white");
+      setMoon2("0px 4px 90px #ffc100");
     }
     if (scrollY >= 4000) {
       setYPosition(800);
       setXPosition(500);
-      console.log("반달");
+      setMoon1("white");
+      setMoon2("0px 4px 90px #ffc100");
     }
     if (scrollY >= 4700) {
       setYPosition(1350);
       setXPosition(850);
-      console.log("달");
+      setMoon1("white");
+      setMoon2("0px 4px 90px #ffc100");
     }
-    if (scrollY >= 5200) {
+    if (scrollY >= 5300) {
       setYPosition(1950);
-      setXPosition(600);
-      console.log("초승달");
+      setXPosition(700);
+      setMoon1("white");
+      setMoon2("0px 4px 80px #AA5D1D");
     }
     if (scrollY >= 6020) {
-      setYPosition(2300);
-      setXPosition(500);
-      console.log("달");
+      setYPosition(2350);
+      setXPosition(410);
+      setMoon1("transparent");
+      setMoon2("50px 10px 1px 0px white");
+      console.log("초승달");
     }
     if (scrollY >= 6230) {
       setYPosition(3000);
       setXPosition(0);
+      setMoon1("transparent");
+      setMoon2("30px 10px 1px 0 white");
     } else {
-      console.log("헷");
     }
   }, [scrollY]);
   return (
@@ -224,10 +236,12 @@ const Illustration = () => {
       <Moon
         initial={{ y: 0, x: -700 }}
         animate={{
-          y: positionY,
           x: positionX,
-          transition: { duration: 1.5 },
+          y: positionY,
+          backgroundColor: moon1,
+          boxShadow: moon2,
         }}
+        transition={{ duration: 1.5 }}
       >
         {scrollY}
       </Moon>

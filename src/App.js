@@ -88,7 +88,7 @@ a,ul,li{
 
 ::selection {
   background: ${(prop) => prop.theme.yellow};
-   color: ${(prop) => prop.theme.white.light};
+  color: ${(prop) => prop.theme.white.light};
 }
 `;
 

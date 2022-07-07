@@ -24,6 +24,7 @@ const Pattern = styled.img`
   animation: ${Anim} 4s ease-in-out infinite;
   transform: rotateZ(20deg);
   transition: 0.5s;
+  user-select: none;
 `;
 
 const CreatePattern = ({ alt, icon }) => {

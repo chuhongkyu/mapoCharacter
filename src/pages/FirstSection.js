@@ -26,6 +26,7 @@ const Container = styled.div`
 
 const MoveBtn = styled(motion.div)`
   position: absolute;
+  z-index: 50;
   bottom: 15px;
   width: 258px;
   height: 76px;

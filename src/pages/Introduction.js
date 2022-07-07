@@ -154,8 +154,6 @@ const Btn = styled(motion.span)`
   line-height: 160%;
   border-radius: 50px;
   background-color: ${(props) => props.theme.yellow};
-  /* border: 3px solid #150b05;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -290,6 +288,11 @@ const Introduction = () => {
           </TextBox>
           {!open ? (
             <Btn
+              animate={{
+                y: [0, -5, 0],
+                backgroundColor: ["#FFC143", "#FFF082", "#FFC143"],
+                transition: { repeatDelay: 2, repeat: Infinity },
+              }}
               whileHover={{ y: -5, backgroundColor: "#FFF082" }}
               whileTap={{ backgroundColor: "#FFF082" }}
               onClick={onClick}
