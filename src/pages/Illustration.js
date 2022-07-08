@@ -141,7 +141,7 @@ const IlluBox = styled.div`
   }
 `;
 
-const MainImg = styled.div`
+const MainImg = styled(motion.div)`
   width: 694px;
   height: 485px;
   border: 3px solid #7d613b;
@@ -149,10 +149,6 @@ const MainImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  &:hover {
-    background-position: top center;
-    transition: 0.5s;
-  }
   @media ${(props) => props.theme.device.tablet} {
     width: 594px;
     height: 385px;
@@ -270,18 +266,24 @@ const Illustration = () => {
           <h2 className="Illu_botton">지각 위기..</h2>
         </div>
         <MainImg
+          initial={{ backgroundSize: "100%" }}
+          whileHover={{ backgroundSize: "107%" }}
+          transition={{ duration: 0.5 }}
           style={{
             backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/01.jpg)`,
           }}
-        ></MainImg>
+        />
       </IlluBox>
 
       <IlluBox style={{ transform: "rotateZ(-2deg)" }}>
         <MainImg
+          initial={{ backgroundSize: "100%" }}
+          whileHover={{ backgroundSize: "107%" }}
+          transition={{ duration: 0.5 }}
           style={{
             backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/02.jpg)`,
           }}
-        ></MainImg>
+        />
         <div className="Illu_title2">
           <div>
             <h1>오전 근무</h1>
@@ -300,10 +302,13 @@ const Illustration = () => {
           <h2 className="Illu_botton">식후 운동 좋아</h2>
         </div>
         <MainImg
+          initial={{ backgroundSize: "100%" }}
+          whileHover={{ backgroundSize: "107%" }}
+          transition={{ duration: 0.5 }}
           style={{
             backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/03.jpg)`,
           }}
-        ></MainImg>
+        />
       </IlluBox>
 
       <IlluBox style={{ transform: "rotateZ(-2deg)" }}>
@@ -319,10 +324,13 @@ const Illustration = () => {
 
       <IlluBox style={{ transform: "rotate(2.39deg)" }}>
         <MainImg
+          initial={{ backgroundSize: "100%" }}
+          whileHover={{ backgroundSize: "107%" }}
+          transition={{ duration: 0.5 }}
           style={{
             backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/05.jpg)`,
           }}
-        ></MainImg>
+        />
         <div className="Illu_title2">
           <div>
             <h1>퇴근 이후</h1>

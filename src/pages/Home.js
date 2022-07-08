@@ -43,7 +43,7 @@ const Home = () => {
       <BackGround>
         {makePattern()}
         <Introduction />
-        <Illustration />
+        <Illustration name="Ill" />
         <Letter />
         <Footer />
       </BackGround>

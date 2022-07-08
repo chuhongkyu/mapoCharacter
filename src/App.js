@@ -53,6 +53,7 @@ body {
   font-family: "Maple_story";
   overflow-x: hidden;
   position: relative;
+  scroll-behavior: smooth;
 }
 h1{
   font-weight: bold;

@@ -309,9 +309,9 @@ const Introduction = () => {
           {!open ? (
             <Btn
               animate={{
-                y: [0, -5, 0],
+                y: [0, -7, 0],
                 backgroundColor: ["#FFC143", "#FFF082", "#FFC143"],
-                transition: { repeatDelay: 2, repeat: Infinity },
+                transition: { repeatDelay: 1, repeat: Infinity },
               }}
               whileHover={{ y: -5, backgroundColor: "#FFF082" }}
               whileTap={{ backgroundColor: "#FFF082" }}
