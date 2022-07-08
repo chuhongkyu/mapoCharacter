@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SubTitle from "../components/SubTitle";
+import FireCracker from "../components/FireCracker";
 
 const YOUR_SERVICE_ID = "service_rpllskw";
 const YOUR_TEMPLATE_ID = "template_fq3wg3f";
@@ -348,6 +349,7 @@ const Letter = () => {
         </Container>
       ) : (
         <Modal>
+          <FireCracker />
           <img src={env.PUBLIC_URL + "/assets/dongeun.png"} alt="전송 완료" />
           <h1>버디레터 배달 완료!</h1>
           <h3>
