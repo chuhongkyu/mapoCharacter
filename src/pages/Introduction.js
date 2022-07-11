@@ -14,6 +14,9 @@ const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   padding: 100px 0px;
+  background-image: url("${env.PUBLIC_URL}/assets/pattern/bg_patten.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   @media ${(props) => props.theme.device.tablet} {
     padding: 70px 0px;
   }

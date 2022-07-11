@@ -19,29 +19,12 @@ const BackGround = styled.section`
   position: relative;
 `;
 
-const BIG_PATTERN = "/assets/pattern/1.png";
-const SMALL_PATTERN = "/assets/pattern/2.png";
-
 const Home = () => {
-  const makePattern = () => {
-    const pattern = [];
-    for (let i = 0; i <= 40; i++) {
-      pattern.push(
-        <CreatePattern
-          key={i}
-          alt={i}
-          icon={i % 2 === 0 ? BIG_PATTERN : SMALL_PATTERN}
-        />
-      );
-    }
-    return pattern;
-  };
   return (
     <Wrapper>
       <NavBar />
       <FirstSection />
       <BackGround>
-        {makePattern()}
         <Introduction />
         <Illustration name="Ill" />
         <Letter />

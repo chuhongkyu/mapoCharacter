@@ -12,9 +12,9 @@ const Wrapper = styled.section`
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  box-shadow: rgba(255, 240, 130, 0.5) 0px -30px 16px 0px inset;
   background-image: url("${env.PUBLIC_URL}/assets/page1/bg.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center top;
   display: flex;
   justify-content: center;
@@ -76,6 +76,18 @@ const MoveBtn = styled(motion.div)`
       }
     }
   }
+`;
+const BoxContainer = styled.div`
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    180deg,
+    #fff082 16.15%,
+    rgba(255, 240, 130, 0) 100%
+  );
+  transform: rotate(-180deg);
+  position: absolute;
+  bottom: 0;
 `;
 
 const SnsBox = styled.div`
@@ -153,6 +165,7 @@ const FirstSection = () => {
             <img src={env.PUBLIC_URL + "/assets/icons/down.png"} alt="down" />
           </span>
         </MoveBtn>
+        <BoxContainer></BoxContainer>
         <SnsBox>
           <a target="blank_" href="https://ko-kr.facebook.com/mapoguoffice">
             <SnsSvg
