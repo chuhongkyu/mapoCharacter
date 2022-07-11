@@ -44,7 +44,7 @@ const TextBox = styled.div`
   justify-content: center;
   align-items: center;
   .stroke {
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 3px #000;
   }
 `;
 
