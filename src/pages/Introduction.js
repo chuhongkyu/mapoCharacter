@@ -58,20 +58,21 @@ const PostBox = styled.div`
       bottom: 0;
       width: 100%;
       background: #ffead2;
-      border-radius: 5px 5px 15px 15px;
+      border-radius: 5px 5px 10px 10px;
       padding: 15px;
     }
 
     .buddies {
-      margin-top: 100px;
+      margin-top: 120px;
       width: 668px;
       height: 276px;
     }
   }
   @media ${(props) => props.theme.device.tablet} {
     .post_main {
-      width: 800px;
+      width: 700px;
       .buddies {
+        margin-top: 100px;
         width: 500px;
         height: auto;
       }
@@ -88,6 +89,7 @@ const PostBox = styled.div`
     .post_main {
       width: 330px;
       .buddies {
+        margin-top: 50px;
         width: 250px;
         height: auto;
       }
@@ -104,7 +106,7 @@ const PostBox = styled.div`
 
 const Shadow = styled.div`
   width: 1005px;
-  height: 800px;
+  height: 870px;
   background: #ebc278;
   border: 6px solid #7d613b;
   border-radius: 60px 60px 15px 15px;
@@ -113,8 +115,8 @@ const Shadow = styled.div`
   left: 10px;
   z-index: -1;
   @media ${(props) => props.theme.device.tablet} {
-    width: 800px;
-    height: 700px;
+    width: 700px;
+    height: 750px;
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 330px;
@@ -197,10 +199,12 @@ const MapBox = styled.img`
   align-items: center;
   width: 90%;
   height: auto;
-  margin-top: 50px;
+  margin-top: 140px;
   @media ${(props) => props.theme.device.tablet} {
+    margin-top: 120px;
   }
   @media ${(props) => props.theme.device.mobile} {
+    margin-top: 60px;
   }
 `;
 
@@ -209,7 +213,8 @@ const Symbol = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 180px;
+  margin-bottom: 20px;
   @media ${(props) => props.theme.device.tablet} {
     margin-top: 180px;
   }
@@ -270,6 +275,8 @@ const SymbolItem = styled(motion.div)`
       font-weight: 300;
       font-size: 12px;
       text-align: center;
+      border-bottom-right-radius: 2%;
+      border-bottom-left-radius: 2%;
     }
   }
 `;
@@ -368,7 +375,7 @@ const Introduction = () => {
             alt="bong2"
           />
         </div>
-        <Shadow style={{ bottom: -15 }}></Shadow>
+        <Shadow style={{ bottom: -15, transform: "rotateZ(-0.5deg)" }}></Shadow>
       </PostBox>
 
       <PostBox style={{ zIndex: 2, transform: "rotateZ(0.5deg)" }}>
@@ -399,13 +406,13 @@ const Introduction = () => {
               <div className="symbol_name">행운의 깃털</div>
             </SymbolItem>
           </Symbol>
-          <TextBox>
+          <TextBox style={{ marginBottom: 90 }}>
             <h3>마포 버디즈가 전하는 편지들에는</h3>
             <h3>희망과 소식, 그리고 행운이 담겨있어요!</h3>
           </TextBox>
           <div className="post_footer"></div>
         </div>
-        <Shadow style={{ bottom: -17, transform: "rotateZ(-1.5deg)" }}></Shadow>
+        <Shadow style={{ bottom: -20, transform: "rotateZ(-1.5deg)" }}></Shadow>
       </PostBox>
     </Wrapper>
   );

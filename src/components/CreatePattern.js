@@ -30,7 +30,7 @@ const Pattern = styled.img`
 const CreatePattern = ({ alt, icon }) => {
   const randomX = Math.floor(Math.random() * 90);
   const randomY = Math.floor(Math.random() * 180);
-  const positionX = randomX + "px";
+  const positionX = randomX + "%";
   const positionY = randomY + "%";
   return (
     <>

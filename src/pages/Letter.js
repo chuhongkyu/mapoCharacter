@@ -28,7 +28,7 @@ const Wrapper = styled(motion.section)`
 
 const Panel = styled.span`
   text-align: center;
-  padding: 5px 60px;
+  padding: 5px 100px;
   font-weight: 300;
   font-size: 32px;
   line-height: 160%;
@@ -52,7 +52,7 @@ const Container = styled.div`
   background-color: #ffffff;
   border: 6px solid #362a64;
   border-radius: 20px;
-  padding: 70px 100px;
+  padding: 80px 190px;
   @media ${(props) => props.theme.device.tablet} {
     padding: 70px 100px;
   }
@@ -168,13 +168,15 @@ const InputDiv = styled.div`
 `;
 
 const Btn = styled.button`
+  font-family: "Maple_story";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
   border-style: none;
   border-radius: 50px;
   background-color: ${(props) => props.theme.yellow};
-  font-size: 40px;
   line-height: 160%;
-  padding: 10px 35px;
-  font-weight: bold;
+  padding: 10px 80px;
   &:hover {
     transform: translateY(-2px);
   }
@@ -283,9 +285,9 @@ const Letter = () => {
   return (
     <Wrapper>
       <SubTitle
-        title={"버디레터 신청하기"}
+        title={"버디레터 이벤트"}
         bColor={"#FFC700"}
-        sub={"버디레터 이벤트"}
+        sub={"버디레터 신청하기"}
         sColor={"#FFFFFF"}
         stroke={true}
       />
