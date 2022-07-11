@@ -25,7 +25,7 @@ const SMALL_PATTERN = "/assets/pattern/2.png";
 const Home = () => {
   const makePattern = () => {
     const pattern = [];
-    for (let i = 0; i <= 50; i++) {
+    for (let i = 0; i <= 40; i++) {
       pattern.push(
         <CreatePattern
           key={i}
