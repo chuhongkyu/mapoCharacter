@@ -49,6 +49,8 @@ const ArrowBtn = styled(motion.div)`
     height: 21px;
   }
   @media ${(props) => props.theme.device.tablet} {
+    width: 50px;
+    height: 48px;
   }
   @media ${(props) => props.theme.device.mobile} {
     img {
@@ -67,6 +69,10 @@ const RightArrowBtn = styled(ArrowBtn)`
   transform: rotateZ(180deg);
   user-select: none;
   @media ${(props) => props.theme.device.mobile} {
+    img {
+      width: 10px;
+      height: 14px;
+    }
     position: absolute;
     bottom: 20px;
     left: 55%;
@@ -110,7 +116,7 @@ const Characters = () => {
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
       <ArrowBtn
-        onClick={onIncrease}
+        onClick={onDecrease}
         whileHover={{
           backgroundColor: "#FFC143",
           transition: { duration: 0.5 },
@@ -126,6 +132,9 @@ const Characters = () => {
               key={intro.id}
               character={intro.character}
               name={intro.name}
+              nickName={intro.nickname}
+              color={intro.color}
+              hash={intro.hashs}
               description={intro.description}
               subImg={intro.subImg}
             />
@@ -134,7 +143,7 @@ const Characters = () => {
       </Modal>
 
       <RightArrowBtn
-        onClick={onDecrease}
+        onClick={onIncrease}
         whileHover={{
           backgroundColor: "#FFC143",
           transition: { duration: 0.5 },

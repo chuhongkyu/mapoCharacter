@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   @media ${(props) => props.theme.device.tablet} {
   }
   @media ${(props) => props.theme.device.mobile} {
+    margin-bottom: 50px;
   }
 `;
 
@@ -20,6 +21,9 @@ const MainImg = styled(motion.img)`
   height: auto;
   margin-right: 30px;
   @media ${(props) => props.theme.device.tablet} {
+    width: 300px;
+    height: auto;
+    margin-right: 0px;
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 145px;
@@ -34,23 +38,47 @@ const TextBox = styled(motion.div)`
   align-items: flex-start;
   flex-direction: column;
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size: 45px;
   }
-  p {
+  h5 {
+    font-size: 16px;
+    font-weight: bold;
     line-height: 25px;
-    margin-bottom: 20px;
+  }
+  p {
+    font-size: 15px;
+    line-height: 25px;
   }
   .small_img {
     width: 100px;
     height: auto;
   }
   div {
+    line-height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    span {
+      white-space: nowrap;
+      font-size: 16px;
+      color: #ababab;
+      margin-right: 5px;
+      margin-bottom: 15px;
+    }
   }
   @media ${(props) => props.theme.device.tablet} {
+    h1 {
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+    h5 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 14px;
+    }
+
     .small_img {
       width: 70px;
       height: auto;
@@ -58,22 +86,45 @@ const TextBox = styled(motion.div)`
   }
   @media ${(props) => props.theme.device.mobile} {
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       font-size: 20px;
+    }
+    h5 {
+      font-size: 11px;
     }
     p {
       line-height: 13px;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       font-size: 11px;
     }
     .small_img {
       width: 50px;
       height: auto;
     }
+    div {
+      line-height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        color: #ababab;
+        font-size: 11px;
+        margin-right: 4px;
+        margin-bottom: 10px;
+      }
+    }
   }
 `;
 
-const Character = ({ character, name, description, subImg }) => {
+const Character = ({
+  character,
+  name,
+  nickName,
+  color,
+  description,
+  subImg,
+  hash,
+}) => {
   return (
     <Wrapper>
       <MainImg
@@ -94,14 +145,18 @@ const Character = ({ character, name, description, subImg }) => {
           transition: { duration: 0.5, delay: 0.5 },
         }}
       >
-        <h1>{name}</h1>
+        <h1 style={{ color: color }}>{name}</h1>
+        <h5>{nickName}</h5>
         <p>
           {description[0]}
           <br />
           {description[1]}
-          <br />
-          {description[2]}
         </p>
+        <div>
+          {hash.map((m) => (
+            <span>#{m}</span>
+          ))}
+        </div>
         <div>
           {subImg.map((img, index) => (
             <img
