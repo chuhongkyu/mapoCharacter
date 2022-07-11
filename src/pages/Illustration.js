@@ -312,12 +312,19 @@ const Illustration = () => {
       <IlluBox style={{ transform: "rotateZ(-2deg)" }}>
         <div className="Illu_title">
           <div>
-            <h1>출근 준비</h1>
-            <p>7:00~8:00</p>
+            <h1>오후 근무</h1>
+            <p>15:00~18:00</p>
           </div>
-          <h2 className="Illu_bottom">지각 위기..</h2>
+          <h2 className="Illu_bottom">열심히 근무중!</h2>
         </div>
-        <MainImg></MainImg>
+        <MainImg
+          initial={{ backgroundSize: "100%" }}
+          whileHover={{ backgroundSize: "107%" }}
+          transition={{ duration: 0.5 }}
+          style={{
+            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/04.jpg)`,
+          }}
+        />
       </IlluBox>
 
       <IlluBox style={{ transform: "rotate(2.39deg)" }}>

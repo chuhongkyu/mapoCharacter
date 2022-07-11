@@ -11,9 +11,9 @@ export const Buddies_data = [
       "결단력으로 한 번 시작한 일은 끝까지 마무리 짓는다.",
     ],
     subImg: [
-      "/assets/sub_img/BM-A.png",
-      "/assets/sub_img/BM-D1.png",
-      "/assets/sub_img/BM-D2.png",
+      "/assets/sub_img/Bred_1.png",
+      "/assets/sub_img/Bred_2.png",
+      "/assets/sub_img/Bred_3.png",
     ],
   },
   {
@@ -28,9 +28,9 @@ export const Buddies_data = [
       "친화력이 좋아 누구든지 친구가 될 수 있다.",
     ],
     subImg: [
-      "/assets/sub_img/BY-A.png",
-      "/assets/sub_img/BY.png",
-      "/assets/sub_img/BY-A.png",
+      "/assets/sub_img/Bunny_1.png",
+      "/assets/sub_img/Bunny_2.png",
+      "/assets/sub_img/Bunny_3.png",
     ],
   },
   {
@@ -45,9 +45,9 @@ export const Buddies_data = [
       "언젠가 랩퍼로 데뷔하는 걸 꿈꾸고 있다.",
     ],
     subImg: [
-      "/assets/sub_img/MC-A.png",
-      "/assets/sub_img/MC.png",
-      "/assets/sub_img/MC.png",
+      "/assets/sub_img/Mc_cunny_1.png",
+      "/assets/sub_img/Mc_cunny_2.png",
+      "/assets/sub_img/Mc_cunny_3.png",
     ],
   },
   {
@@ -62,9 +62,9 @@ export const Buddies_data = [
       "위기에 순간에는 비상한 두뇌를 뽐낸다.",
     ],
     subImg: [
-      "/assets/sub_img/DG-A.png",
-      "/assets/sub_img/DG-A2.png",
-      "/assets/sub_img/DG.png",
+      "/assets/sub_img/Dongeun_1.png",
+      "/assets/sub_img/Dongeun_2.png",
+      "/assets/sub_img/Dongeun_3.png",
     ],
   },
 ];
