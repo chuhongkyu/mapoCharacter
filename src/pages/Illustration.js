@@ -64,7 +64,7 @@ const IlluBox = styled.div`
       }
     }
   }
-  .Illu_botton {
+  .Illu_bottom {
     font-weight: 300;
     font-size: 30px;
     line-height: 140%;
@@ -122,7 +122,7 @@ const IlluBox = styled.div`
         }
       }
     }
-    .Illu_botton {
+    .Illu_bottom {
       font-weight: 300;
       font-size: 15px;
       line-height: 140%;
@@ -244,9 +244,7 @@ const Illustration = () => {
           boxShadow: moon2,
         }}
         transition={{ duration: 1.5 }}
-      >
-        {scrollY}
-      </Moon>
+      ></Moon>
 
       <SubTitle
         title={"버디즈의 하루"}
@@ -263,7 +261,7 @@ const Illustration = () => {
             <h1>출근 준비</h1>
             <p>7:00~8:00</p>
           </div>
-          <h2 className="Illu_botton">지각 위기..</h2>
+          <h2 className="Illu_bottom">지각 위기..</h2>
         </div>
         <MainImg
           initial={{ backgroundSize: "100%" }}
@@ -289,7 +287,7 @@ const Illustration = () => {
             <h1>오전 근무</h1>
             <p>9:00~11:00</p>
           </div>
-          <h2 className="Illu_botton">편지 배달중..!</h2>
+          <h2 className="Illu_bottom">편지 배달중..!</h2>
         </div>
       </IlluBox>
 
@@ -299,7 +297,7 @@ const Illustration = () => {
             <h1>{"점심&휴식"}</h1>
             <p>11:00~14:00</p>
           </div>
-          <h2 className="Illu_botton">식후 운동 좋아</h2>
+          <h2 className="Illu_bottom">식후 운동 좋아</h2>
         </div>
         <MainImg
           initial={{ backgroundSize: "100%" }}
@@ -317,7 +315,7 @@ const Illustration = () => {
             <h1>출근 준비</h1>
             <p>7:00~8:00</p>
           </div>
-          <h2 className="Illu_botton">지각 위기..</h2>
+          <h2 className="Illu_bottom">지각 위기..</h2>
         </div>
         <MainImg></MainImg>
       </IlluBox>
@@ -336,7 +334,7 @@ const Illustration = () => {
             <h1>퇴근 이후</h1>
             <p>7:00~8:00</p>
           </div>
-          <h2 className="Illu_botton">버디즈는 휴식중..</h2>
+          <h2 className="Illu_bottom">버디즈는 휴식중..</h2>
         </div>
       </IlluBox>
     </Wrapper>

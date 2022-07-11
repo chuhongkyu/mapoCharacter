@@ -393,7 +393,7 @@ const Introduction = () => {
             </SymbolItem>
             <SymbolItem variants={Variants} whileHover="whileHover">
               <img
-                src={env.PUBLIC_URL + "/assets/intro/Re-hope.png"}
+                src={env.PUBLIC_URL + "/assets/intro/Re-lucky.png"}
                 alt="캐릭터"
               />
               <div className="symbol_name">행운의 깃털</div>
