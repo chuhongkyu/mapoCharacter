@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -170,6 +171,16 @@ const Character = ({
       </TextBox>
     </Wrapper>
   );
+};
+
+Character.propTypes = {
+  character: PropTypes.string,
+  name: PropTypes.string,
+  nickName: PropTypes.string,
+  color: PropTypes.string,
+  description: PropTypes.array,
+  subImg: PropTypes.array,
+  hash: PropTypes.array,
 };
 
 export default Character;
