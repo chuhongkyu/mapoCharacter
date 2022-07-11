@@ -181,10 +181,11 @@ const Btn = styled.button`
     transform: translateY(-2px);
   }
   @media ${(props) => props.theme.device.tablet} {
-    font-size: 35px;
+    font-size: 30px;
   }
   @media ${(props) => props.theme.device.mobile} {
-    font-size: 30px;
+    font-size: 25px;
+    padding: 10px 70px;
   }
 `;
 
