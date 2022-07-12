@@ -295,7 +295,7 @@ const Letter = () => {
         stroke={true}
       />
       <Panel>이벤트 기간 : 7월 14일 ~7월 19일</Panel>
-      {subscribe ? (
+      {!subscribe ? (
         <Container>
           <Logo
             src={env.PUBLIC_URL + "/assets/icons/letter_logo.png"}
