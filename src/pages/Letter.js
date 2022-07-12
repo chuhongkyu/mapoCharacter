@@ -179,6 +179,7 @@ const Btn = styled.button`
   padding: 10px 80px;
   &:hover {
     transform: translateY(-2px);
+    background-color: #fff082;
   }
   @media ${(props) => props.theme.device.tablet} {
     font-size: 30px;
@@ -343,7 +344,7 @@ const Letter = () => {
               <Btn
                 type={!checkMail ? "button" : "submit"}
                 onClick={!checkMail ? onCheck : null}
-                style={!checkMail ? { color: "gray" } : { color: "black" }}
+                style={!checkMail ? { color: "black" } : { color: "black" }}
               >
                 버디레터 받기
               </Btn>

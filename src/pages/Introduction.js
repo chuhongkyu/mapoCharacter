@@ -109,7 +109,7 @@ const PostBox = styled.div`
 
 const Shadow = styled.div`
   width: 1005px;
-  height: 870px;
+  height: 850px;
   background: #ebc278;
   border: 6px solid #7d613b;
   border-radius: 60px 60px 15px 15px;
@@ -119,7 +119,7 @@ const Shadow = styled.div`
   z-index: -1;
   @media ${(props) => props.theme.device.tablet} {
     width: 700px;
-    height: 750px;
+    height: 700px;
   }
   @media ${(props) => props.theme.device.mobile} {
     width: 330px;
@@ -162,12 +162,18 @@ const TextBox = styled.div`
   font-weight: 700;
   font-size: 30px;
   line-height: 160%;
+  .bottom {
+    margin-bottom: 80px;
+  }
   @media ${(props) => props.theme.device.tablet} {
     font-size: 30px;
     line-height: 160%;
   }
   @media ${(props) => props.theme.device.mobile} {
     font-size: 15px;
+    .bottom {
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -200,7 +206,7 @@ const MapBox = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 80%;
   height: auto;
   margin-top: 140px;
   @media ${(props) => props.theme.device.tablet} {
@@ -219,7 +225,7 @@ const Symbol = styled.div`
   margin-top: 180px;
   margin-bottom: 20px;
   @media ${(props) => props.theme.device.tablet} {
-    margin-top: 180px;
+    margin-top: 160px;
   }
   @media ${(props) => props.theme.device.mobile} {
     margin-top: 70px;
@@ -258,8 +264,8 @@ const SymbolItem = styled(motion.div)`
     text-align: center;
   }
   @media ${(props) => props.theme.device.tablet} {
-    width: 232px;
-    height: 307px;
+    width: 202px;
+    height: 277px;
     margin-right: 20px;
     img {
       width: 100px;
@@ -409,9 +415,9 @@ const Introduction = () => {
               <div className="symbol_name">행운의 깃털</div>
             </SymbolItem>
           </Symbol>
-          <TextBox style={{ marginBottom: 90 }}>
+          <TextBox>
             <h3>마포 버디즈가 전하는 편지들에는</h3>
-            <h3>희망과 소식, 그리고 행운이 담겨있어요!</h3>
+            <h3 className="bottom">희망과 소식, 그리고 행운이 담겨있어요!</h3>
           </TextBox>
           <div className="post_footer"></div>
         </div>
