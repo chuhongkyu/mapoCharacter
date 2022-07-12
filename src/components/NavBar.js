@@ -137,10 +137,13 @@ const NavBar = () => {
     window.scrollTo({ top: 1100, behavior: "smooth" });
   };
   const onMiddleOfMiddle = () => {
-    window.scrollTo({ top: 4000, behavior: "smooth" });
+    window.scrollTo({
+      top: document.body.scrollHeight / 2,
+      behavior: "smooth",
+    });
   };
   const onBottom = () => {
-    window.scrollTo({ top: 7400, behavior: "smooth" });
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   };
 
   return (
