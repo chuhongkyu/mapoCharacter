@@ -46,6 +46,11 @@ const TextBox = styled.div`
   .stroke {
     -webkit-text-stroke: 3px #000;
   }
+  @media ${(props) => props.theme.device.mobile} {
+    .stroke {
+      -webkit-text-stroke: 1px #000;
+    }
+  }
 `;
 
 const SubTitle = ({ title, sub, sColor, bColor, stroke }) => {

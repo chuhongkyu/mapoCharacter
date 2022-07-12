@@ -222,7 +222,7 @@ const Modal = styled.div`
   flex-direction: column;
   h1 {
     font-size: 40px;
-    margin-bottom: 55px;
+    margin-bottom: 20px;
     margin-top: 50px;
     color: #ffc100;
   }
@@ -237,7 +237,7 @@ const Modal = styled.div`
   @media ${(props) => props.theme.device.mobile} {
     h1 {
       font-size: 30px;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
       margin-top: 50px;
       color: #ffc100;
     }
@@ -246,6 +246,7 @@ const Modal = styled.div`
       font-weight: 300;
       color: white;
       line-height: 30px;
+      margin-bottom: 5px;
     }
   }
 `;
@@ -294,7 +295,7 @@ const Letter = () => {
         stroke={true}
       />
       <Panel>이벤트 기간 : 7월 14일 ~7월 19일</Panel>
-      {!subscribe ? (
+      {subscribe ? (
         <Container>
           <Logo
             src={env.PUBLIC_URL + "/assets/icons/letter_logo.png"}
@@ -357,7 +358,6 @@ const Letter = () => {
           <img src={env.PUBLIC_URL + "/assets/dongeun.png"} alt="전송 완료" />
           <h1>버디레터 배달 완료!</h1>
           <h3>
-            {" "}
             버디레터가 발송되었습니다.
             <br /> 이메일을 확인해주세요!
           </h3>

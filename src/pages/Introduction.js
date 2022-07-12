@@ -16,6 +16,7 @@ const Wrapper = styled.section`
   padding: 100px 0px;
   background-image: url("${env.PUBLIC_URL}/assets/pattern/bg_patten.png");
   background-size: contain;
+  background-position: center top;
   background-repeat: no-repeat;
   @media ${(props) => props.theme.device.tablet} {
     padding: 70px 0px;
