@@ -339,7 +339,7 @@ const Illustration = () => {
         <div className="Illu_title2">
           <div>
             <h1>퇴근 이후</h1>
-            <p>7:00~8:00</p>
+            <p>18:00~</p>
           </div>
           <h2 className="Illu_bottom">버디즈는 휴식중..</h2>
         </div>
