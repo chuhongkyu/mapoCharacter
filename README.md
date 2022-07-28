@@ -14,6 +14,9 @@
 - http://chuhongkyu.github.io/mapoCharacter
 - https://www.figma.com/file/hIMeQcFelXFEyDS6ZTRjw7/
 
+<img style="width: 200px; height:auto" src="https://github.com/chuhongkyu/mapoCharacter/blob/main/public/assets/readme/01%20(1).jpg?raw=true" alt="전시_1" />
+<img style="width: 200px; height:auto" src="https://github.com/chuhongkyu/mapoCharacter/blob/main/public/assets/readme/01%20(2).jpg?raw=true" alt="전시_2" />
+
 ---
 
 # 사용 hook
