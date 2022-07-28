@@ -4,8 +4,7 @@
 - 캐릭터: 마포구 캐릭터 디자인팀
 - 일러스트: 김영윤
 - 개발: 추홍규
-- UX/UI: 홍승혜, 김영윤
-- 홍승혜, 김영윤, 박지영, 손수연, 진섭
+- 디자인: 홍승혜, 김영윤
 
 ---
 
@@ -27,3 +26,6 @@
 - 캐릭터 소개
 - 캐릭터 상세 페이지 슬라이드 컨테이너
 - Email.js를 통한 이메일 구독 기능
+
+---
+<img style="width: 300px; height: auto;" src="https://github.com/chuhongkyu/mapoCharacter/blob/main/public/assets/readme/%EC%8A%A4%ED%81%AC%EB%A1%A4_%ED%8E%98%EC%9D%B4%EC%A7%80.png?raw=true" alt="페이지"/>
