@@ -223,7 +223,6 @@ const Illustration = () => {
       setXPosition(410);
       setMoon1("transparent");
       setMoon2("50px 10px 1px 0px white");
-      console.log("초승달");
     }
     if (scrollY >= 6230) {
       setYPosition(3000);

@@ -7,10 +7,10 @@ import FireCracker from "../components/FireCracker";
 
 const YOUR_SERVICE_ID = "service_rpllskw";
 const YOUR_TEMPLATE_ID = "template_fq3wg3f";
-const API = "8COq9QAPVe_wIh5BW";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
+const API = env.REACT_APP_API_KEY;
 
 const Wrapper = styled(motion.section)`
   width: 100%;
