@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import PropTypes from "prop-types";
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -125,7 +121,7 @@ const Character = ({
   description,
   subImg,
   hash,
-}) => {
+}:any) => {
   return (
     <Wrapper>
       <MainImg
@@ -135,7 +131,7 @@ const Character = ({
           opacity: 1,
           transition: { duration: 0.5, delay: 0.5 },
         }}
-        src={env.PUBLIC_URL + character}
+        src={character}
         alt={name}
       />
       <TextBox
@@ -154,33 +150,23 @@ const Character = ({
           {description[1]}
         </p>
         <div>
-          {hash.map((m) => (
+          {hash.map((m:string) => (
             <span>#{m}</span>
           ))}
         </div>
         <div>
-          {subImg.map((img, index) => (
+          {subImg.map((img:string, index:number) => (
             <img
               className="small_img"
               key={index}
-              src={env.PUBLIC_URL + img}
-              alt={index}
+              src={img}
+              alt={index + "sub-img"}
             />
           ))}
         </div>
       </TextBox>
     </Wrapper>
   );
-};
-
-Character.propTypes = {
-  character: PropTypes.string,
-  name: PropTypes.string,
-  nickName: PropTypes.string,
-  color: PropTypes.string,
-  description: PropTypes.array,
-  subImg: PropTypes.array,
-  hash: PropTypes.array,
 };
 
 export default Character;

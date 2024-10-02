@@ -1,7 +1,6 @@
 import styled from "styled-components";
+import { publicUrl } from "../utils/publicUrl";
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const LetterBottom = styled.div`
   width: 100%;
@@ -65,7 +64,7 @@ const LetterBottom = styled.div`
 const Footer = () => {
   return (
     <LetterBottom>
-      <img src={env.PUBLIC_URL + "/assets/page3/Bg_2.png"} alt="footer" />
+      <img src={publicUrl + "/assets/page3/Bg_2.png"} alt="footer" />
       <div>
         <h5>희망과 소식을 전하는 마포 버디즈</h5>
         <p>Copyright. Godlifes. All rights reserved.</p>

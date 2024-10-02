@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -53,25 +52,25 @@ const TextBox = styled.div`
   }
 `;
 
-const SubTitle = ({ title, sub, sColor, bColor, stroke }) => {
+interface IProps{
+  title:string;
+  sub:string;
+  sColor:string;
+  bColor:string;
+  stroke: boolean;
+}
+
+const SubTitle = ({ title, sub, sColor, bColor, stroke }:IProps) => {
   return (
     <Wrapper>
       <h2 style={{ color: sColor }}># {sub}</h2>
       <TextBox>
-        <h1 className={stroke ? "stroke" : null} style={{ color: bColor }}>
+        <h1 className={stroke ? "stroke" : " "} style={{ color: bColor }}>
           {title}
         </h1>
       </TextBox>
     </Wrapper>
   );
-};
-
-SubTitle.propTypes = {
-  title: PropTypes.string,
-  sub: PropTypes.string,
-  sColor: PropTypes.string,
-  bColor: PropTypes.string,
-  stroke: PropTypes.bool,
 };
 
 export default SubTitle;

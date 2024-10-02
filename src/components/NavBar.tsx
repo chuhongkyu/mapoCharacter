@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
+import { publicUrl } from "../utils/publicUrl";
 
 const Wrapper = styled(motion.div)`
   margin-top: 50px;
@@ -149,7 +147,7 @@ const NavBar = () => {
   return (
     <Wrapper variants={Variants} initial="initial" animate="animate">
       <NavBarContainer>
-        <img src={env.PUBLIC_URL + "/assets/page1/Letter.png"} alt="편지" />
+        <img src={publicUrl + "/assets/page1/Letter.png"} alt="편지" />
         <img
           style={{
             top: -10,
@@ -157,7 +155,7 @@ const NavBar = () => {
             transform: "rotateZ(-27deg)",
             zIndex: 97,
           }}
-          src={env.PUBLIC_URL + "/assets/page1/Letter.png"}
+          src={"/assets/page1/Letter.png"}
           alt="편지"
         />
         <NavBtn onClick={onMiddle}>마포버디즈</NavBtn>
@@ -165,7 +163,7 @@ const NavBar = () => {
         <NavBtn onClick={onBottom}>버디레터 </NavBtn>
       </NavBarContainer>
       <ArrowBtn onClick={onTop}>
-        <img src={env.PUBLIC_URL + "/assets/icons/Arrow.svg"} alt="top" />
+        <img src={"/assets/icons/Arrow.svg"} alt="top" />
       </ArrowBtn>
     </Wrapper>
   );

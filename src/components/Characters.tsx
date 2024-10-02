@@ -4,9 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Buddies_data } from "../utils/mapoCharacterData";
 import Character from "./Character";
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
+import { publicUrl } from "../utils/publicUrl";
 
 const Wrapper = styled(motion.section)`
   width: 100%;
@@ -122,7 +120,7 @@ const Characters = () => {
           transition: { duration: 0.5 },
         }}
       >
-        <img src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"} alt="left" />
+        <img src={publicUrl + "/assets/icons/LeftArrow.svg"} alt="left" />
       </ArrowBtn>
 
       <Modal>
@@ -149,7 +147,7 @@ const Characters = () => {
           transition: { duration: 0.5 },
         }}
       >
-        <img src={env.PUBLIC_URL + "/assets/icons/LeftArrow.svg"} alt="right" />
+        <img src={publicUrl + "/assets/icons/LeftArrow.svg"} alt="right" />
       </RightArrowBtn>
     </Wrapper>
   );

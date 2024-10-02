@@ -1,8 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
-
 const Anim = keyframes`
 0%{
   transform: rotateZ(20deg) translateY(0);
@@ -27,7 +24,7 @@ const Pattern = styled.img`
   user-select: none;
 `;
 
-const CreatePattern = ({ alt, icon }) => {
+const CreatePattern = ({ alt, icon }:{alt: string , icon: string }) => {
   const randomX = Math.floor(Math.random() * 90);
   const randomY = Math.floor(Math.random() * 180);
   const positionX = randomX + "%";
@@ -39,7 +36,7 @@ const CreatePattern = ({ alt, icon }) => {
           marginLeft: positionX,
           marginTop: positionY,
         }}
-        src={env.PUBLIC_URL + icon}
+        src={icon}
         alt={alt}
       />
     </>

@@ -1,16 +1,15 @@
-import React, { useRef, useState } from "react";
+import { FormEvent, MouseEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SubTitle from "../components/SubTitle";
 import FireCracker from "../components/FireCracker";
+import { publicUrl } from "../utils/publicUrl";
 
 const YOUR_SERVICE_ID = "service_rpllskw";
 const YOUR_TEMPLATE_ID = "template_fq3wg3f";
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
-const API = env.REACT_APP_API_KEY;
+const API = import.meta.env.VITE_API_KEY;
 
 const Wrapper = styled(motion.section)`
   width: 100%;
@@ -253,14 +252,17 @@ const Modal = styled.div`
 
 const Letter = () => {
   const [checkMail, setCheckMail] = useState(false);
-  const form = useRef();
+  const form = useRef<HTMLFormElement | null>(null);
   const [subscribe, setSubscribe] = useState(false);
-  const onCheck = (e) => {
+
+  const onCheck = (e:MouseEvent<HTMLButtonElement>) => {
     alert("이름과 이메일을 확인해 주세요");
     e.stopPropagation();
   };
-  const sendEmail = (e) => {
+  
+  const sendEmail = (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(form.current != null)
     emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, API).then(
       (result) => {
         console.log(result.text);
@@ -274,11 +276,11 @@ const Letter = () => {
     console.log(form.current);
   };
 
-  const isEmail = (email) => {
+  const isEmail = (email:any) => {
     const emailRegex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     setCheckMail(emailRegex.test(email.target.value));
-    if (checkMail === false) {
+    if (!checkMail) {
       console.log("이메일 오류");
     } else {
       console.log("이메일 확인");
@@ -291,14 +293,14 @@ const Letter = () => {
         title={"버디레터 이벤트"}
         bColor={"#FFC700"}
         sub={"버디레터 신청하기"}
-        sColor={"#FFFFFF"}
+        sColor={"#ffffff"}
         stroke={true}
       />
       <Panel>이벤트 기간 : 7월 14일 ~7월 19일</Panel>
       {!subscribe ? (
         <Container>
           <Logo
-            src={env.PUBLIC_URL + "/assets/icons/letter_logo.png"}
+            src={publicUrl + "/assets/icons/letter_logo.png"}
             alt="Logo"
           />
           <TextBox>
@@ -317,8 +319,8 @@ const Letter = () => {
                   type="text"
                   name="user_name"
                   placeholder="닉네임을 입력해 주세요."
-                  minLength="1"
-                  maxLength="15"
+                  minLength={1}
+                  maxLength={15}
                 />
               </InputDiv>
               <InputDiv>
@@ -344,7 +346,7 @@ const Letter = () => {
 
               <Btn
                 type={!checkMail ? "button" : "submit"}
-                onClick={!checkMail ? onCheck : null}
+                onClick={!checkMail ? onCheck : ()=> {}}
                 style={!checkMail ? { color: "black" } : { color: "black" }}
               >
                 버디레터 받기
@@ -355,7 +357,7 @@ const Letter = () => {
       ) : (
         <Modal>
           <FireCracker />
-          <img src={env.PUBLIC_URL + "/assets/dongeun.png"} alt="전송 완료" />
+          <img src={publicUrl + "/assets/dongeun.png"} alt="전송 완료" />
           <h1>버디레터 배달 완료!</h1>
           <h3>
             버디레터가 발송되었습니다.

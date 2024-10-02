@@ -3,9 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Characters from "../components/Characters";
 import SubTitle from "../components/SubTitle";
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
+import { publicUrl } from "../utils/publicUrl";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -14,7 +12,7 @@ const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   padding: 100px 0px;
-  background-image: url("${env.PUBLIC_URL}/assets/pattern/bg_patten.png");
+  background-image: url("${publicUrl}/assets/pattern/bg_patten.png");
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
@@ -316,7 +314,7 @@ const Introduction = () => {
           </div>
           <img
             className="buddies"
-            src={env.PUBLIC_URL + "/assets/main_img.png"}
+            src={publicUrl + "/assets/main_img.png"}
             alt="캐릭터"
           />
           <TextBox>
@@ -352,12 +350,12 @@ const Introduction = () => {
 
           <LongBong
             style={{ left: 15 }}
-            src={env.PUBLIC_URL + "/assets/pattern/bong1.png"}
+            src={publicUrl + "/assets/pattern/bong1.png"}
             alt="bong1"
           />
           <ShortBong
             style={{ right: 15 }}
-            src={env.PUBLIC_URL + "/assets/pattern/bong2.png"}
+            src={publicUrl + "/assets/pattern/bong2.png"}
             alt="bong2"
           />
         </div>
@@ -368,7 +366,7 @@ const Introduction = () => {
           <div className="post_header ">
             <h1>업무 소개</h1>
           </div>
-          <MapBox src={env.PUBLIC_URL + "/assets/page2/map.png"} alt="Map" />
+          <MapBox src={publicUrl + "/assets/page2/map.png"} alt="Map" />
           <TextBox>
             <h3>버디즈의 주요 업무는 마포구 전역을 돌면서</h3>
             <h3>구민들에게 '편지를 전하기'입니다</h3>
@@ -376,12 +374,12 @@ const Introduction = () => {
           <div className="post_footer"></div>
           <LongBong
             style={{ right: 15 }}
-            src={env.PUBLIC_URL + "/assets/pattern/bong1.png"}
+            src={publicUrl + "/assets/pattern/bong1.png"}
             alt="bong1"
           />
           <ShortBong
             style={{ left: 15 }}
-            src={env.PUBLIC_URL + "/assets/pattern/bong2.png"}
+            src={publicUrl + "/assets/pattern/bong2.png"}
             alt="bong2"
           />
         </div>
@@ -396,21 +394,21 @@ const Introduction = () => {
           <Symbol>
             <SymbolItem variants={Variants} whileHover="whileHover">
               <img
-                src={env.PUBLIC_URL + "/assets/intro/Re-leaf.png"}
+                src={publicUrl + "/assets/intro/Re-leaf.png"}
                 alt="속식 단풍잎"
               />
               <div className="symbol_name">소식 단풍잎</div>
             </SymbolItem>
             <SymbolItem variants={Variants} whileHover="whileHover">
               <img
-                src={env.PUBLIC_URL + "/assets/intro/Re-hope.png"}
+                src={publicUrl + "/assets/intro/Re-hope.png"}
                 alt="희망 결정체 "
               />
               <div className="symbol_name">희망 결정체</div>
             </SymbolItem>
             <SymbolItem variants={Variants} whileHover="whileHover">
               <img
-                src={env.PUBLIC_URL + "/assets/intro/Re-lucky.png"}
+                src={publicUrl + "/assets/intro/Re-lucky.png"}
                 alt="캐릭터"
               />
               <div className="symbol_name">행운의 깃털</div>

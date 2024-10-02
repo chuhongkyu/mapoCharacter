@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
+import { publicUrl } from "../utils/publicUrl";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -12,7 +10,7 @@ const Wrapper = styled.section`
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url("${env.PUBLIC_URL}/assets/page1/bg.jpg");
+  background-image: url("${publicUrl}/assets/page1/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -162,7 +160,7 @@ const FirstSection = () => {
         >
           버디즈 보러가기
           <span>
-            <img src={env.PUBLIC_URL + "/assets/icons/down.png"} alt="down" />
+            <img src={"/assets/icons/down.png"} alt="down" />
           </span>
         </MoveBtn>
         <BoxContainer></BoxContainer>

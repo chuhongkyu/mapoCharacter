@@ -1,11 +1,8 @@
 import { createGlobalStyle } from "styled-components";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import { publicUrl } from "./utils/publicUrl";
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
-
-const FontUrl = `${env.PUBLIC_URL}/assets/fonts/`;
+const FontUrl = `${publicUrl}/assets/fonts/`;
 
 const GlobalStyles = createGlobalStyle`
 @font-face {
@@ -97,11 +94,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <Home/>
     </>
   );
 }

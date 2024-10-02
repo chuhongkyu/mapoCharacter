@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SubTitle from "../components/SubTitle";
 import { motion } from "framer-motion";
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
+import { publicUrl } from "../utils/publicUrl";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -181,7 +179,7 @@ const Illustration = () => {
   const [scrollY, setScrollY] = useState(0);
   const [positionX, setXPosition] = useState(-700);
   const [positionY, setYPosition] = useState(0);
-  const [moon1, setMoon1] = useState("white");
+  const [moon1, setMoon1] = useState("rgba(255, 255, 255, 1)");
   const [moon2, setMoon2] = useState("0px 4px 90px #ffc100");
 
   const listener = () => {
@@ -197,37 +195,37 @@ const Illustration = () => {
     if (scrollY <= 3600) {
       setYPosition(0);
       setXPosition(-700);
-      setMoon1("white");
+      setMoon1("rgba(255, 255, 255, 1)");
       setMoon2("0px 4px 90px #ffc100");
     }
     if (scrollY >= 4000) {
       setYPosition(800);
       setXPosition(500);
-      setMoon1("white");
+      setMoon1("rgba(255, 255, 255, 1)");
       setMoon2("0px 4px 90px #ffc100");
     }
     if (scrollY >= 4700) {
       setYPosition(1350);
       setXPosition(850);
-      setMoon1("white");
+      setMoon1("rgba(255, 255, 255, 1)");
       setMoon2("0px 4px 90px #ffc100");
     }
     if (scrollY >= 5300) {
       setYPosition(1950);
       setXPosition(700);
-      setMoon1("white");
+      setMoon1("rgba(255, 255, 255, 1)");
       setMoon2("0px 4px 80px #AA5D1D");
     }
     if (scrollY >= 6020) {
       setYPosition(2350);
       setXPosition(410);
-      setMoon1("transparent");
+      setMoon1("rgba(255, 255, 255, 0)");
       setMoon2("50px 10px 1px 0px white");
     }
     if (scrollY >= 6230) {
       setYPosition(3000);
       setXPosition(0);
-      setMoon1("transparent");
+      setMoon1("rgba(255, 255, 255, 0)");
       setMoon2("30px 10px 1px 0 white");
     } else {
     }
@@ -267,7 +265,7 @@ const Illustration = () => {
           whileHover={{ backgroundSize: "107%" }}
           transition={{ duration: 0.5 }}
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/01.jpg)`,
+            backgroundImage: `url(${publicUrl}/assets/page3/01.jpg)`,
           }}
         />
       </IlluBox>
@@ -278,7 +276,7 @@ const Illustration = () => {
           whileHover={{ backgroundSize: "107%" }}
           transition={{ duration: 0.5 }}
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/02.jpg)`,
+            backgroundImage: `url(${publicUrl}/assets/page3/02.jpg)`,
           }}
         />
         <div className="Illu_title2">
@@ -303,7 +301,7 @@ const Illustration = () => {
           whileHover={{ backgroundSize: "107%" }}
           transition={{ duration: 0.5 }}
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/03.jpg)`,
+            backgroundImage: `url(${publicUrl}/assets/page3/03.jpg)`,
           }}
         />
       </IlluBox>
@@ -314,7 +312,7 @@ const Illustration = () => {
           whileHover={{ backgroundSize: "107%" }}
           transition={{ duration: 0.5 }}
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/04.jpg)`,
+            backgroundImage: `url(${publicUrl}/assets/page3/04.jpg)`,
           }}
         />
         <div className="Illu_title2">
@@ -332,7 +330,7 @@ const Illustration = () => {
           whileHover={{ backgroundSize: "107%" }}
           transition={{ duration: 0.5 }}
           style={{
-            backgroundImage: `url(${env.PUBLIC_URL}/assets/page3/05.jpg)`,
+            backgroundImage: `url(${publicUrl}/assets/page3/05.jpg)`,
           }}
         />
         <div className="Illu_title2">
