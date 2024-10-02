@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import CreatePattern from "../components/CreatePattern";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import FirstSection from "./FirstSection";

@@ -276,9 +276,9 @@ const Letter = () => {
 
   const isEmail = (email) => {
     const emailRegex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     setCheckMail(emailRegex.test(email.target.value));
-    if (checkMail === false) {
+    if (!checkMail) {
       console.log("이메일 오류");
     } else {
       console.log("이메일 확인");
